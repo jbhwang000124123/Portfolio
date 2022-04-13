@@ -1,0 +1,136 @@
+/*-------------------------- main(복습)css ---------------------- */
+@charset "utf-8";
+
+* {margin: 0; padding:0;}
+li {list-style: none;}
+a {text-decoration: none; color:#333;}
+html, body { color:#333;}
+
+/* header -----------------------------------*/
+header {height: 80px; line-height:80px;}
+    header div { 
+        width:1280px;
+        margin:0 auto;
+        display:flex;
+        justify-content: space-between;
+    }
+        header div h1 a {font-size:25px;}
+        header div a {font-size:20px;}
+/* header end------------------------------ */
+
+/* main_visual ------------------------------*/
+.main_visual{
+    width:100%;
+    height:calc(100vh-80px);
+    position: relative;
+    ;}
+        .main_visual figure { 
+            width:100%;
+            height:100%;
+        }
+            .main_visual figure img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            } 
+        .main_visual .title { 
+            width:1280px; height:100%;
+            position: absolute;
+            top:0; left:50%;
+            transform:translatex(-50%);
+            color:#fff;
+            display:flex;
+            flex-wrap: wrap;
+            align-content:center;
+        }
+            .main_visual .title h2 {
+                width:100%;
+                font-size: 60px;
+            }
+            .main_visual .title p {
+                width:100%;
+                font-size: 30px;
+                margin-bottom: 40px;
+            }
+            .main_visual .title a {
+                color:#fff;
+                width:150px;
+                height:50px;
+                line-height:50px;
+                text-align:center;
+                background-color: firebrick
+            }
+/*  .main visual end------------------ */
+
+/* .best_v ----------------------------------*/
+.best_v {
+    padding: 100px 0;
+}
+    .best_v .title {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+        .best_v .title h3 { /* 베스트 비디오 타이틀 */
+            font-size: 40px;
+        }
+        .best_v .title p { /* 베스트 비디오 부제 */
+            font-size:20px;
+        }
+    /* 콘텐츠 영역 -----------*/
+    .best_v .cont {
+        display: flex;
+        width:1280px;
+        margin:0 auto;
+        align-items: center;
+        justify-content: space-between;
+    }
+    /* 유튜브박스 ----*/
+    .best_v .cont .youtube{
+        width:50%;    
+    }
+        .best_v .cont .youtube .youtube_in {
+            width:100%;
+            padding-bottom:56.25%; /* 유튜브박스공간을 16:9비율로 만들어준다. */
+            position: relative;
+        }
+            .best_v .cont .youtube .youtube_in iframe {
+                width:100%;
+                height: 100%;
+                position: absolute;
+                top:0; left:0;
+            }
+    /* info박스 ----*/
+    .best_v .cont .info { width:45%;}
+        /* 기본폰트크기의 기준:16px. 폰트 크기14px이하로  내려가지 않도록 할 것 */
+        .best_v .cont .info h4 { /* 영상제목 */
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+        .best_v .cont .info p:nth-of-type(2) { /* 제작목적, 컨셉트 */
+            color:red;
+            margin: 20px 0 40px;
+        }
+        /* nth-child: 부모 안에 동일한 선택자만 있을때, 순서로 호출
+        nth-of-type: 부모 그룹 안에 서로 다른 선택자들이 혼재 할 때 같은 타입 선택자 안에서의 순서로 호출*/
+
+        .best_v .info dl { /* 프로그램, 배경음악, 러닝타임 */
+            display: flex; 
+            margin-bottom: 10px;
+        }
+            .info dl dt {
+                font-weight: bold; 
+                width:100px;
+            }
+        .best_v .info ul {display:  flex;} /* 하이퍼링크 버튼 */
+            .best_v .info ul li a {
+                height: 45px; line-height: 45px;
+                display: block;
+                border: 1px solid firebrick; 
+                box-sizing: border-box;
+                padding:0 25px;
+                margin-right:10px;
+            }
+            .best_v .info ul li:first-child a {
+                background-color: firebrick;
+                color: whitesmoke
+            }
