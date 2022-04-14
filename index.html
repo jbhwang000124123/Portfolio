@@ -3,9 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>황정빈 포트폴리오</title>
+    <!-- 팬시박스 css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css"
+        integrity="sha512-nNlU0WK2QfKsuEmdcTwkeh+lhGs6uyOxuUs+n+0oXSYDok5qy0EI0lt01ZynHq6+p/tbgpZ7P+yUb+r71wqdXg==" crossorigin="anonymous" referrerpolicy="no-referrer" 
+        />
+    <!-- html 메인 css -->
     <link href="css/main(복습).css" rel="stylesheet" />
+    <!-- jquery 라이브러리 연결 스크립트 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer">    
+    </script>
+    <!-- 모션그래픽 리스트 버튼 함수 스크립트 -->
+    <script> //$=script, function:함수*
+        $(function(){//탭메뉴
+            $('.motion ul li').click //''안의 선택자를 click한다.
+            (function(){
+                $('.motion .list_cont').removeClass('on');
+                $('.motion .list_cont').eq/*=적용대상 순번 지정*/($(this/*=이전 액션에서 명령어를 실행한 대상*/).index()/*대상의 순번 추출*/).addClass('on');//클래스명에 'on'추가
+            });//click end
+        });
+        $(function(){//탭메뉴
+            $('.motion ul li').click //''안의 선택자를 click한다.
+            (function(){
+                $('.motion ul li').removeClass('on');
+                $(this).addClass('on');
+            });//click end
+        });
+    </script>
+    <!-- 팬시박스 js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" i
+    ntegrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
 </head>
 <body>
     <header>
@@ -16,17 +46,19 @@
             <a href="#" download>resume</a>
         </div>
     </header>
+<!--/////////////// section .main_visual ///////////////-->
     <section class="main_visual">
         <figure>
             <img src="https://cdn.dribbble.com/users/181520/screenshots/9447082/media/ef346873f7ca645f056310305167e101.jpg" />  
         </figure>
         <div class="title">
-            <h2>MOTION GRAPHIC DESINGER</h2>
+            <h2>MOTION GRAPHIC DESIGNER</h2>
             <p>Hwang JeoungBin</p>
             <a href="#">유튜브채널</a>
         </div><!-- .title end -->
     </section><!-- .main_visual end -->
 
+<!--/////////////// section .best_v ///////////////-->
     <section class="best_v">
         <div class="title">
             <h3>BEST VIDEO EDITING</h3>
@@ -36,7 +68,7 @@
             <div class="youtube">
                 <div class="youtube_in">
                     <!-- 유튜브 연결 -->
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/8dbPJkDLuDQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/8UJEsO6VkpM?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div><!-- .youtube_in end -->
             </div><!-- .youtube end -->
             <div class="info">
@@ -67,5 +99,226 @@
             </div><!-- .info end -->
         </div><!-- .cont end -->
     </section><!-- .best_v end -->
+
+<!--/////////////// section .motion ///////////////-->
+    <section class="motion">
+        <div class="title">
+            <h3>2D GRAPHIC 영상작업</h3>
+            <p>비디오, 애니메이션 기술을 이용한 영상제작</p>
+            <ul class="list">
+                <li class="on">게임</li>
+                <li>홍보영상</li>
+                <li>인포그래픽</li>
+                <li>브이로그</li>
+                <li>뮤비티져</li>
+            </ul><!-- ul .list end -->
+        </div><!-- div .title end -->
+
+        <div class="motion_cont">
+            <div class="list_cont on"><!-- 게임영상용 list 콘텐츠 박스 -->                
+                <div class="items"> <!-- 1 -->
+                    <!-- 유튜브 영상 영역 -->
+                    <div class="youtube">
+                        <div class="youtube_in"><!-- 유튜브연결 -->                         
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/bdPbKodqxPE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div><!-- div .youtube_in end '게임' -->
+                    </div><!-- div .youtube end -->
+                    <div class="info">
+                        <p>각본, 연출, 편집, 보정, 특수효과</p>
+                        <h4>나폴리탄 스파게티 레시피</h4>
+                        <dl>
+                            <dt>프로그램</dt>
+                            <dd>Adobe Illustrator 2020, Adobe After Effects 2020</dd>
+                        </dl>
+                        <dl>
+                            <dt>러닝타임</dt>
+                            <dd>0:41</dd>
+                        </dl>
+                        <dl>
+                            <dt>배경음악</dt>
+                            <dd>PAINT IT! - Nicolai Heidlas Music</dd>
+                        </dl>
+                        <dl>
+                            <dt>URL주소</dt>
+                            <dd><a href="https://youtu.be/bdPbKodqxPE" target="_blank">https://youtu.be/bdPbKodqxPE</a></dd>
+                        </dl>
+                    </div><!-- div .info end -->
+                </div><!-- div .items end 1 -->
+
+                <div class="items"> <!-- 2 -->
+                    <!-- 유튜브 영상 영역 -->
+                    <div class="youtube">
+                        <div class="youtube_in"><!-- 유튜브연결 -->                         
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/hQ_CJdpOyaY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div><!-- div .youtube_in end '게임' -->
+                    </div><!-- div .youtube end -->
+                    <div class="info">
+                        <p>각본, 연출, 편집, 보정, 특수효과</p>
+                        <h4>친절한 금자씨 타이틀 시퀀스</h4>
+                        <dl>
+                            <dt>프로그램</dt>
+                            <dd>Adobe Illustrator 2020, Adobe After Effects 2020</dd>
+                        </dl>
+                        <dl>
+                            <dt>러닝타임</dt>
+                            <dd>0:49</dd>
+                        </dl>
+                        <dl>
+                            <dt>배경음악</dt>
+                            <dd>기도하는 금자 - 조영욱 (친절한 금자씨 ost)</dd>
+                        </dl>
+                        <dl>
+                            <dt>URL주소</dt>
+                            <dd><a href="https://youtu.be/bdPbKodqxPE">Youtube https://youtu.be/bdPbKodqxPE</a></dd>
+                        </dl>
+
+                    </div><!-- div .info end -->
+                </div><!-- div .items end 2 -->
+            </div><!-- div .list_cont end '게임' -->
+
+            <div class="list_cont"><!-- 홍보영상용 list 콘텐츠 박스 -->
+                <div class="items"> <!-- 1 -->
+                    <!-- 유튜브 영상 영역 -->
+                    <div class="youtube">
+                        <div class="youtube_in"><!-- 유튜브연결 -->                         
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/8UJEsO6VkpM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div><!-- div .youtube_in end '홍보' -->
+                    </div><!-- div .youtube end -->
+                    <div class="info">
+                        <p>각본, 연출, 편집, 보정, 특수효과</p>
+                        <h4>부산 금강식물원 Kumgang garden</h4>
+                        <dl>
+                            <dt>프로그램</dt>
+                            <dd>Adobe Premiere Pro 2020, Adobe After Effects 2020</dd>
+                        </dl>
+                        <dl>
+                            <dt>러닝타임</dt>
+                            <dd>1:50</dd>
+                        </dl>
+                        <dl>
+                            <dt>배경음악</dt>
+                            <dd>Forest of the elves - Jonathan segev</dd>
+                        </dl>
+                        <dl>
+                            <dt>URL주소</dt>
+                            <dd><a href="https://youtu.be/8UJEsO6VkpM">Youtube 영상보기</a></dd>
+                        </dl>
+                    </div><!-- div .info end -->
+                </div><!-- div .items end 1 -->
+
+                <div class="items"> <!-- 2 -->
+                    <!-- 유튜브 영상 영역 -->
+                    <div class="youtube">
+                        <div class="youtube_in"><!-- 유튜브연결 -->                         
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/hQ_CJdpOyaY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div><!-- div .youtube_in end '홍보' -->
+                    </div><!-- div .youtube end -->
+                    <div class="info">
+                        <p>각본, 연출, 편집, 보정, 특수효과</p>
+                        <h4>친절한 금자씨 타이틀 시퀀스</h4>
+                        <dl>
+                            <dt>프로그램</dt>
+                            <dd>Adobe Illustrator 2020, Adobe After Effects 2020</dd>
+                        </dl>
+                        <dl>
+                            <dt>러닝타임</dt>
+                            <dd>0:41</dd>
+                        </dl>
+                        <dl>
+                            <dt>배경음악</dt>
+                            <dd>Nicolai Heidlas Music - PAINT IT!</dd>
+                        </dl>
+                        <dl>
+                            <dt>URL주소</dt>
+                            <dd><a href="https://youtu.be/bdPbKodqxPE">Youtube 영상보기</a></dd>
+                        </dl>
+                    </div><!-- div .info end -->
+                </div><!-- div .items end 2 -->
+            </div><!-- div .list_cont end '홍보영상' -->
+        </div><!-- div .motion_cont end-->
+        
+    </section><!--section .motion end -->
+
+<!--/////////////// section .g_ver05 ///////////////-->
+    <section class="g_ver05">
+        <div class="title">
+            <h3>GRAPHIC DESIGN</h3>
+            <p>디자인 프로그램을 사용하여 만든 그래픽 디자인</p>
+            <em>클릭하면 원본을 보실 수 있습니다.</em>
+        </div><!-- .title end -->
+        <div  class="cont">
+            <!-- items 1 -->
+            <a class="items" href="https://via.placeholder.com/300x500" data-fancybox="images">
+                <figure>
+                    <img src="https://via.placeholder.com/300x500/333/?text=image" alt="?"/>
+                </figure>
+                <div class="info">
+                    <p>#보정 / 포토샵</p>
+                    <h4>제작된 이미지 제목</h4>
+                </div><!-- .info end -->
+            </a><!-- .items end 1-->
+            <!-- items 2 -->
+            <a class="items" href="https://via.placeholder.com/300x500" data-fancybox="images">
+                <figure>
+                    <img src="https://via.placeholder.com/300x500/333/?text=image" alt="?"/>
+                </figure>
+                <div class="info">
+                    <p>#보정 / 포토샵</p>
+                    <h4>제작된 이미지 제목</h4>
+                </div><!-- .info end -->
+            </a><!-- .items end 2-->
+        </div><!-- .cont end -->
+    </section><!-- .g_ver05 end -->
+
+    <!--/////////////// section .about ///////////////-->
+    <section class="about">
+        <div class="cont">
+            <figure>
+                <img src="https://via.placeholder.com/300x500/333/?text=image" alt="황정빈_프로필사진" />
+            </figure>
+            <div class="info">
+                <div>
+                    <h4>PROFILE</h4>
+                    <p>황정빈 / HWAMG JEOUNGBIN</p>
+                    <p>1995.07.15</p>
+                    <p><a href="tel:010-4381-6587">010 4381 6587</a></p>
+                    <p>창원 의창구, 부산 진구</p>
+                </div><!-- Profile end -->
+                <div>
+                    <h4>EDUCATION</h4>
+                    <dl>
+                        <dt>2014.3~2019.08</dt>
+                        <dd>동덕여자대학교<br>회화과 서양화전공 졸</dd>
+                        <dt>2021.12~2022.05</dt>
+                        <dd>부산 그린컴퓨터아카데미<br>[멀티미디어콘텐츠제작]영상편집 수료</dd>
+                    </dl>
+                </div><!-- education end -->
+                <div>
+                    <h4>LICENSE</h4>
+                    <dl>
+                        <dt>2020.08</dt>
+                        <dd>GTQ 1급</dd>
+                        <dt>2021.07</dt>
+                        <dd>컴퓨터그래픽스운용기능사</dd>
+                    </dl>
+                </div><!-- lisence end -->
+                <div>
+                    <h4>SKILL</h4>
+                    <p>프리미어 프로, 에프터 이펙트<br>포토샵, 일러스트레이터, 클립스튜디오</p>
+                    <p>HTML, CSS</p><p>Excel, 한글, 파워포인트</p>
+                    <p>3D마야</p>
+                </div>
+            </div><!-- .info end -->
+        </div><!-- .cont end -->
+    </section><!-- .about end -->
+    <footer>
+        <h3>황 정 빈</h3>
+        <ul>
+            <li><a href="#">유튜브 채널 바로가기 </a></li>
+            <li><a href="tel:010-4381-6587">010-4381-6587</a></li>
+            <li>jbwhang0001@gmail.com</li>
+        </ul>
+        <p>copyright 2022. 황정빈 all rights reserved.<br>본 사이트는 개인 포트폴리오 용도로 제작되었으며, 상업적인 목적이 없음을 밝힙니다. 사용된 일부 이미지 및 폰트 등은 별도의 출처를 가집니다.</p>
+    </footer>
 </body>
 </html>

@@ -4,7 +4,11 @@
 * {margin: 0; padding:0;}
 li {list-style: none;}
 a {text-decoration: none; color:#333;}
-html, body { color:#333;}
+html, body { 
+    background-color:#f7d2cc; 
+    color:#333;
+    min-width: 1280px;
+}
 
 /* header -----------------------------------*/
 header {height: 80px; line-height:80px;}
@@ -117,7 +121,7 @@ header {height: 80px; line-height:80px;}
             display: flex; 
             margin-bottom: 10px;
         }
-            .info dl dt {
+            best_v .info dl dt {
                 font-weight: bold; 
                 width:100px;
             }
@@ -134,3 +138,155 @@ header {height: 80px; line-height:80px;}
                 background-color: firebrick;
                 color: whitesmoke
             }
+/* .best_v end----------------------------------*/
+/*-------------------------------- 섹션 motion --------------------*/
+.motion {padding:100px 0; 
+} 
+/*-------------------------------- 섹션 motion --------------------*/
+/* motion 섹션의 타이틀영역 */
+.motion .title {text-align: center; margin-bottom: 40px;}
+    .motion .title h3 {font-size: 45px; margin-bottom: 2px;}
+    .motion .title p {font-size: 20px; margin-bottom: 20px;}
+    .motion .title .list {display: flex; justify-content: center;}
+        .motion .title .list li {
+            cursor: pointer;
+            height: 45px; line-height: 45px; 
+            border: 1px solid #ccc; box-sizing: border-box;
+            padding: 0 30px; margin: 0 8px;
+            border-radius: 3px;
+        }
+        .motion .title .list li:hover {
+            cursor: pointer;
+            height: 45px; line-height: 45px;
+            color:rgb(255, 67, 67);
+            padding: 0 30px; margin: 0 8px;
+        }
+        .motion .title .list li.on {
+            box-shadow: 3px 3px 1px rgb(255, 164, 29);
+            height: 45px; line-height: 45px; color:white;  
+            background: rgb(255, 67, 67); 
+            border: 0px solid #ccc; box-sizing: border-box;
+            padding: 0 30px; margin: 0 8px;
+        }
+/* 컨텐츠 영역, 각 카테고리의 박스 설정 */
+.motion .motion_cont .list_cont {
+    width:1280px; margin:0 auto;
+    /* display:flex;  */
+    display:none; /* 숨기기 */
+    justify-content:space-between;
+}
+.motion .motion_cont .list_cont.on {
+    width:1280px; margin:0 auto;
+    display:flex; 
+    justify-content:space-between;
+}
+    .motion .motion_cont .list_cont .items { 
+        width:49%; border: 1px solid #ccc; 
+        box-sizing: border-box;
+    }
+    /* 유튜브 영상 크기 조절 설정 */
+        .youtube {width:100%;}
+        .youtube .youtube_in {
+            width:100%; padding-bottom:56.25%;
+            position:relative; 
+        }
+        .youtube .youtube_in iframe {
+            width:100%; height: 100%;
+            position: absolute; top:0; left: 0;
+        }
+    /* 각 아이템 info영역 */
+        .motion .list_cont .items .info {padding:30px;}
+            .motion .info h4 {font-size: 30px; margin-bottom:20px; color:rgb(255, 110, 110);display: inline-block;}
+            .motion .info dl {display: flex; margin-top:10px;}
+                .motion .info dl dt {width: 20%; font-weight: bold;}
+                    .motion .info dl dd:hover a {text-decoration: underline;}
+/* .motion end-------------------------------------------------------*/
+/*-------------------------------- .g_ver05 --------------------*/
+.g_ver05 {
+    background-color: #eee;
+    padding:100px 0;
+}
+    .g_ver05 .title { /* GRAPHIC DESGIN */
+        text-align: center;
+        width: 1280px;
+        margin:0 auto;
+    }
+        .g_ver05 .title h3 {font-size: 45px; margin-bottom: 5px;}
+        .g_ver05 .title p {font-size: 20px;}
+        .g_ver05 .title em {font-size: 13px; text-align: right; display: block; margin-top:40px; margin-bottom: 10px;}
+            
+    /* g_ver05 컨텐츠영역 */
+    .g_ver05 .cont { 
+        display: flex; 
+        justify-content: space-between;
+        width:1280px; margin: 0 auto; 
+    }
+        .g_ver05 .cont .items {
+            width:49%;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+        }
+            .g_ver05 .cont .items figure {
+                width:60%; height: 500px;
+            }
+                .g_ver05 .cont .items figure img {
+                    width:100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            .g_ver05 .items .info {
+                width: 40%; padding-left: 20px; box-sizing: border-box;
+            }
+            .g_ver05 .items .info h4 {font-size: 30px;}
+/* .about -----------------------------------*/
+.about {
+    padding:100px 0;
+}
+/* .about_컨텐츠박스 */
+.about .cont {
+    width:1280px; margin:0 auto; 
+    display:flex; align-items: center; justify-content: space-between;
+}
+    /* 프로필  이미지영역 */
+    .about .cont figure {
+        width:30%; height:500px; 
+    }
+        .about .cont figure img {
+            width:100%; height:100%; object-fit: cover; 
+        }
+    /* 프로필 텍스트 영역 */
+    .about .cont .info {
+        width:60%;
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+        .about .cont .info div {
+            width:45%;
+            margin:20px 0;
+        }
+            .about .cont .info div h4 { font-size:30px; margin-bottom:20px;}
+            .about .cont .info div p { font-size:17px; margin-bottom:2px;}
+            .about .cont .info div dl dt { font-size:18px; font-weight: bold; margin-bottom:3px;}
+            .about .cont .info div dl dd { font-size:17px; margin-bottom: 12px; }
+    
+/* footer */
+footer {
+    padding:50px 0 20px;
+    background-color:#333; text-align: center; color:#fff;}
+        footer h3 {font-size: 25px; margin-bottom: 15px;}
+        footer ul li {
+            width:250px; height: 40px; 
+            border: 1px solid white; 
+            border-radius: 50px;
+            margin:10px auto;
+            text-align: center;
+            line-height:40px;
+        }
+        footer ul li a {color:#fff;}
+    /* 유튜브 채널 바로가기 버튼 설정 */
+    footer ul li:first-child {background-color: rgba(255, 73, 73, 0.6);}
+    footer ul li:first-child a {font-weight: bold;}
+    /* 유튜브 채널 바로가기 버튼 설정 */
+        footer p {margin-top:20px; font-size:14px; color:rgba(255, 255, 255, 0.5)}
