@@ -5,10 +5,62 @@
 li {list-style: none;}
 a {text-decoration: none; color:#333;}
 html, body { 
-    background-color:#f7d2cc; 
+    background-color:#fae5dc; 
     color:#333;
     min-width: 1280px;
 }
+
+/* 사용프로그램아이콘--------------------------------------------- */
+.Ai {
+    width:20px; height: 20px;
+    display: inline-block; 
+    padding: 2px; 
+    margin: 0 4px; 
+    line-height: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 17px;
+    background: rgb(51, 36, 31);
+    border: 2px solid rgb(255, 123, 0);
+    letter-spacing:0.5px;
+    color:rgb(255, 123, 0); 
+    
+}
+.Ae {
+    width:20px; height: 20px;
+    display: inline-block; padding: 2px; margin: 0 4px;
+    background: rgb(46, 31, 59);
+    border: 2px solid rgb(188, 130, 255);
+    font-size: 17px; line-height: 20px;
+    color:rgb(188, 130, 255); font-weight:bold; letter-spacing:-1.5px;
+    text-align: center;
+}
+.Pr {width:20px; height: 20px;
+    display: inline-block; padding: 2px; margin: 0 4px;
+    background: rgb(56, 31, 59);
+    border: 2px solid rgb(223, 117, 255);
+    font-size: 17px; line-height: 20px;
+    color:rgb(223, 117, 255); font-weight:bold; letter-spacing:0px;
+    text-align: center;
+}
+.Ps {width:20px; height: 20px;
+    display: inline-block; padding: 2px; margin: 0 4px;
+    background: rgb(31, 43, 59);
+    border: 2px solid rgb(52, 169, 216);
+    font-size: 17px; line-height: 20px;
+    color:rgb(137, 231, 255); font-weight:bold; letter-spacing:0px;
+    text-align: center;
+}
+
+.Maya { width:24px; height: 24px;
+    display: inline-block; padding: px; margin: 0 4px;
+    background: rgb(246, 251, 255);
+    border: 2px solid rgb(255, 255, 255);
+    font-size: 25px; line-height: 24px;
+    color:rgb(107, 201, 218); font-weight:bold;
+    text-align: center;
+}
+/* 사용프로그램아이콘--------------------------------------------- */
 
 /* header -----------------------------------*/
 header {height: 80px; line-height:80px;}
@@ -43,7 +95,7 @@ header {height: 80px; line-height:80px;}
             top:0; left:50%;
             transform:translatex(-50%);
             color:#fff;
-            display:flex;
+            display:flex; /* inline요소인 a를 block성격이 되도록 만들어준 직접요인 */
             flex-wrap: wrap;
             align-content:center;
         }
@@ -59,10 +111,12 @@ header {height: 80px; line-height:80px;}
             .main_visual .title a {
                 color:#fff;
                 width:150px;
-                height:50px;
-                line-height:50px;
+                height:40px;
+                line-height:40px;
                 text-align:center;
-                background-color: firebrick
+                display: inline-block;
+                background-color: firebrick;
+                border-radius: 30px;
             }
 /*  .main visual end------------------ */
 
