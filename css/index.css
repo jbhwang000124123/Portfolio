@@ -1,0 +1,316 @@
+@charset "utf-8";
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+@font-face {
+    font-family: 'Hahmlet-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/Hahmlet-Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {margin:0; padding:0;}
+li {list-style: none;}
+a {text-decoration: none; color:#333;}
+html,body {color:#333; font-family: 'NanumSquare';}
+
+/* 사용프로그램아이콘--------------------------------------------- */
+.Ai {
+    width:20px; height: 20px;
+    display: inline-block; 
+    padding: 2px; 
+    margin: 0 4px; margin-bottom: 5px;
+    line-height: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 17px;
+    background: rgb(51, 36, 31);
+    border: 2px solid rgb(255, 123, 0);
+    letter-spacing:0.5px;
+    color:rgb(255, 123, 0); 
+}
+.Ae {
+    width:20px; height: 20px;
+    display: inline-block; padding: 2px; margin: 0 4px; margin-bottom: 5px;
+    background: rgb(46, 31, 59);
+    border: 2px solid rgb(188, 130, 255);
+    font-size: 17px; line-height: 20px;
+    color:rgb(188, 130, 255); font-weight:bold; letter-spacing:-1.5px;
+    text-align: center;
+}
+.Pr {width:20px; height: 20px;
+    display: inline-block; padding: 2px; margin: 0 4px; margin-bottom: 5px;
+    background: rgb(56, 31, 59);
+    border: 2px solid rgb(223, 117, 255);
+    font-size: 17px; line-height: 20px;
+    color:rgb(223, 117, 255); font-weight:bold; letter-spacing:0px;
+    text-align: center;
+}
+.Ps {width:20px; height: 20px;
+    display: inline-block; padding: 2px; margin: 0 4px; margin-bottom: 5px;
+    background: rgb(31, 43, 59);
+    border: 2px solid rgb(52, 169, 216);
+    font-size: 17px; line-height: 20px;
+    color:rgb(137, 231, 255); font-weight:bold; letter-spacing:0px;
+    text-align: center;
+}
+
+.Maya { width:24px; height: 24px;
+    display: inline-block; padding: 2px; margin: 0 4px; margin-bottom: 5px;
+    background: rgb(246, 251, 255);
+    border: 2px solid rgb(255, 255, 255);
+    font-size: 25px; line-height: 24px;
+    color:rgb(107, 201, 218); font-weight:bold;
+    text-align: center;
+}
+/* 사용프로그램아이콘--------------------------------------------- */
+
+h4 {font-size: 30px;}
+h3 {font-size: 35px;}
+h2 {font-size: 40px;}
+h1 {font-size: 45px;}
+
+/* main_visual ----------------------------------------------------------*/
+/* header -----------------------------------*/
+header {
+    width:100%;height: 80px; line-height:80px; 
+    position: absolute; top:0; left:50%;transform:translatex(-50%);
+    background: rgba(255,255,255,0.7);
+background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.2) 100%);
+}
+    header div { 
+        width:100%;
+        margin:0 auto;
+        display:flex;
+        justify-content: center;
+        color:#fff;
+    }
+    header div a{ 
+        color:#fff;
+        font-size: 17px;
+        cursor: pointer;
+    }
+/* header end------------------------------ */
+.main_visual{
+    width:100%;
+    height:500px;
+    position: relative;
+    ;}
+        .main_visual .bg { 
+            width:100%;
+            height:100%;
+        }
+            .main_visual .bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            } 
+        .main_visual .title { 
+            width:1280px; height:100%;
+            position: absolute;
+            top:0; left:50%;
+            transform:translatex(-50%);
+            color:#fff;
+            display:flex; /* inline요소인 a를 block성격이 되도록 만들어준 직접요인 */
+            flex-wrap: wrap;
+            align-content:center;
+        }
+            .main_visual .title h2 {
+                font-style: italic;
+                width:100%;
+                font-size: 90px;
+                /* text-shadow: 2px 3px 1px #333; */
+            }
+            .main_visual .title p {
+                width:100%;
+                font-size: 25px;
+                letter-spacing: 2px;
+                font-family:Georgia, 'Times New Roman', Times, serif;}
+
+            .main_visual .under_arrow {
+                position:absolute; bottom:1%; left:50%; transform:translatex(-50%);}
+/* main_visual end */
+/* v_category -------------------------------------------------------------*/
+.v_category .category .list { /* 카테고리를 선택할 수 있는 곳 */
+    /* background-color: yellowgreen; */
+    height: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding:10px;
+    padding-top:40px;
+}
+    .category .list li {
+        font-size: 25px;
+        /* background-color: tomato; */
+        display: inline-block;
+        width:30%;
+        text-align: center;
+        cursor: pointer;
+    }
+    .category .list li:hover {
+        font-size: 25px;
+        /* background-color: tomato; */
+        display: inline-block;
+        width:30%;
+        text-align: center;
+        color:rgb(190, 190, 190)
+    }
+
+.v_category .category_on div { /* 선택한 카테고리를 보여주는 곳 */
+    background-color: rgb(79, 146, 88);
+    height: 70px;
+    line-height: 70px;
+    padding-left: 70px;
+    color:white;
+    font-family: 'Hahmlet-Bold';
+}
+
+/* v_category end */
+/*  video ----------------------------------------------------------------- */
+.video { /* 카테고리에 속한 비디오들이 나타나는 영역 */
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(233, 238, 223);
+}
+/* .video  */
+.video .item { /* 비디오 1개 콘텐츠의 전체박스 */
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: antiquewhite; */
+    padding:10px 0;}
+.video .item .cont { /* 영상과 영상정보의 박스*/
+    /* background-color: antiquewhite; */
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin:0 100px;
+    padding-top: 50px;
+}
+.video .item .cont .youtube{
+    width:50%;    
+}
+    .video .item .cont .youtube .youtube_in {
+            width:100%;
+            padding-bottom:56.25%; /* 유튜브박스공간을 16:9비율로 만들어준다. */
+            position: relative;
+        }
+        .video .item .cont .youtube .youtube_in iframe {
+                width:100%;
+                height: 100%;
+                position: absolute;
+                top:0; left:0;
+            }
+.video .item .cont .info {/* 영상의 설명이 들어가는 곳 */
+    width:47%; 
+    /* background-color: aliceblue; */
+}
+    .video .item .cont .info h3 {
+        font-size: 45px;
+        margin:10px 0;
+        font-family: 'Hahmlet-Bold';
+    }
+    .video .item .cont .info p {
+        font-size: 17px;
+        margin:10px 0;
+    }
+    .video .item .cont .info dl {
+        display: flex;
+        font-size: 17px;
+    }
+        .info dl dt {
+            font-weight: bold;
+            margin-right:10px;
+        }
+        
+.video .sub_img {/* 비디오와 관련된 이미지가 들어가는 박스 */
+    width: 100%;
+    height: 30%;
+    display: flex;
+    margin-top:10px;
+}
+    .sub_img figure {
+        width:20%; 
+        height:100%;
+        margin-right: 10px;
+        box-sizing: border-box;
+    }
+
+        .sub_img figure img {
+            width:100%; height: 100%; object-fit: cover;
+        }
+/*  video ------------------------------- */
+/* .about -----------------------------------*/
+.about {
+    padding:50px 0; 
+    /* background-color: rgb(255, 182, 182); */
+    display: flex;
+    justify-content: space-evenly;
+}
+.about a:hover {color:rgb(167, 167, 187);}
+.about .about_title {
+    display: flex;
+    align-items: center;
+    /* background-color: aliceblue; */
+}
+/* .about_컨텐츠박스 */
+.about .cont {
+    width:1600px;  
+    display:flex; 
+    justify-content: space-between;
+    /* background-color: yellow; */
+}
+    /* 프로필  이미지+기본인적사항 박스 */
+    .about .cont .basic {
+        /* background-color: yellowgreen; */
+        width:20%;
+        height: 100%;
+    }
+
+    .about .cont .basic .propic {
+        width:100%;
+        height:100%;
+        position: relative;
+    }
+    .about .cont .basic figure {
+        width:90%; height:100%;
+        position: absolute; top:0; left: 50%; transform: translateX(-50%);
+    }
+        .about .cont .basic figure img {
+            width:100%; height:100%; object-fit: cover; 
+            
+        }
+
+    /* 프로필 텍스트 영역 */
+    .about .cont .info {
+        width:75%;
+        display:flex;
+        justify-content: space-between;
+        /* background-color: violet; */
+    }
+        .about .cont .info div {
+            width:33%;
+            margin:20px 0;
+            /* background-color: turquoise; */
+        }
+        /* .about .cont .info div:nth-of-type(1) {
+            width:25%;
+            margin:20px 0;
+            background-color: turquoise;
+        } */
+        .about .cont .info dl {display: flex;}
+            .about .cont .info div:nth-of-type(1) h4 { font-size:30px; margin-bottom:20px;font-style: italic; color:#333;}
+            .about .cont .info div h4 { font-size:30px; margin-bottom:20px;font-style: italic; color:rgb(148, 148, 148);}
+            .about .cont p { font-size:17px; margin-bottom:2px;}
+            .about .cont .info div dl dt { font-size:18px; font-weight: bold; margin-bottom:3px;}
+            .about .cont .info div dl dd { font-size:17px; margin-bottom: 12px; }
+    
+/* footer */
+footer {text-align: center;
+padding-top:80px;
+padding-bottom:30px;
+font-size:13px;
+font-family: "돋움";
+color:rgb(179, 179, 179)}
+footer a:hover {color:rgb(167, 167, 187);}
