@@ -129,7 +129,7 @@ background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0
                 position:absolute; bottom:1%; left:50%; transform:translatex(-50%);}
 /* main_visual end */
 /* v_category -------------------------------------------------------------*/
-.v_category .category .list { /* 카테고리를 선택할 수 있는 곳 */
+.category .list { /* 카테고리를 선택할 수 있는 곳 */
     /* background-color: yellowgreen; */
     height: 40px;
     display: flex;
@@ -155,8 +155,9 @@ background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0
         color:rgb(190, 190, 190)
     }
 
-.v_category .category_on div { /* 선택한 카테고리를 보여주는 곳 */
+.video .category_title { /* 선택한 카테고리를 보여주는 곳 */
     background-color: rgb(79, 146, 88);
+    width:100%;
     height: 70px;
     line-height: 70px;
     padding-left: 70px;
