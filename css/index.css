@@ -170,7 +170,7 @@ background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0
 .video { /* 카테고리에 속한 비디오들이 나타나는 영역 */
     display: flex;
     flex-wrap: wrap;
-    background-color: rgb(233, 238, 223);
+    
 }
 /* .video  */
 .video .item { /* 비디오 1개 콘텐츠의 전체박스 */
@@ -189,6 +189,7 @@ background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0
     margin:0 100px;
     padding-top: 50px;
 }
+
 .video .item .cont .youtube{
     width:50%;    
 }
@@ -227,7 +228,6 @@ background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0
         
 .video .sub_img {/* 비디오와 관련된 이미지가 들어가는 박스 */
     width: 100%;
-    height: 30%;
     display: flex;
     margin-top:10px;
 }
@@ -309,9 +309,47 @@ background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0
     
 /* footer */
 footer {text-align: center;
-padding-top:80px;
+padding-top:50px;
 padding-bottom:30px;
 font-size:13px;
 font-family: "돋움";
-color:rgb(179, 179, 179)}
+color:rgb(179, 179, 179);
+background-color: rgb(233, 238, 223);}
 footer a:hover {color:rgb(167, 167, 187);}
+
+/* 반응형 제작 - 해상도 가로 960px 이하일 때 적용되는 스타일*/
+
+@media screen and (max-width:1280px) {
+    /* 브라우저너비 1280px이하 일 때 스타일 */
+    header div {width:100%;}
+    .main_visual .title {width:100%;}
+}/* 해상도 1280px이하 일 때 */
+
+@media screen and (max-width:960px){
+    .video .item .cont {flex-wrap: wrap;}
+    .video .item .cont .youtube {width: 100%;}
+    .video .item .cont .info {width:95%; margin:0 auto; margin-top:20px;}
+    .video .item .cont .sub_img {width: 95%; margin:0 auto;margin-top:20px;}
+    .about {flex-wrap: wrap;}
+    .about .cont {flex-wrap: wrap;}
+    .about .cont .basic {width:288px; height: 260px; margin: 0 auto;}
+    .about .cont .info {width:90%; margin:0 auto;}
+    .about .about_title {margin-bottom:20px;}
+    .about .info div:nth-of-type(3) dl {flex-wrap: wrap;}
+    .about .info div:nth-of-type(3) dl dt {width:100%;}
+}
+
+@media screen and (max-width:640px){
+    .video .item .cont .info {width:100%; margin:0 auto; margin-top:20px;}
+    .video .item .cont .sub_img {
+        width: 100%; margin:0 auto;margin-top:20px;
+    }
+    .category .list li {font-size: 20px;
+    /* background-color: #333; */
+    width:40%;}
+
+
+}
+
+/* word-break : 영역을 벗어나는 텍스트의 줄바꿈에 대한 설정 */
+/* !important 해당설정값을 임의로 최우선 순위로 변경한다 */
