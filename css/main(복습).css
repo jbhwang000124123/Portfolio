@@ -342,3 +342,9 @@ footer {
     footer ul li:first-child a {font-weight: bold;}
     /* 유튜브 채널 바로가기 버튼 설정 */
         footer p {margin-top:20px; font-size:14px; color:rgba(255, 255, 255, 0.5)}
+
+@media screen and (max-width:1280px) {
+    /* 브라우저너비 1280px이하 일 때 스타일 */
+    header div {width:100%;}
+    .main_visual .title {width:100%;}
+}/* 해상도 1280px이하 일 때 */
