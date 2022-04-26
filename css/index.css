@@ -168,6 +168,11 @@ background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0
 /* v_category end */
 /*  video ----------------------------------------------------------------- */
 .video { /* 카테고리에 속한 비디오들이 나타나는 영역 */
+    display: none;
+    flex-wrap: wrap;
+    
+}
+.video.on { /* 카테고리에 속한 비디오들이 나타나는 영역 */
     display: flex;
     flex-wrap: wrap;
     
