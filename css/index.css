@@ -155,8 +155,26 @@ background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0
         color:rgb(190, 190, 190)
     }
 
-.video .category_title { /* 선택한 카테고리를 보여주는 곳 */
+.video .category_title1 { /* 선택한 카테고리를 보여주는 곳 */
     background-color: rgb(79, 146, 88);
+    width:100%;
+    height: 70px;
+    line-height: 70px;
+    padding-left: 70px;
+    color:white;
+    font-family: 'Hahmlet-Bold';
+}
+.video .category_title2 { /* 선택한 카테고리를 보여주는 곳 */
+    background-color: rgb(0, 95, 119);
+    width:100%;
+    height: 70px;
+    line-height: 70px;
+    padding-left: 70px;
+    color:white;
+    font-family: 'Hahmlet-Bold';
+}
+.video .category_title3 { /* 선택한 카테고리를 보여주는 곳 */
+    background-color: rgb(137, 87, 255);
     width:100%;
     height: 70px;
     line-height: 70px;
@@ -174,9 +192,9 @@ background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0
 }
 .video.on { /* 카테고리에 속한 비디오들이 나타나는 영역 */
     display: flex;
-    flex-wrap: wrap;
-    
+    flex-wrap: wrap;    
 }
+
 /* .video  */
 .video .item { /* 비디오 1개 콘텐츠의 전체박스 */
     width: 100%;
@@ -217,19 +235,31 @@ background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0
         font-size: 45px;
         margin:10px 0;
         font-family: 'Hahmlet-Bold';
+        margin-bottom: 30px;
+    }
+    .video .item .cont .info h3:hover {
+        font-size: 45px;
+        margin:10px 0;
+        font-family: 'Hahmlet-Bold';
+        margin-bottom: 30px;
+        color: rgb(86, 139, 93);
+        transition: 0.9s;
     }
     .video .item .cont .info p {
-        font-size: 17px;
-        margin:10px 0;
-    }
+        font-size: 18px;
+        margin-top: 5px;
+        margin-bottom: 30px;}
     .video .item .cont .info dl {
         display: flex;
         font-size: 17px;
+        margin-bottom: 8px;
     }
         .info dl dt {
             font-weight: bold;
             margin-right:10px;
         }
+        .info dl a {text-decoration: underline; color:green}
+        .info dl a:hover {text-decoration: underline; color:rgb(179, 218, 179); transition: 0.5s}
         
 .video .sub_img {/* 비디오와 관련된 이미지가 들어가는 박스 */
     width: 100%;
@@ -309,18 +339,83 @@ background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0
             .about .cont .info div:nth-of-type(1) h4 { font-size:30px; margin-bottom:20px;font-style: italic; color:#333;}
             .about .cont .info div h4 { font-size:30px; margin-bottom:20px;font-style: italic; color:rgb(148, 148, 148);}
             .about .cont p { font-size:17px; margin-bottom:2px;}
+            .about .cont p:nth-child(3) a {color:rgb(64, 199, 188);
+            }
             .about .cont .info div dl dt { font-size:18px; font-weight: bold; margin-bottom:3px;}
             .about .cont .info div dl dd { font-size:17px; margin-bottom: 12px; }
     
-/* footer */
+/* footer ----------------------------------------------*/
 footer {text-align: center;
-padding-top:50px;
-padding-bottom:30px;
+padding-top:20px;
+padding-bottom:10px;
 font-size:13px;
 font-family: "돋움";
-color:rgb(179, 179, 179);
+color:rgb(105, 116, 100);
 background-color: rgb(233, 238, 223);}
-footer a:hover {color:rgb(167, 167, 187);}
+/* footer p ----------------------*/
+footer p:nth-of-type(1) {font-weight: bold; font-size:17px;font-family: 'NanumSquare'; margin-top:10px;margin-bottom:5px;}
+footer p:nth-of-type(2) {margin-top:10px; margin-bottom: 20px;color:rgba(105, 116, 100, 0.3)}
+
+/* footer ul 1 (유튜브 채널바로가기) ----------------------*/
+footer ul:nth-of-type(1) .youtube a {
+    color:rgb(255, 255, 255); 
+    background-color: rgb(153, 202, 166);
+    border: 1px solid rgb(100, 172, 67);
+    display: inline-block; 
+    padding:0 10px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 3px;
+}
+footer ul:nth-of-type(1) a:hover {
+    color:rgb(101, 165, 72); 
+    background-color: #fff;
+    transition:0.5s;
+}
+
+/* footer .connect span(CONNECT :) ----------------------*/
+
+footer .connect span {
+    font-size: 12px; letter-spacing: 1px; 
+    margin-bottom:2px; 
+    font-family: 'nanumspuare';
+    /* background-color: #333; */
+    display: inline-block;
+}
+
+/* footer .connect ul ----------------------*/
+
+footer .connect {margin: 10px;}
+footer .connect ul:nth-of-type(2) {
+    display:block; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .connect ul li a {
+    color:rgb(245, 255, 240);
+    background-color: rgb(104, 156, 152);
+    /* border:1px solid rgb(255, 255, 255); */
+    border-radius: 8px;
+    display: inline-block;
+    padding: 0 20px;
+    margin-bottom: 2px;
+    height: 20px; line-height: 20px;
+}
+
+footer .connect ul span:nth-child(2) {margin: 0 5px;}
+
+footer .connect ul li:nth-of-type(2) {
+    /* background-color: rgb(243, 176, 176); */
+    display: inline-block;
+    border-radius: 5px;
+}
+
+
+/* footer ----------------------------------------------*/
+
 
 /* 반응형 제작 - 해상도 가로 960px 이하일 때 적용되는 스타일*/
 
@@ -364,3 +459,4 @@ footer a:hover {color:rgb(167, 167, 187);}
 
 /* word-break : 영역을 벗어나는 텍스트의 줄바꿈에 대한 설정 */
 /* !important 해당설정값을 임의로 최우선 순위로 변경한다 */
+
