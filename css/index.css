@@ -502,8 +502,9 @@ margin-bottom:3px}
 .about .cont .info div:nth-child(3)  {display: flex; flex-wrap:wrap; align-items:flex-start;}
 .about .cont .info div:nth-child(3) h4 {width: 100%;}
 .about .cont .info div:nth-child(3) dl {width: 50%;}
-}
 
+footer p:nth-of-type(2) {font-size: 11px; padding:0 30px; word-break:keep-all;}
+}
 /* word-break : 영역을 벗어나는 텍스트의 줄바꿈에 대한 설정 */
 /* !important 해당설정값을 임의로 최우선 순위로 변경한다 */
 
