@@ -508,3 +508,35 @@ footer p:nth-of-type(2) {font-size: 11px; padding:0 30px; word-break:keep-all;}
 /* word-break : 영역을 벗어나는 텍스트의 줄바꿈에 대한 설정 */
 /* !important 해당설정값을 임의로 최우선 순위로 변경한다 */
 
+
+
+/* 2022.05.06 하수정 */
+.category.on {
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+    top: 0;
+    background-color: #fff;
+}
+
+/* 퀵메뉴 하수정 */
+aside {
+    position: fixed;
+    right: 30px;
+    bottom: 70px;
+}
+aside ul li {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    margin: 5px 0;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    font-size: 14px;
+    box-shadow: 3px 3px 10px rgba(105, 116, 100, 0.3);
+}
+aside ul li a {
+    display: block;
+}
