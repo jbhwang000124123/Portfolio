@@ -393,3 +393,121 @@ aside ul li a {
     color:rgb(211, 211, 211)
 }
 aside ul li:hover {background-color: rgb(0, 0, 0); transition: 0.5s;}
+
+
+@media screen and (max-width:1280px) {
+    /* 브라우저너비 1280px이하 일 때 스타일 */
+    header div {width:100%;}
+    .main_visual .title {width:100%;}
+}/* 해상도 1280px이하 일 때 */
+
+@media screen and (max-width:960px){
+    .video .item .cont {flex-wrap: wrap;}
+    .video .item .cont .youtube {width: 100%;}
+    .video .item .cont .info {width:95%; margin:0 auto; margin-top:20px;}
+    .video .item .cont .sub_img {width: 95%; margin:0 auto;margin-top:20px;}
+    .about {flex-wrap: wrap;}
+    .about .cont {flex-wrap: wrap;}
+    .about .cont .basic {width:288px; height: 260px; margin: 0 auto;}
+    .about .cont .info {width:90%; margin:0 auto;}
+    .about .about_title {margin-bottom:20px;}
+    .about .info div:nth-of-type(3) dl {flex-wrap: wrap;}
+    .about .info div:nth-of-type(3) dl dt {width:100%;}
+}
+
+@media screen and (max-width:640px){
+    .video .item .cont .info {width:100%; margin:0 auto; margin-top:20px;}
+    .video .item .cont .sub_img {
+        width: 100%; margin:0 auto;margin-top:20px;
+    }
+    .category .list {display:flex;flex-wrap: wrap; height:100px;padding:0;margin: 10px;}
+    .category .list li {width:100%;font-size: 25px; 
+    /* background-color: #333; */
+    }
+    .category .list li:hover {
+        width:100%;font-size: 25px;
+        background-color: rgba(238, 117, 117, 0.849);
+    } 
+    /* background-color: #333; */
+}
+
+@media screen and (max-width:390px){
+    .main_visual {height: 230px;}
+    .main_visual header div h4 {font-size: 20px; margin: 0 10px;}
+    .main_visual header div a {font-size: 15px;}
+    .main_visual .title {text-align: center;}
+    .main_visual .title h2 {
+        font-size: 80px;
+    }
+    .main_visual .title p {
+        font-size: 20px; font-family: nanumsquare;}
+    .Contents .video h3 {
+        font-size: 25px;
+    }
+    .Contents .video .category_title1 {
+        width:100%;
+        padding: 0;
+        text-align: center;
+    }
+    .Contents .video .category_title2 {
+        width:100%;
+        padding: 0;
+        text-align: center;
+    }
+    .Contents .video .category_title3 {
+        width:100%;
+        padding: 0;
+        text-align: center;
+    }
+    .Contents .video .item {
+        padding:0; margin:0;
+        margin-bottom:10px;
+    }
+    .Contents .video .item .cont {width:98%; margin:0 auto; padding:10px}
+    .Contents .video .item .info h3 {
+        font-size: 30px; 
+        margin:0; 
+        padding:0;
+        margin-bottom: 8px;
+    }
+    .Contents .video .item .info p {
+        display:inline-block;
+        /* background-color: yellowgreen; */
+        font-size: 18.5px;
+    }
+    .Contents .video .item .info dl {font-size: 17px;}
+
+.category .list {margin:0; margin-top:1px;}
+.category .list li {font-size: 20px;}
+.category .list li:hover {font-size: 20px;}
+
+about {padding:0; margin:0;}
+.about .cont .info {display: flex; flex-wrap: wrap;}
+.about .cont .info div {width:100%; margin:5px 0;}
+.about .about_title h2 {font-size: 25px; margin:0; padding:0}
+.about .cont .info div h4 {font-size:20px; margin-bottom: 2px;}
+.about .cont .info div:nth-of-type(1) h4 {
+    font-size: 18px; text-align: center;
+    margin-top: 10px; 
+    padding:0;
+margin-bottom:3px}
+
+.about .cont .info div p {margin:0; padding: 0; font-size: 14px;}
+.about .cont .info div:nth-child(1) p {text-align: center;}
+.about .cont .info div dl dt {font-size: 14px;margin:0; margin-right: 10px; padding:0;}
+.about .cont .info div dl dd {font-size: 14px;margin:0; padding:0;}
+.about .cont .info div span {
+    display:inline-block;
+    margin-top: 5px;
+}
+
+.about .cont .info div:nth-child(3)  {display: flex; flex-wrap:wrap; align-items:flex-start;}
+.about .cont .info div:nth-child(3) h4 {width: 100%;}
+.about .cont .info div:nth-child(3) dl {width: 50%;}
+
+footer p:nth-of-type(2) {font-size: 11px; padding:0 30px; word-break:keep-all;}
+}
+/* word-break : 영역을 벗어나는 텍스트의 줄바꿈에 대한 설정 */
+/* !important 해당설정값을 임의로 최우선 순위로 변경한다 */
+
+
