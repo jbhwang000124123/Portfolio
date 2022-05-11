@@ -11,37 +11,133 @@
 
 /* 2D그래픽 제작 및 합성 작업 */
 .video .category_title1 { /* 선택한 카테고리를 보여주는 곳 */
-    background-color: #ed7d31;
     width:100%;
-    height: 70px;
-    line-height: 70px;
-    padding-left: 70px;
-    color:white;
-    font-family: 'Hahmlet-Bold';
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    color:rgba(0, 0, 0, 0.534);
+    font-family: 'Hahmlet'; 
 }
+
 .Contents section:nth-of-type(1) {background-color: rgb(255, 249, 230);}
 
 /* 영상 촬영 및 편집 작업 */
 .video .category_title2 { /* 선택한 카테고리를 보여주는 곳 */
-    background-color: #189079;
     width:100%;
-    height: 70px;
-    line-height: 70px;
-    padding-left: 70px;
-    color:white;
-    font-family: 'Hahmlet-Bold';
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    color:rgba(0, 0, 0, 0.534);
+    font-family: 'Hahmlet';
 }
 .Contents section:nth-of-type(2) {background-color: rgb(227, 237, 240);}
 
 
 /* 3D그래픽작업 */
 .video .category_title3 { /* 선택한 카테고리를 보여주는 곳 */
-    background-color: #ff7575;
     width:100%;
-    height: 70px;
-    line-height: 70px;
-    padding-left: 70px;
-    color:white;
-    font-family: 'Hahmlet-Bold';
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    color:rgba(0, 0, 0, 0.534);
+    font-family: 'Hahmlet';
 }
 .Contents section:nth-of-type(3) {background-color: rgb(255, 232, 217);}
+
+/*  video ----------------------------------------------------------------- */
+.video { /* 카테고리에 속한 비디오들이 나타나는 영역 */
+    display: none;
+    flex-wrap: wrap;
+}
+.video.on { /* 카테고리에 속한 비디오들이 나타나는 영역 */
+    display: flex;
+    flex-wrap: wrap;    
+    
+}
+
+/* .video  */
+.video .item { /* 비디오 1개 콘텐츠의 전체박스 */
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: antiquewhite; */
+    padding:50px 10px;}
+.video .item .cont { /* 영상과 영상정보의 박스*/
+    /* background-color: antiquewhite; */
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin:0 100px;
+    padding-top: 50px;
+}
+
+.video .item .cont .youtube{
+    width:50%;    
+}
+    .video .item .cont .youtube .youtube_in {
+            width:100%;
+            padding-bottom:56.25%; /* 유튜브박스공간을 16:9비율로 만들어준다. */
+            position: relative;
+        }
+        .video .item .cont .youtube .youtube_in iframe {
+                width:100%;
+                height: 100%;
+                position: absolute;
+                top:0; left:0;
+            }
+.video .item .cont .info {/* 영상의 설명이 들어가는 곳 */
+    width:47%; 
+    /* background-color: aliceblue; */
+}
+    .video .item .cont .info h3 {
+        font-size: 45px;
+        margin:10px 0;
+        font-family: 'Hahmlet-Bold';
+        margin-bottom: 30px;
+    }
+    .video .item .cont .info h3:hover {
+        font-size: 45px;
+        margin:10px 0;
+        font-family: 'Hahmlet-Bold';
+        margin-bottom: 30px;
+        color: rgb(255, 255, 255);
+        text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+        transition: 0.2s;
+    }
+    .video .item .cont .info p {
+        font-size: 18px;
+        margin-top: 5px;
+        margin-bottom: 30px;}
+    .video .item .cont .info dl {
+        display: flex;
+        font-size: 17px;
+        margin-bottom: 8px;
+    }
+        .info dl dt {
+            font-weight: bold;
+            margin-right:10px;
+        }
+        .info dl a {text-decoration: underline; color:green}
+        .info dl a:hover {text-decoration: underline; color:rgb(179, 218, 179); transition: 0.3s}
+        
+.video .sub_img {/* 비디오와 관련된 이미지가 들어가는 박스 */
+    width: 100%;
+    display: flex;
+    margin-top:50px;
+}
+    .sub_img figure {
+        width:20%; 
+        height:100%;
+        margin-right: 10px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+        .sub_img figure img {
+            width:100%; height: 100%; object-fit: cover;
+            cursor: zoom-in;
+        }
+
+/*  video ------------------------------- */

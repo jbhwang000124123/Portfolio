@@ -11,6 +11,7 @@
 li {list-style: none;}
 a {text-decoration: none; color:#333;}
 html,body {color:#333; font-family: 'NanumSquare';}
+body{ -ms-overflow-style: none; } ::-webkit-scrollbar { display: none; }
 
 /* 사용프로그램아이콘--------------------------------------------- */
 .Ai {
@@ -86,6 +87,21 @@ background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0
         font-size: 17px;
         cursor: pointer;
     }
+    header div a:hover{ 
+        transition: 0.5s;
+    }
+
+    header div a:nth-of-type(1):hover{  /* 유튜브 */
+        color:red;
+    }
+
+    header div a:nth-of-type(2):hover{  /* 이력서hwp */
+        color:rgb(0, 140, 255);
+    }
+
+    header div a:nth-of-type(3):hover{  /* 이력서 구글문서 */
+        color:rgb(0, 134, 90);
+    }
 /* header end------------------------------ */
 .main_visual{
     width:100%;
@@ -129,127 +145,67 @@ background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0
 /* v_category -------------------------------------------------------------*/
 .category .list { /* 카테고리를 선택할 수 있는 곳 */
     /* background-color: yellowgreen; */
-    height: 40px;
+    height: 50px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    padding:10px;
-    padding-top:40px;
+
 }
     .category .list li {
         font-size: 25px;
         /* background-color: tomato; */
         display: inline-block;
-        width:30%;
+        width:33.3%;
         text-align: center;
         cursor: pointer;
+        line-height: 50px;
+    
     }
     .category .list li:hover {
         font-size: 25px;
         /* background-color: tomato; */
         display: inline-block;
-        width:30%;
+        width:33.3%; 
         text-align: center;
-        color:rgb(190, 190, 190)
+        background-color: rgba(255, 223, 223, 0.9);
     }
+    .category .list li.on {
+        font-size: 25px; 
+        /* background-color: tomato; */
+        display: inline-block;
+        width:33.3%; height: 100%;
+        text-align: center;
+        cursor: pointer;
+        background-color: rgba(238, 117, 117, 0.849);
+    }
+    .category .list .on a {color:#fff;}
+    
+    /* 2022.05.06 하수정 */
+.category.on {
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.category.on .list li:hover {
+    background-color: rgba(255, 223, 223, 0.9);
+}
+.category.on .list li.on {
+    font-size: 25px;
+    /* background-color: tomato; */
+    display: inline-block;
+    width:33.3%;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgba(238, 117, 117, 0.849);
+}
 
+.category.on .list .on a {color:#fff;}
 
 
 /* v_category end */
-/*  video ----------------------------------------------------------------- */
-.video { /* 카테고리에 속한 비디오들이 나타나는 영역 */
-    display: none;
-    flex-wrap: wrap;
-}
-.video.on { /* 카테고리에 속한 비디오들이 나타나는 영역 */
-    display: flex;
-    flex-wrap: wrap;    
-    
-}
 
-/* .video  */
-.video .item { /* 비디오 1개 콘텐츠의 전체박스 */
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    /* background-color: antiquewhite; */
-    padding:50px 10px;}
-.video .item .cont { /* 영상과 영상정보의 박스*/
-    /* background-color: antiquewhite; */
-    width:100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin:0 100px;
-    padding-top: 50px;
-}
-
-.video .item .cont .youtube{
-    width:50%;    
-}
-    .video .item .cont .youtube .youtube_in {
-            width:100%;
-            padding-bottom:56.25%; /* 유튜브박스공간을 16:9비율로 만들어준다. */
-            position: relative;
-        }
-        .video .item .cont .youtube .youtube_in iframe {
-                width:100%;
-                height: 100%;
-                position: absolute;
-                top:0; left:0;
-            }
-.video .item .cont .info {/* 영상의 설명이 들어가는 곳 */
-    width:47%; 
-    /* background-color: aliceblue; */
-}
-    .video .item .cont .info h3 {
-        font-size: 45px;
-        margin:10px 0;
-        font-family: 'Hahmlet-Bold';
-        margin-bottom: 30px;
-    }
-    .video .item .cont .info h3:hover {
-        font-size: 45px;
-        margin:10px 0;
-        font-family: 'Hahmlet-Bold';
-        margin-bottom: 30px;
-        color: rgb(86, 139, 93);
-        transition: 0.9s;
-    }
-    .video .item .cont .info p {
-        font-size: 18px;
-        margin-top: 5px;
-        margin-bottom: 30px;}
-    .video .item .cont .info dl {
-        display: flex;
-        font-size: 17px;
-        margin-bottom: 8px;
-    }
-        .info dl dt {
-            font-weight: bold;
-            margin-right:10px;
-        }
-        .info dl a {text-decoration: underline; color:green}
-        .info dl a:hover {text-decoration: underline; color:rgb(179, 218, 179); transition: 0.5s}
-        
-.video .sub_img {/* 비디오와 관련된 이미지가 들어가는 박스 */
-    width: 100%;
-    display: flex;
-    margin-top:50px;
-}
-    .sub_img figure {
-        width:20%; 
-        height:100%;
-        margin-right: 10px;
-        box-sizing: border-box;
-    }
-
-        .sub_img figure img {
-            width:100%; height: 100%; object-fit: cover;
-            cursor: zoom-in;
-        }
-/*  video ------------------------------- */
 /* .about -----------------------------------*/
 .about {
     padding:50px 0; 
@@ -331,17 +287,17 @@ footer p:nth-of-type(2) {margin-top:10px; margin-bottom: 20px;color:rgba(105, 11
 
 /* footer ul 1 (유튜브 채널바로가기) ----------------------*/
 footer ul:nth-of-type(1) .youtube a {
-    color:rgb(255, 255, 255); 
-    background-color: rgb(153, 202, 166);
-    border: 1px solid rgb(100, 172, 67);
+    color:rgba(255, 255, 255, 0.747); 
+    background-color: rgba(179, 0, 0, 0.678);
+    /* border: 1px solid rgb(100, 172, 67); */
     display: inline-block; 
-    padding:0 10px;
+    padding: 2px 10px;
     height: 20px;
     line-height: 20px;
-    border-radius: 3px;
+    border-radius: 8px;
 }
 footer ul:nth-of-type(1) a:hover {
-    color:rgb(101, 165, 72); 
+    color:rgba(179, 0, 0, 0.678); 
     background-color: #fff;
     transition:0.5s;
 }
@@ -358,7 +314,7 @@ footer .connect span {
 
 /* footer .connect ul ----------------------*/
 
-footer .connect {margin: 10px;}
+footer .connect {margin: 10px 0 20px;}
 footer .connect ul:nth-of-type(2) {
     display:block; 
     display: flex;
@@ -373,150 +329,31 @@ footer .connect ul li a {
     /* border:1px solid rgb(255, 255, 255); */
     border-radius: 8px;
     display: inline-block;
-    padding: 0 20px;
-    margin-bottom: 2px;
+    padding: 0 10px;
+    margin-bottom: 5px;
     height: 20px; line-height: 20px;
+}
+footer .connect ul li a:hover {
+    color:rgb(104, 156, 152);
 }
 
 footer .connect ul span:nth-child(2) {margin: 0 5px;}
 
 footer .connect ul li:nth-of-type(2) {
-    /* background-color: rgb(243, 176, 176); */
+    color:rgba(245, 255, 240, 0.5);
+    background-color: rgb(104, 156, 152);
     display: inline-block;
-    border-radius: 5px;
+    border-radius: 8px;
+    padding: 0 10px;
+    height: 20px; line-height: 20px;
 }
 
 
 /* footer ----------------------------------------------*/
 
 
-/* 반응형 제작 - 해상도 가로 960px 이하일 때 적용되는 스타일*/
-
-@media screen and (max-width:1280px) {
-    /* 브라우저너비 1280px이하 일 때 스타일 */
-    header div {width:100%;}
-    .main_visual .title {width:100%;}
-}/* 해상도 1280px이하 일 때 */
-
-@media screen and (max-width:960px){
-    .video .item .cont {flex-wrap: wrap;}
-    .video .item .cont .youtube {width: 100%;}
-    .video .item .cont .info {width:95%; margin:0 auto; margin-top:20px;}
-    .video .item .cont .sub_img {width: 95%; margin:0 auto;margin-top:20px;}
-    .about {flex-wrap: wrap;}
-    .about .cont {flex-wrap: wrap;}
-    .about .cont .basic {width:288px; height: 260px; margin: 0 auto;}
-    .about .cont .info {width:90%; margin:0 auto;}
-    .about .about_title {margin-bottom:20px;}
-    .about .info div:nth-of-type(3) dl {flex-wrap: wrap;}
-    .about .info div:nth-of-type(3) dl dt {width:100%;}
-}
-
-@media screen and (max-width:640px){
-    .video .item .cont .info {width:100%; margin:0 auto; margin-top:20px;}
-    .video .item .cont .sub_img {
-        width: 100%; margin:0 auto;margin-top:20px;
-    }
-    .category .list {display:flex;flex-wrap: wrap; height:100px;padding:0;margin: 10px;}
-    .category .list li {width:100%;font-size: 25px; 
-    /* background-color: #333; */
-    }
-    .category .list li:hover {
-        width:100%;font-size: 25px;
-        color:rgb(190, 190, 190) 
-    } 
-    /* background-color: #333; */
-}
-
-@media screen and (max-width:390px){
-    .main_visual {height: 230px;}
-    .main_visual header div h4 {font-size: 20px; margin: 0 10px;}
-    .main_visual header div a {font-size: 15px;}
-    .main_visual .title {text-align: center;}
-    .main_visual .title h2 {
-        font-size: 80px;
-    }
-    .main_visual .title p {
-        font-size: 20px; font-family: nanumsquare;}
-    .Contents .video h3 {
-        font-size: 25px;
-    }
-    .Contents .video .category_title1 {
-        width:100%;
-        padding: 0;
-        text-align: center;
-    }
-    .Contents .video .category_title2 {
-        width:100%;
-        padding: 0;
-        text-align: center;
-    }
-    .Contents .video .category_title3 {
-        width:100%;
-        padding: 0;
-        text-align: center;
-    }
-    .Contents .video .item {
-        padding:0; margin:0;
-        margin-bottom:10px;
-    }
-    .Contents .video .item .cont {width:98%; margin:0 auto; padding:10px}
-    .Contents .video .item .info h3 {
-        font-size: 30px; 
-        margin:0; 
-        padding:0;
-        margin-bottom: 8px;
-    }
-    .Contents .video .item .info p {
-        display:inline-block;
-        /* background-color: yellowgreen; */
-        font-size: 18.5px;
-    }
-    .Contents .video .item .info dl {font-size: 17px;}
-
-.category .list {margin:0; margin-top:1px;}
-.category .list li {font-size: 20px;}
-.category .list li:hover {font-size: 20px;}
-
-about {padding:0; margin:0;}
-.about .cont .info {display: flex; flex-wrap: wrap;}
-.about .cont .info div {width:100%; margin:5px 0;}
-.about .about_title h2 {font-size: 25px; margin:0; padding:0}
-.about .cont .info div h4 {font-size:20px; margin-bottom: 2px;}
-.about .cont .info div:nth-of-type(1) h4 {
-    font-size: 18px; text-align: center;
-    margin-top: 10px; 
-    padding:0;
-margin-bottom:3px}
-
-.about .cont .info div p {margin:0; padding: 0; font-size: 14px;}
-.about .cont .info div:nth-child(1) p {text-align: center;}
-.about .cont .info div dl dt {font-size: 14px;margin:0; margin-right: 10px; padding:0;}
-.about .cont .info div dl dd {font-size: 14px;margin:0; padding:0;}
-.about .cont .info div span {
-    display:inline-block;
-    margin-top: 5px;
-}
-
-.about .cont .info div:nth-child(3)  {display: flex; flex-wrap:wrap; align-items:flex-start;}
-.about .cont .info div:nth-child(3) h4 {width: 100%;}
-.about .cont .info div:nth-child(3) dl {width: 50%;}
-
-footer p:nth-of-type(2) {font-size: 11px; padding:0 30px; word-break:keep-all;}
-}
-/* word-break : 영역을 벗어나는 텍스트의 줄바꿈에 대한 설정 */
-/* !important 해당설정값을 임의로 최우선 순위로 변경한다 */
 
 
-
-/* 2022.05.06 하수정 */
-.category.on {
-    position: fixed;
-    width: 100%;
-    z-index: 9;
-    top: 0;
-    background-color: #fff;
-}
 
 /* 퀵메뉴 하수정 */
 aside {
@@ -524,18 +361,35 @@ aside {
     right: 30px;
     bottom: 70px;
 }
-aside ul li {
+aside ul li:first-child {
     display: block;
     width: 50px;
     height: 50px;
-    background-color: #fff;
-    margin: 5px 0;
+    background-color: rgb(255, 255, 255);
+    margin: 10px 0;
     text-align: center;
-    line-height: 50px;
-    border-radius: 50%;
+    line-height: 1.2;
+    border-radius: 50% 50% 0 0 ;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 3px 3px 10px rgba(105, 116, 100, 0.3);
+}
+aside ul li:last-child {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    margin: 10px 0;
+    text-align: center;
+    line-height: 1.2;
+    font-weight: bold;
+    border-radius: 0 0 50% 50%;
     font-size: 14px;
     box-shadow: 3px 3px 10px rgba(105, 116, 100, 0.3);
 }
 aside ul li a {
     display: block;
+    padding: 10px;
+    color:rgb(211, 211, 211)
 }
+aside ul li:hover {background-color: rgb(0, 0, 0); transition: 0.5s;}
