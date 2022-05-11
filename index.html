@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> HJB_Portfolio</title>
     <!-- 팬시박스 css -->
-    <link 
-    rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css"
-        integrity="sha512-nNlU0WK2QfKsuEmdcTwkeh+lhGs6uyOxuUs+n+0oXSYDok5qy0EI0lt01ZynHq6+p/tbgpZ7P+yUb+r71wqdXg==" crossorigin="anonymous" referrerpolicy="no-referrer" 
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
 />
     <!-- animate css -->
     <link
@@ -21,6 +21,7 @@ href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"
 /> 
     <!-- html 메인 css -->
     <link href="css/video.css" rel="stylesheet" /> 
+    <link href="css/media.css" rel="stylesheet" /> 
     <link href="css/index.css" rel="stylesheet" /> 
     
     <!-- jquery 라이브러리 연결 스크립트 -->
@@ -28,6 +29,8 @@ href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"
     src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
     integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer">    
     </script>
+    <!-- fancybox.umd.js 스크립트 -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
     <!-- 모션그래픽 리스트 버튼 함수 스크립트 -->
     <script> //$=script, function:함수*
         $(function(){//탭메뉴
@@ -35,26 +38,26 @@ href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"
             (function(){
                 $('.video').removeClass('on');
                 $('.video').eq/*=적용대상 순번 지정*/($(this/*=이전 액션에서 명령어를 실행한 대상*/).index()/*대상의 순번 추출*/).addClass('on');//클래스명에 'on'추가
+                $('.category .list li').removeClass('on');
+                $(this).addClass('on');//클래스명에 'on'추가
             });//click end
         });
         $(function(){//탭메뉴
-            $('.category .list li').click //''안의 선택자를 click한다.
-            $(function(){
-                $('.category .list li').removeClass('on');
-                $(this).addClass('on');
+            $('.category.on .list li').click //''안의 선택자를 click한다.
+            (function(){
+                $('.video').removeClass('on');
+                $('.video').eq/*=적용대상 순번 지정*/($(this/*=이전 액션에서 명령어를 실행한 대상*/).index()/*대상의 순번 추출*/).addClass('on');//클래스명에 'on'추가
             });//click end
             AOS.init(); //aos initialize script
 
-            
-
-            ////////////////////////
+                       ////////////////////////
             //스크롤시 메뉴 상단 고정 22.05.06 하수정
             ////////////////////////////////////////
             var headerTop = $('.category').offset().top;
 
-             $(window).scroll(function(){
+            $(window).scroll(function(){
                 var wst = $(window).scrollTop();
-               
+            
                 if(headerTop < wst) {
                     // 스크립트 코드
                     //header한테 클래스명('on')이 추가
@@ -67,13 +70,45 @@ href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"
             });//window scroll end
         });
 
+           // Initialise Carousel
+const mainCarousel = new Carousel(document.querySelector("#mainCarousel"), { 
+    infinite: false,
+    Navigation: false,
+});
+// Initialise Fancybox
+Fancybox.bind('[data-fancybox="gallery"]', {
+    Carousel: {
+    on: {
+    change: (carousel, to) => {
+        // Sync Carousel slide
+        // ===
+        const $el = Fancybox.getInstance()
+        .getSlide()
+        .$trigger.closest(".carousel__slide");
+
+        const slide = mainCarousel.slides.find((slide) => {
+        return slide.$el === $el;
+        });
+
+        mainCarousel.slideTo(slide.index, {
+        friction: 0,
+        });
+    },
+    },
+},
+});
+/* https://fancyapps.com/docs/ui/fancybox  팬시박스 적용방법 나중에 읽고 적용해보기*/
+ 
+
         
     </script>
     <!-- 팬시박스 js -->
-    <script 
-    src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" i
-    ntegrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <link  href="/path/to/jquery.fancybox.min.css" rel="stylesheet">
+    <script src="/path/to/jquery.fancybox.min.js"></script>
+    
+    
     <!-- aos js -->
     <script 
     src="https://unpkg.com/aos@2.3.1/dist/aos.js">
@@ -86,12 +121,12 @@ href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"
     <div>
         <img src="images/HJB_LOGO3.png"/>
         <a href="https://www.youtube.com/channel/UCY7G7IWg7RE1eH4SWWsmtVg" target="_blank">유튜브</a>
-        <a href="#">Resume</a>
+        <a href="images/22.05.23 영상 황정빈 입사지원서(22.05.02 수정).hwp" >Resume(.hwp)</a><a href="https://docs.google.com/document/d/1-raCYNn4b6ZKxFPs-28QfBTinfOtKTvnnekDnWsk4Rc/edit?usp=sharing" target="_blank"> Resume(.Google Docs)</a>
     </div>
 </header>
     <section class="main_visual">
         <figure class="bg">
-            <img src="images/hills.jpg" />  
+            <img src="images/hills_2.jpg" />  
         </figure>
         <div class="title">
         <!--   <div class="animate__animated animate__bounceInRight"> -->
@@ -104,19 +139,19 @@ href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"
 
     <section class="category">
                 <ul class="list">
-                    <li><a href="#category_title1">2D그래픽 제작 및 합성작업</a></li>
-                    <li><a href="#category_title2">영상촬영 및 편집작업</a></li>
-                    <li><a href="#category_title3">3D그래픽 애니메이션</a></li>
+                    <li><a href="#top_video1">2D그래픽 제작 및 합성작업</a></li>
+                    <li><a href="#top_video2">영상촬영 및 편집작업</a></li>
+                    <li><a href="#top_video3">3D그래픽 애니메이션</a></li>
                 </ul><!-- list end -->
-    </section><!-- .category end -->
+    </section> <!-- .category end -->
 
     <section class="Contents" id="Contents" >
-        <section class="video on"><!-- 2D그래픽제작 -->
-            <div class="category_title1" id="category_title1">
+        <section class="video on"> <!-- 2D그래픽제작 -->
+<!--             <div class="category_title1" id="category_title1">
                     <h3># 2D그래픽 제작 및 합성 작업</h3>
-            </div>
+            </div> -->
             <!--///////  1 ///////-->
-                <div class="item">
+                <div class="item" id="top_video1">
                     <div class="cont"><!-- 영상 및 정보, 이미지 출력영역 -->
                             <div class="youtube"><!-- 유튜브 영상 box-->
                                 <div class="youtube_in">
@@ -146,13 +181,14 @@ href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"
                             </div><!-- info end -->
                         <div class="sub_img">
                             
-                            <figure href="images/HJB_KJ (1).png" data-fancybox="images"><img src="images/HJB_KJ (1).png" alt="#"/></figure>
-                            <figure href="images/HJB_KJ (2).png" data-fancybox="images"><img src="images/HJB_KJ (2).png" alt="#"/></figure>
-                            <figure><img src="images/HJB_KJ (3).png" alt="#"/></figure>
-                            <figure><img src="images/HJB_KJ (4).png" alt="#"/></figure>
-                            <figure><img src="images/HJB_KJ (5).png" alt="#"/></figure>
-                            <figure><img src="images/HJB_KJ (6).png" alt="#"/></figure>
-                            <figure><img src="images/HJB_KJ (7).png" alt="#"/></figure>
+                            <figure href="images/HJB_KJ (1).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (1).png" alt="#"/></figure>
+                            <figure href="images/HJB_KJ (2).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (2).png" alt="#"/></figure>
+                            <figure href="images/HJB_KJ (3).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (3).png" alt="#"/></figure>
+                            <figure href="images/HJB_KJ (4).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (4).png" alt="#"/></figure>
+                            <figure href="images/HJB_KJ (5).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (5).png" alt="#"/></figure>
+                            <figure href="images/HJB_KJ (6).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (6).png" alt="#"/></figure>
+                            <figure href="images/HJB_KJ (7).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (7).png" alt="#"/></figure>
+
                         </div><!-- sub_img end -->   
                     </div><!-- cont end -->
                     
@@ -162,7 +198,7 @@ href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"
                     <div class="cont"><!-- 영상 및 정보, 이미지 출력영역 -->
                         <div class="youtube"><!-- 유튜브 영상 box-->
                             <div class="youtube_in">
-            <!-- 영상링크 --><iframe width="560" height="315" src="https://www.youtube.com/embed/BZS9DETsLjc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- 영상링크 --><iframe width="560" height="315" src="https://www.youtube.com/embed/Rh1HQ9IR97M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                         </div><!-- youtube end -->
                         <div class="info">
@@ -185,13 +221,15 @@ href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"
                             </dl>
                             <dl>
                                 <dt>URL</dt>
-                                <dd><a href="#">url</a></dd>
+                                <dd><a href="https://youtu.be/Rh1HQ9IR97M">https://youtu.be/Rh1HQ9IR97M</a></dd>
                             </dl>
                         </div><!-- info end -->
                         <div class="sub_img">
-                        <figure><img src="images/lake.jpg" alt="#"/></figure>
-                        <figure><img src="images/lake.jpg" alt="#"/></figure>
-                        <figure><img src="images/lake.jpg" alt="#"/></figure>
+                            <figure href="images/HJB_Napolitan (1).png" data-fancybox="gallery-2"><img src="images/HJB_Napolitan (1).png" alt="#"/></figure>    
+                            <figure href="images/HJB_Napolitan (2).png" data-fancybox="gallery-2"><img src="images/HJB_Napolitan (2).png" alt="#"/></figure>    
+                            <figure href="images/HJB_Napolitan (3).png" data-fancybox="gallery-2"><img src="images/HJB_Napolitan (3).png" alt="#"/></figure>    
+                            <figure href="images/HJB_Napolitan (4).png" data-fancybox="gallery-2"><img src="images/HJB_Napolitan (4).png" alt="#"/></figure>    
+                            <figure href="images/HJB_Napolitan (5).png" data-fancybox="gallery-2"><img src="images/HJB_Napolitan (5).png" alt="#"/></figure>
                         </div><!-- sub_img end -->   
                     </div><!-- cont end -->
                     
@@ -225,11 +263,11 @@ href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"
                             </dl>
                         </div><!-- info end -->
                         <div class="sub_img">
-                        <figure><img src="images/HJB_Napolitan (1).png" alt="#"/></figure>
-                        <figure><img src="images/HJB_Napolitan (2).png" alt="#"/></figure>
-                        <figure><img src="images/HJB_Napolitan (3).png" alt="#"/></figure>
-                        <figure><img src="images/HJB_Napolitan (4).png" alt="#"/></figure>
-                        <figure><img src="images/HJB_Napolitan (5).png" alt="#"/></figure>
+                        <figure href="images/HJB_Napolitan (1).png" data-fancybox="gallery-3"><img src="images/HJB_Napolitan (1).png" alt="#"/></figure>    
+                        <figure href="images/HJB_Napolitan (2).png" data-fancybox="gallery-3"><img src="images/HJB_Napolitan (2).png" alt="#"/></figure>    
+                        <figure href="images/HJB_Napolitan (3).png" data-fancybox="gallery-3"><img src="images/HJB_Napolitan (3).png" alt="#"/></figure>    
+                        <figure href="images/HJB_Napolitan (4).png" data-fancybox="gallery-3"><img src="images/HJB_Napolitan (4).png" alt="#"/></figure>    
+                        <figure href="images/HJB_Napolitan (5).png" data-fancybox="gallery-3"><img src="images/HJB_Napolitan (5).png" alt="#"/></figure>    
                         </div><!-- sub_img end -->   
                     </div><!-- cont end -->
                     
@@ -238,11 +276,11 @@ href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"
 
         </section><!-- video end (2D)-->
         <section class="video"><!-- 영상촬영 및 편집 -->
-            <div class="category_title2" id="category_title2">
+<!--             <div class="category_title2" id="category_title2">
                     <h3># 영상촬영 및 편집작업</h3>
-            </div>
+            </div> -->
             <!--///////  1 ///////-->
-            <div class="item">
+            <div class="item" id="top_video2">
                 <div class="cont"><!-- 영상 및 정보, 이미지 출력영역 -->
                     <div class="youtube"><!-- 유튜브 영상 box-->
                         <div class="youtube_in">
@@ -270,12 +308,13 @@ href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"
                         </dl>
                     </div><!-- info end -->
                     <div class="sub_img">
-                    <figure><img src="images/HJB_Garden (1).png" alt="#"/></figure>
-                    <figure><img src="images/HJB_Garden (2).png" alt="#"/></figure>
-                    <figure><img src="images/HJB_Garden (3).png" alt="#"/></figure>
-                    <figure><img src="images/HJB_Garden (4).png" alt="#"/></figure>
-                    <figure><img src="images/HJB_Garden (5).png" alt="#"/></figure>
-                    <figure><img src="images/HJB_Garden (6).png" alt="#"/></figure>
+                    <figure href="images/HJB_Garden (1).png" data-fancybox="gallery-4"><img src="images/HJB_Garden (1).png" alt="#"/></figure>
+                    <figure href="images/HJB_Garden (2).png" data-fancybox="gallery-4"><img src="images/HJB_Garden (2).png" alt="#"/></figure>
+                    <figure href="images/HJB_Garden (3).png" data-fancybox="gallery-4"><img src="images/HJB_Garden (3).png" alt="#"/></figure>
+                    <figure href="images/HJB_Garden (4).png" data-fancybox="gallery-4"><img src="images/HJB_Garden (4).png" alt="#"/></figure>
+                    <figure href="images/HJB_Garden (5).png" data-fancybox="gallery-4"><img src="images/HJB_Garden (5).png" alt="#"/></figure>
+                    <figure href="images/HJB_Garden (6).png" data-fancybox="gallery-4"><img src="images/HJB_Garden (6).png" alt="#"/></figure>
+                
                     </div><!-- sub_img end -->   
                 </div><!-- cont end -->
                 
@@ -309,9 +348,7 @@ href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"
                         </dl>
                     </div><!-- info end -->
                     <div class="sub_img">
-                    <figure><img src="images/lake.jpg" alt="#"/></figure>
-                    <figure><img src="images/lake.jpg" alt="#"/></figure>
-                    <figure><img src="images/lake.jpg" alt="#"/></figure>
+                        <figure href="images/HJB_Garden (1).png" data-fancybox="gallery-5"><img src="images/HJB_Garden (1).png" alt="#"/></figure>
                     </div><!-- sub_img end -->   
                 </div><!-- cont end -->
                 
@@ -346,9 +383,7 @@ href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"
                         </dl>
                     </div><!-- info end -->
                     <div class="sub_img">
-                    <figure><img src="images/lake.jpg" alt="#"/></figure>
-                    <figure><img src="images/lake.jpg" alt="#"/></figure>
-                    <figure><img src="images/lake.jpg" alt="#"/></figure>
+                        <figure href="images/HJB_Garden (1).png" data-fancybox="gallery-6"><img src="images/HJB_Garden (1).png" alt="#"/></figure>
                     </div><!-- sub_img end -->   
                 </div><!-- cont end -->
                 
@@ -357,11 +392,11 @@ href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"
 
         </section><!-- video end (영편)-->
         <section class="video"><!-- 3D -->
-            <div class="category_title3" id="category_title3">
+<!--             <div class="category_title3" id="category_title3">
                     <h3># 3D그래픽 애니메이션</h3>
-            </div>
+            </div> -->
             <!--///////  1 ///////-->
-            <div class="item">
+            <div class="item" id="top_video3">
                 <div class="cont"><!-- 영상 및 정보, 이미지 출력영역 -->
                     <div class="youtube"><!-- 유튜브 영상 box-->
                         <div class="youtube_in">
@@ -390,9 +425,7 @@ href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"
                         </dl>
                     </div><!-- info end -->
                     <div class="sub_img">
-                    <figure><img src="images/lake.jpg" alt="#"/></figure>
-                    <figure><img src="images/lake.jpg" alt="#"/></figure>
-                    <figure><img src="images/lake.jpg" alt="#"/></figure>
+                        <figure href="images/HJB_Garden (1).png" data-fancybox="gallery-7"><img src="images/HJB_Garden (1).png" alt="#"/></figure>
                     </div><!-- sub_img end -->   
                 </div><!-- cont end -->
                 
@@ -469,16 +502,16 @@ href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"
         <!-- 유튜브 바로가기 //////////////////////-->
         <ul>
             <li class="youtube">
-                <a href="https://www.youtube.com/channel/UCY7G7IWg7RE1eH4SWWsmtVg" target="_blank">유튜브 채널 바로가기 </a>
+                <a href="https://www.youtube.com/channel/UCY7G7IWg7RE1eH4SWWsmtVg" target="_blank">▶ YouTube</a>
             </li>
         </ul><!-- ul end -->
-        <p>copyright© 2022. 황정빈 all rights reserved.<br>본 사이트는 개인 포트폴리오 용도로 제작되었으며, 상업적인 목적이 없음을 밝힙니다. 사용된 일부 이미지 및 폰트 등은 각각 별도의 출처를 가집니다.</p>
+        <p>copyright© 2022. 황정빈 all rights reserved.<br>본 사이트는 개인 포트폴리오를 위해 제작되었으며, 상업적 이윤을 추구하지않습니다.  <br>사이트에 게시된 영상과 그래픽 이미지의 저작권은 제작자에게 있으며 일부 이미지 및 폰트는 각각 별도의 출처를 가지고 있음을 밝힙니다.</p>
     </footer>
 
     <aside>
         <ul>
-            <li><a href="#top">위로</a></li>
-            <li><a href="#bottom">밑으로</a></li>
+            <li><a href="#top">▲<br>TOP</a></li>
+            <li><a href="#bottom">END<br>▼</a></li>
         </ul>
     </aside>
 
