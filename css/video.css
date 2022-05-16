@@ -63,14 +63,14 @@
     /* background-color: antiquewhite; */
     padding:50px 10px;}
 .video .item .cont { /* 영상과 영상정보의 박스*/
-    /* background-color: antiquewhite; */
+    background-color: antiquewhite;
     width:100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     margin:0 100px;
-    padding-top: 50px;
+    padding: 70px 10px;
 }
 
 .video .item .cont .youtube{

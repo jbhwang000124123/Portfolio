@@ -12,11 +12,17 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'LeferiPoint-SpecialA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-SpecialA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 * {margin:0; padding:0;}
 li {list-style: none;}
 a {text-decoration: none; color:#333;}
-html,body {color:#333; font-family: 'NanumSquareRound';}
+html,body {color:#333; font-family: 'NanumSquare';}
 body{ -ms-overflow-style: none; } ::-webkit-scrollbar { display: none; }
 
 /* 사용프로그램아이콘--------------------------------------------- */
@@ -141,9 +147,8 @@ background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0
             }
             .main_visual .title p {
                 width:100%;
-                font-size: 25px;
-                letter-spacing: 2px;
-                font-family:Georgia, 'Times New Roman', Times, serif;}
+                font-size: 18px;
+                letter-spacing: 2px;}
 
             .main_visual .under_arrow {
                 position:absolute; bottom:1%; left:50%; transform:translatex(-50%);}
@@ -151,38 +156,39 @@ background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0
 /* v_category -------------------------------------------------------------*/
 .category .list { /* 카테고리를 선택할 수 있는 곳 */
     /* background-color: yellowgreen; */
-    height: 50px;
+    height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
     .category .list li {
-        font-size: 25px;
+        font-size: 30px;
         /* background-color: tomato; */
         display: inline-block;
-        width:33.3%;
+        width:33.33%;
         text-align: center;
         cursor: pointer;
-        line-height: 50px;
+        line-height:70px;
+        font-family: 'LeferiPoint-SpecialA';
     
     }
     .category .list li:hover {
-        font-size: 25px;
+        font-size: 30px;
         /* background-color: tomato; */
         display: inline-block;
-        width:33.3%; 
+        width:33.33%; 
         text-align: center;
-        background-color: rgba(255, 223, 223, 0.9);
+        background-color: rgba(184,  184,184, 0.5);
     }
     .category .list li.on {
-        font-size: 25px; 
+        font-size: 30px; 
         /* background-color: tomato; */
         display: inline-block;
-        width:33.3%; height: 100%;
+        width:33.33%; height: 100%;
         text-align: center;
         cursor: pointer;
-        background-color: rgba(238, 117, 117, 0.849);
+        background-color: rgba(0, 0, 0, 0.849);
     }
     .category .list .on a {color:#fff;}
     
@@ -193,18 +199,19 @@ background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0
     z-index: 9;
     top: 0;
     background-color: rgba(255, 255, 255, 0.5);
+    
 }
 .category.on .list li:hover {
-    background-color: rgba(255, 223, 223, 0.9);
+    background-color: rgba(184, 184, 184, 0.5);
 }
 .category.on .list li.on {
-    font-size: 25px;
+    font-size: 30px;
     /* background-color: tomato; */
     display: inline-block;
-    width:33.3%;
+    width:33.33%;
     text-align: center;
     cursor: pointer;
-    background-color: rgba(238, 117, 117, 0.849);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .category.on .list .on a {color:#fff;}
@@ -400,7 +407,6 @@ aside ul li a {
 }
 aside ul li:hover {background-color: rgb(0, 0, 0); transition: 0.5s;}
 
-
 @media screen and (max-width:1500px) {
     /* 브라우저너비 1500px이하 일 때 스타일 */
     header div {width:100%;}
@@ -428,6 +434,9 @@ aside ul li:hover {background-color: rgb(0, 0, 0); transition: 0.5s;}
 @media screen and (max-width:412px){
     * {margin:0; padding:0;}
     .main_visual .title {width:90%; margin: 0 auto;}
+    .main_visual .title h2 {font-size: 80px;}
+    .main_visual .title p {font-size: 14px;}
+    .main_visual .title img {width:50%;}
     header div a {font-size: 14px;}
     header div img {width: 40px; height: 100%; object-fit: cover;}
     .category {height: 80px;}
@@ -442,6 +451,71 @@ aside ul li:hover {background-color: rgb(0, 0, 0); transition: 0.5s;}
     .video.on .item .cont .info p{font-size:16px; margin: 10px 0; padding:0;word-break: keep-all;}
     .video.on .item .cont .info dl {font-size: 15px; margin:0; margin-bottom:2px;}
     .video.on .item .cont .sub_img {margin:0 auto; margin-top:20px; width: 100%;}
+    .about {
+        padding: 30px 0;}
+    .about .about_title h2 {
+        font-size: 32px;
+    }
+    .about .cont {
+        width:100%;
+        flex-wrap: wrap;
+        margin: 0 auto;
+    }
+    .about .cont .info {
+        flex-wrap: wrap;
+    } 
+    .about .cont .info div { width:100%; margin:15px;}
+    .about .cont .info div:nth-of-type(1) h4 {font-size: 22px; margin-bottom: 7px;}
+    .about .cont .info div h4 {font-size: 20px;margin-bottom: 7px;}
+    .about .cont .info div p {margin:0; padding:0; font-size: 15px;}
+    .about .cont .info div dl {margin:0;
+        margin-bottom:5px; padding:0; font-size: 15px; align-items: center;}
+    .about .cont .info div dl dt {
+        font-size: 15px;
+        font-weight: bold;
+        margin: 0;
+        margin-right: 8px;
+    }
+    .about .cont .info div dl dd {
+        font-size: 15px;
+        margin: 0;
+    }
+    
+    footer p:nth-of-type(2) {padding: 0 20px;}
+
+aside {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+aside ul li:first-child {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(255, 255, 255);
+    margin: 10px 0;
+    text-align: center;
+    line-height: 1.2;
+    border-radius: 50% 50% 0 0;
+    font-size: 11px;
+    box-shadow: 3px 3px px rgb(105 116 100 / 30%);
+}
+    
+aside ul li:last-child {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(255, 255, 255);
+    margin: 10px 0;
+    text-align: center;
+    line-height: 1.2;
+    border-radius: 0 0 50% 50%;
+    font-size: 11px;
+    box-shadow: 3px 3px px rgb(105 116 100 / 30%);
+}
+
+aside ul li:hover {background-color: #333;}
 }
 
 @media screen and (max-width:360px){
@@ -459,73 +533,7 @@ aside ul li:hover {background-color: rgb(0, 0, 0); transition: 0.5s;}
             padding: 0;
             margin: 20px auto;
         }
-        .about {
-            padding: 30px 0;}
-        .about .about_title h2 {
-            font-size: 32px;
-        }
-        .about .cont {
-            width:100%;
-            flex-wrap: wrap;
-            margin: 0 auto;
-        }
-        .about .cont .info {
-            flex-wrap: wrap;
-        } 
-        .about .cont .info div { width:100%; margin:15px;}
-        .about .cont .info div:nth-of-type(1) h4 {font-size: 22px; margin-bottom: 7px;}
-        .about .cont .info div h4 {font-size: 20px;margin-bottom: 7px;}
-        .about .cont .info div p {margin:0; padding:0; font-size: 15px;}
-        .about .cont .info div dl {margin:0;
-            margin-bottom:5px; padding:0; font-size: 15px; align-items: center;}
-        .about .cont .info div dl dt {
-            font-size: 15px;
-            font-weight: bold;
-            margin: 0;
-            margin-right: 8px;
-        }
-        .about .cont .info div dl dd {
-            font-size: 15px;
-            margin: 0;
-        }
-        
-        footer p:nth-of-type(2) {padding: 0 20px;}
-
-    aside {
-        position: fixed;
-        right: 20px;
-        bottom: 20px;
-    }
-
-    aside ul li:first-child {
-        display: block;
-        width: 40px;
-        height: 40px;
-        background-color: rgb(255, 255, 255);
-        margin: 10px 0;
-        text-align: center;
-        line-height: 1.2;
-        border-radius: 50% 50% 0 0;
-        font-size: 11px;
-        box-shadow: 3px 3px px rgb(105 116 100 / 30%);
-    }
-        
-    aside ul li:last-child {
-        display: block;
-        width: 40px;
-        height: 40px;
-        background-color: rgb(255, 255, 255);
-        margin: 10px 0;
-        text-align: center;
-        line-height: 1.2;
-        border-radius: 0 0 50% 50%;
-        font-size: 11px;
-        box-shadow: 3px 3px px rgb(105 116 100 / 30%);
-    }
-
-    aside ul li:hover {background-color: #333;}
+ 
 }
 /* word-break : 영역을 벗어나는 텍스트의 줄바꿈에 대한 설정 */
 /* !important 해당설정값을 임의로 최우선 순위로 변경한다 */
-
-
