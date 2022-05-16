@@ -39,7 +39,8 @@ href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"
                 $('.video').eq/*=적용대상 순번 지정*/($(this/*=이전 액션에서 명령어를 실행한 대상*/).index()/*대상의 순번 추출*/).addClass('on');//클래스명에 'on'추가
                 $('.category .list li').removeClass('on');
                 $(this).addClass('on');//클래스명에 'on'추가
-            });//click end
+            });//click end 
+
         });
         $(function(){//탭메뉴
             $('.category.on .list li').click //''안의 선택자를 click한다.
@@ -47,8 +48,7 @@ href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"
                 $('.video').removeClass('on');
                 $('.video').eq/*=적용대상 순번 지정*/($(this/*=이전 액션에서 명령어를 실행한 대상*/).index()/*대상의 순번 추출*/).addClass('on');//클래스명에 'on'추가
             });//click end
-            AOS.init(); //aos initialize script
-
+ 
                        ////////////////////////
             //스크롤시 메뉴 상단 고정 22.05.06 하수정
             ////////////////////////////////////////
@@ -67,7 +67,9 @@ href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"
                 //조건식에 부합되지 않을 때 else
                 // header에게 클래스명 on 제거
            // });//window scroll end
-        });
+        }); 
+        
+
 
            // Initialise Carousel
 const mainCarousel = new Carousel(document.querySelector("#mainCarousel"), { 
@@ -113,9 +115,11 @@ Fancybox.bind('[data-fancybox="gallery"]', {
     src="https://unpkg.com/aos@2.3.1/dist/aos.js">
     </script>
 
+
     
 </head>
 <body  id="top"> 
+    <script>AOS.init();</script>
     <header><!-- 헤더 -->
     <div>
         <img src="images/HJB_LOGO3.png"/>
@@ -139,9 +143,9 @@ Fancybox.bind('[data-fancybox="gallery"]', {
     <section class="category">
         <div><h3>영상작업</h3></div>
                 <ul class="list">
-                    <li><a href="#top_video1">2D그래픽 제작 및 합성작업</a></li>
-                    <li><a href="#top_video2">영상촬영 및 편집작업</a></li>
-                    <li><a href="#top_video3">3D그래픽 애니메이션</a></li>
+                    <li>2D그래픽 제작 및 합성작업</li>
+                    <li>영상촬영 및 편집작업</li>
+                    <li>3D그래픽 애니메이션</li>
                 </ul><!-- list end -->
     </section> <!-- .category end -->
 
@@ -153,15 +157,12 @@ Fancybox.bind('[data-fancybox="gallery"]', {
             <!--///////  1 ///////-->
                 <div class="item" id="top_video1" >
                     <div class="cont"><!-- 영상 및 정보, 이미지 출력영역 -->
-                            <div class="youtube" data-aos="fade-up"
-                            data-aos-duration="600"><!-- 유튜브 영상 box-->
+                            <div class="youtube" ><!-- 유튜브 영상 box-->
                                 <div class="youtube_in">
                 <!-- 영상링크 --><iframe width="560" height="315" src="https://www.youtube.com/embed/hQ_CJdpOyaY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                             </div><!-- youtube end -->
-                            <div class="info" data-aos="fade-up"
-                            data-aos-easing="linear"
-                            data-aos-duration="900" >
+                            <div class="info" >
                                 <h3><친절한 금자씨> 타이틀 시퀀스</h3>
                                 <div class="tool">
                                     <span class="Ae">Ae</span>
@@ -186,9 +187,7 @@ Fancybox.bind('[data-fancybox="gallery"]', {
                                     <dd><a href="https://youtu.be/hQ_CJdpOyaY">https://youtu.be/hQ_CJdpOyaY</a></dd>
                                 </dl>
                             </div><!-- info end -->
-                        <div class="sub_img" data-aos="fade-up"
-                        data-aos-easing="linear"
-                        data-aos-duration="900">
+                        <div class="sub_img">
                             
                             <figure href="images/HJB_KJ (1).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (1).png" alt="#"/></figure>
                             <figure href="images/HJB_KJ (2).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (2).png" alt="#"/></figure>
@@ -205,14 +204,12 @@ Fancybox.bind('[data-fancybox="gallery"]', {
                 <!--///////  2 ///////-->
                 <div class="item">
                     <div class="cont"><!-- 영상 및 정보, 이미지 출력영역 -->
-                        <div class="youtube" data-aos="fade-up"
-                        data-aos-duration="600"><!-- 유튜브 영상 box-->
+                        <div class="youtube"><!-- 유튜브 영상 box-->
                             <div class="youtube_in">
             <!-- 영상링크 --><iframe width="560" height="315" src="https://www.youtube.com/embed/Rh1HQ9IR97M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                         </div><!-- youtube end -->
-                        <div class="info" data-aos="fade-up"
-                        data-aos-duration="900">
+                        <div class="info">
                             <h3>알라딘 브랜드광고영상</h3>
                             <div class="tool">
                                 <span class="Ai">Ai</span>
@@ -239,8 +236,7 @@ Fancybox.bind('[data-fancybox="gallery"]', {
                                 <dd><a href="https://youtu.be/Rh1HQ9IR97M">https://youtu.be/Rh1HQ9IR97M</a></dd>
                             </dl>
                         </div><!-- info end -->
-                        <div class="sub_img" data-aos="fade-up"
-                        data-aos-duration="900">
+                        <div class="sub_img" >
                             <figure href="images/aladin_modeling.jpg" data-fancybox="gallery-2"><img src="images/aladin_modeling.jpg" alt="#"/></figure>    
                             <figure href="images/HJB_Napolitan (2).png" data-fancybox="gallery-2"><img src="images/HJB_Napolitan (2).png" alt="#"/></figure>    
                             <figure href="images/HJB_Napolitan (3).png" data-fancybox="gallery-2"><img src="images/HJB_Napolitan (3).png" alt="#"/></figure>    
@@ -253,14 +249,12 @@ Fancybox.bind('[data-fancybox="gallery"]', {
                 <!--///////  3 ///////-->
                 <div class="item">
                     <div class="cont"><!-- 영상 및 정보, 이미지 출력영역 -->
-                        <div class="youtube" data-aos="fade-up"
-                        data-aos-duration="600"><!-- 유튜브 영상 box-->
+                        <div class="youtube" ><!-- 유튜브 영상 box-->
                             <div class="youtube_in">
             <!-- 영상링크 --><iframe width="560" height="315" src="https://www.youtube.com/embed/bdPbKodqxPE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                         </div><!-- youtube end -->
-                        <div class="info" data-aos="fade-up"
-                        data-aos-duration="900">
+                        <div class="info" >
                             <h3>나폴리탄 스파게티 레시피</h3>
                             <div class="tool">
                                 <span class="Ai">Ai</span>
@@ -283,8 +277,7 @@ Fancybox.bind('[data-fancybox="gallery"]', {
                                 <dd><a href="https://youtu.be/bdPbKodqxPE">https://youtu.be/bdPbKodqxPE</a></dd>
                             </dl>
                         </div><!-- info end -->
-                        <div class="sub_img" data-aos="fade-up"
-                        data-aos-duration="900">
+                        <div class="sub_img">
                         <figure href="images/HJB_Napolitan (1).png" data-fancybox="gallery-3"><img src="images/HJB_Napolitan (1).png" alt="#"/></figure>    
                         <figure href="images/HJB_Napolitan (2).png" data-fancybox="gallery-3"><img src="images/HJB_Napolitan (2).png" alt="#"/></figure>    
                         <figure href="images/HJB_Napolitan (3).png" data-fancybox="gallery-3"><img src="images/HJB_Napolitan (3).png" alt="#"/></figure>    
@@ -301,11 +294,12 @@ Fancybox.bind('[data-fancybox="gallery"]', {
 <!--             <div class="category_title2" id="category_title2">
                     <h3># 영상촬영 및 편집작업</h3>
             </div> -->
+           
             <!--///////  1 ///////-->
             <div class="item" id="top_video2">
                 <div class="cont" ><!-- 영상 및 정보, 이미지 출력영역 -->
                     <div class="youtube" data-aos="fade-up"
-                data-aos-duration="600"><!-- 유튜브 영상 box-->
+                    data-aos-duration="600"><!-- 유튜브 영상 box-->
                         <div class="youtube_in">
         <!-- 영상링크 --><iframe width="560" height="315" src="https://www.youtube.com/embed/8UJEsO6VkpM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
@@ -494,7 +488,7 @@ Fancybox.bind('[data-fancybox="gallery"]', {
                     </figure> 
                     <div class="info">
                         <p>PPT디자인</p>
-                        <p>키워드키워드키워드</p>
+                        <p>#목업</p>
                     </div>
                 </div>
                 <div class="item"><!-- 2 -->
@@ -590,6 +584,6 @@ Fancybox.bind('[data-fancybox="gallery"]', {
             <li><a href="#bottom">END<br>▼</a></li>
         </ul>
     </aside>
-
+  
 </body>
 </html>
