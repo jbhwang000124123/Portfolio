@@ -60,10 +60,9 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    /* background-color: antiquewhite; */
-    padding:50px 10px;}
+    /* background-color: antiquewhite; */}
 .video .item .cont { /* 영상과 영상정보의 박스*/
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
     width:100%;
     display: flex;
     flex-wrap: wrap;

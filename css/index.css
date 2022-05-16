@@ -154,12 +154,16 @@ background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0
                 position:absolute; bottom:1%; left:50%; transform:translatex(-50%);}
 /* main_visual end */
 /* v_category -------------------------------------------------------------*/
+.category div {margin:20px 0;}
+.category div h3 {text-align: center;  font-family: 'LeferiPoint-SpecialA'; height: 70px; font-size: 33px; line-height: 80px; font-weight: normal;}
+
 .category .list { /* 카테고리를 선택할 수 있는 곳 */
     /* background-color: yellowgreen; */
     height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
+    
 
 }
     .category .list li {
@@ -170,8 +174,7 @@ background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0
         text-align: center;
         cursor: pointer;
         line-height:70px;
-        font-family: 'LeferiPoint-SpecialA';
-    
+        font-family: 'LeferiPoint-SpecialA'; border: 1px solid rgba(0, 0, 0, 0.849);    
     }
     .category .list li:hover {
         font-size: 30px;
@@ -188,6 +191,7 @@ background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0
         width:33.33%; height: 100%;
         text-align: center;
         cursor: pointer;
+        line-height:70px;
         background-color: rgba(0, 0, 0, 0.849);
     }
     .category .list .on a {color:#fff;}
@@ -220,8 +224,9 @@ background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0
 /* v_category end */
 
 /* desgin -------------------------------*/
-.D_desgin .D_title {text-align: center;  font-family: 'LeferiPoint-SpecialA'; height: 70px; }
-.D_desgin .D_title h3 {font-size: 30px; line-height: 70px; font-weight: normal;}
+.D_desgin {padding:50px 0;}
+.D_desgin .D_title {text-align: center;  font-family: 'LeferiPoint-SpecialA'; height: 70px;margin: 20px 0; }
+.D_desgin .D_title h3 {font-size: 33px; line-height: 80px; font-weight: normal;}
 .D_desgin .conts {width:1640px; display: flex; justify-content: space-between;  margin: 0 auto;}
 .D_desgin .conts .item {width:48%; display: flex; flex-wrap: wrap;}
 .D_desgin .conts .item figure {width:100%; height: 90%; overflow: hidden;}
