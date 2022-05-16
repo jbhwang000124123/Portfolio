@@ -52,21 +52,21 @@ href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"
                        ////////////////////////
             //스크롤시 메뉴 상단 고정 22.05.06 하수정
             ////////////////////////////////////////
-            var headerTop = $('.category').offset().top;
+            //var headerTop = $('.category').offset().top;
 
-            $(window).scroll(function(){
-                var wst = $(window).scrollTop();
+            //$(window).scroll(function(){
+                //var wst = $(window).scrollTop();
             
-                if(headerTop < wst) {
+                //if(headerTop < wst) {
                     // 스크립트 코드
                     //header한테 클래스명('on')이 추가
-                    $('.category').addClass('on');
-                } else {
-                    $('.category').removeClass('on');
-                } 
+                    //$('.category').addClass('on');
+                //} else {
+                    //$('.category').removeClass('on');
+                //} 
                 //조건식에 부합되지 않을 때 else
                 // header에게 클래스명 on 제거
-            });//window scroll end
+           // });//window scroll end
         });
 
            // Initialise Carousel
@@ -137,6 +137,7 @@ Fancybox.bind('[data-fancybox="gallery"]', {
     </section> <!-- mainvisual end -->
 
     <section class="category">
+        <div><h3>영상작업</h3></div>
                 <ul class="list">
                     <li><a href="#top_video1">2D그래픽 제작 및 합성작업</a></li>
                     <li><a href="#top_video2">영상촬영 및 편집작업</a></li>
