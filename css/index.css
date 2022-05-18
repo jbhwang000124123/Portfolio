@@ -223,6 +223,13 @@ background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0
 
 /* v_category end */
 
+.topbutton {text-align: center; margin: 10px 0;}
+.topbutton a {display: inline-block;
+    border: 1px solid rgb(133, 133, 133); 
+    color:rgb(175, 175, 175);
+padding:10px 20px;
+border-radius: 20px;}
+
 /* desgin -------------------------------*/
 .D_desgin {padding:50px 0;}
 .D_desgin .D_title {text-align: center;  font-family: 'LeferiPoint-SpecialA'; height: 70px;margin: 20px 0; }
