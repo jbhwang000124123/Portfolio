@@ -471,9 +471,18 @@ aside ul li:hover {background-color: rgb(0, 0, 0); transition: 0.5s;}
     .main_visual .title img {width:50%;}
     header div a {font-size: 14px;}
     header div img {width: 40px; height: 100%; object-fit: cover;}
-    .category {height: 80px;}
-    .category.on {height: 80px;}
+    .category {height: 140px;}
+    .category div {
+        margin: 0;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;}
+    .category .list {height: 40%;}
+    .category .list li {height: 100%; font-size: 18px;word-break:keep-all; display: flex; align-items: center;line-height: 1.3;}
+    .category .list li.on {height: 100%; font-size: 18px;word-break:keep-all;line-height: 1.3;display: flex; align-items: center;}
     .list li a {font-size: 18px; word-break:keep-all;}
+
     .video.on {width: 100%;}
     .video.on .item {width: 100%; padding:0;}
     .video.on .item .cont {width:calc(100% - 30px); padding:0; margin:0 auto; margin:20px; 
@@ -483,6 +492,26 @@ aside ul li:hover {background-color: rgb(0, 0, 0); transition: 0.5s;}
     .video.on .item .cont .info p{font-size:16px; margin: 10px 0; padding:0;word-break: keep-all;}
     .video.on .item .cont .info dl {font-size: 15px; margin:0; margin-bottom:2px;}
     .video.on .item .cont .sub_img {margin:0 auto; margin-top:20px; width: 100%;}
+
+    .D_desgin {
+        padding: 50px 0;
+    }
+    .D_desgin .conts {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        height: 500px; 
+        /* background-color:rgb(156, 73, 73); */
+    }
+    .D_desgin .conts .item {height:50%;width: 90%;margin:0 auto;
+    /* background-color: #fff; */
+}
+    .D_desgin .conts .item figure {height: 80%;width: 98%; margin:0 auto;}
+    .D_desgin .conts .item .info {display: flex; margin: 0;padding:auto 0;}
+    .D_desgin .conts .item .info p:nth-child(2) {margin-left: 8px;}
+
     .about {
         padding: 30px 0;}
     .about .about_title h2 {
@@ -512,6 +541,7 @@ aside ul li:hover {background-color: rgb(0, 0, 0); transition: 0.5s;}
         font-size: 15px;
         margin: 0;
     }
+
     
     footer p:nth-of-type(2) {padding: 0 20px;}
 
