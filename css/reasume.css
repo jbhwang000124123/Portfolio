@@ -27,7 +27,6 @@ background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0
         width:100%;
         margin:0 auto;
         display:flex;
-        justify-content: space-evenly;
         align-items: center;
     }
     header div a{ 
@@ -37,17 +36,26 @@ background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0
     header div a:hover{ 
         transition: 0.5s;
     }
+    /* header div a figure {height: 40px;}
+    header div a figure img {height: 100%;} */
 
     header div a:nth-of-type(2) {display: inline-block; display:flex; align-items: center;}
-    header div a:nth-of-type(2) {font-size: 35px; font-family: 'ONE-Mobile-Title';line-height: 65px; letter-spacing: 5px;color:rgba(121, 131, 86, 0.5)}
+    header div a:nth-of-type(2) {font-size: 35px; font-family: 'ONE-Mobile-Title';line-height: 65px;color:rgba(121, 131, 86, 0.5); position: absolute;
+        top:0; left:50%;transform:translatex(-50%);}
 
+    header div a:nth-of-type(1) {position: absolute;
+        top:0; left:25%
+    }
+    header div a:nth-of-type(3) {position: absolute;
+        top:0; right: 23%;
+    }
     header div a:nth-of-type(1):hover{  /* 유튜브 */
         color:red;
     }
- header div a:nth-of-type(2):hover{ color:rgba(121, 131, 86, 0.904) ;
 
- } /* 유튜브 */
-    header div a:nth-of-type(3) {  /* 이력서&자기소개서 페이지*/
+    header div a:nth-of-type(2):hover { color:rgba(121, 131, 86, 0.904); transition: 0.5s;    }
+
+    header div a:nth-of-type(3){  /* 이력서&자기소개서 페이지*/
         color:rgb(0, 134, 90);
     }
 
