@@ -1,0 +1,84 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'ONE-Mobile-Title';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+* {margin:0; padding:0;}
+li {list-style: none;}
+a {text-decoration: none; color:#333;}
+html,body {color:#333; font-family: 'NanumSquareround';background-color: rgba(247, 246, 235, 0.055);}
+body{ -ms-overflow-style: none; } ::-webkit-scrollbar { display: none; }
+
+/* header -----------------------------------*/
+header {
+    width:100%;height: 65px; line-height:65px; 
+    background: rgba(255,255,255,0.7);
+background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.2) 100%);font-family: 'NanumSquare'
+}
+    header div { 
+        width:100%;
+        margin:0 auto;
+        display:flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    header div a{ 
+        font-size: 17px;
+        cursor: pointer;
+    }
+    header div a:hover{ 
+        transition: 0.5s;
+    }
+
+    header div a:nth-of-type(2) {display: inline-block; display:flex; align-items: center;}
+    header div a:nth-of-type(2) {font-size: 35px; font-family: 'ONE-Mobile-Title';line-height: 65px; letter-spacing: 5px;color:rgba(121, 131, 86, 0.5)}
+
+    header div a:nth-of-type(1):hover{  /* 유튜브 */
+        color:red;
+    }
+ header div a:nth-of-type(2):hover{ color:rgba(121, 131, 86, 0.904) ;
+
+ } /* 유튜브 */
+    header div a:nth-of-type(3) {  /* 이력서&자기소개서 페이지*/
+        color:rgb(0, 134, 90);
+    }
+
+/* header end------------------------------ */
+.download {display: flex; justify-content: center;}
+.download a {display:inline-block; background-color: rgb(0, 127, 231);border-radius: 20px; padding:12px 40px; color:white; font-size: 20px; box-sizing: border-box; font-family: 'NanumSquare'; margin-top: 50px;border: 2px solid rgb(0, 127, 231)}
+
+.download a:hover {box-sizing: border-box;
+background: white;border: 2px solid rgb(0, 127, 231); color:rgb(0, 127, 231);
+transition: 0.9s;}
+
+
+.r_1,.r_2 {margin:65px 0;}
+.r_1 div, .r_2 div {text-align: center;/*  background-color: aliceblue */;margin:10px;font-size: 25px; font-family: 'NanumSquare';}
+caption {text-align: left; margin-bottom: 10px; font-weight: bold;}
+table { border-spacing: 0; 
+border-collapse: collapse;
+margin:20px auto;
+width:1180px
+}
+td,th {border:1px solid rgb(124, 124, 124); padding:5px;line-height: 1.5;}
+th {background-color: rgb(247, 246, 235);}
+td {background-color: white;}
+
+aside {
+    position: fixed;
+    right: 30px;
+    bottom: 70px;
+}
+
+
+@media screen and (max-width:1280px){
+    table {width:90%}
+}

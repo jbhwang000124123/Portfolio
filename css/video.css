@@ -6,7 +6,12 @@
     font-weight: normal;
     font-style: normal;
 }
-
+@font-face {
+    font-family: 'ONE-Mobile-Title';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 
 /* 2D그래픽 제작 및 합성 작업 */
@@ -68,12 +73,12 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin:0 100px;
+    margin:0 40px;
     padding: 70px 10px;
 }
 
 .video .item .cont .youtube{
-    width:50%;    
+    width:80%; margin: 0 auto;   
 }
     .video .item .cont .youtube .youtube_in {
             width:100%;
@@ -87,20 +92,16 @@
                 top:0; left:0;
             }
 .video .item .cont .info {/* 영상의 설명이 들어가는 곳 */
-    width:47%; 
+    width:80%;  margin:0 auto;
     /* background-color: aliceblue; */
 }
     .video .item .cont .info h3 {
-        font-size: 45px;
+        font-size: 50px;
         margin:10px 0;
         font-family: 'Hahmlet-Bold';
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
     .video .item .cont .info h3:hover {
-        font-size: 45px;
-        margin:10px 0;
-        font-family: 'Hahmlet-Bold';
-        margin-bottom: 30px;
         color: rgb(255, 255, 255);
         text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
         transition: 0.2s;
@@ -120,16 +121,19 @@
         }
         .info dl a {text-decoration: underline; color:green}
         .info dl a:hover {text-decoration: underline; color:rgb(179, 218, 179); transition: 0.3s}
-        
+
+    .item .cont .info .tool {margin-bottom: 20px;}
+
 .video .sub_img {/* 비디오와 관련된 이미지가 들어가는 박스 */
-    width: 100%;
-    display: flex;
-    margin-top:50px;
+    width: 80%; 
+    display: flex; flex-wrap: wrap;
+    margin:0 auto;margin-top:50px;
 }
+
+.sub_img div {width: 100%;}
     .sub_img figure {
         width:20%; 
         height:100%;
-        margin-right: 10px;
         box-sizing: border-box;
         overflow: hidden;
     }
@@ -138,5 +142,7 @@
             width:100%; height: 100%; object-fit: cover;
             cursor: pointer;
         }
+        .sub_img figure img:hover {}
+
 
 /*  video ------------------------------- */
