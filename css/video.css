@@ -12,7 +12,12 @@
     font-weight: normal;
     font-style: normal;
 }
-
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* 2D그래픽 제작 및 합성 작업 */
 .video .category_title1 { /* 선택한 카테고리를 보여주는 곳 */
@@ -62,9 +67,10 @@
 
 /* .video  */
 .video .item { /* 비디오 1개 콘텐츠의 전체박스 */
-    width: 100%;
+    width: 85%;
     display: flex;
     flex-wrap: wrap;
+    margin: 10px auto;
     /* background-color: antiquewhite; */}
 .video .item .cont { /* 영상과 영상정보의 박스*/
     /* background-color: antiquewhite; */
@@ -74,11 +80,14 @@
     justify-content: space-between;
     align-items: center;
     margin:0 40px;
-    padding: 70px 10px;
+    padding: 80px 10px;
 }
+.video .item .cont h3 {font-size: 60px;
+    font-family: 'Hahmlet-Bold';
+    margin-bottom: 30px;}
 
 .video .item .cont .youtube{
-    width:80%; margin: 0 auto;   
+    width:100%; margin: 0 auto;   
 }
     .video .item .cont .youtube .youtube_in {
             width:100%;
@@ -92,7 +101,7 @@
                 top:0; left:0;
             }
 .video .item .cont .info {/* 영상의 설명이 들어가는 곳 */
-    width:80%;  margin:0 auto;
+    width:100%;  margin:0 auto;
     /* background-color: aliceblue; */
 }
     .video .item .cont .info h3 {
@@ -101,7 +110,7 @@
         font-family: 'Hahmlet-Bold';
         margin-bottom: 20px;
     }
-    .video .item .cont .info h3:hover {
+    .video .item .cont h3:hover {
         color: rgb(255, 255, 255);
         text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
         transition: 0.2s;
@@ -122,27 +131,30 @@
         .info dl a {text-decoration: underline; color:green}
         .info dl a:hover {text-decoration: underline; color:rgb(179, 218, 179); transition: 0.3s}
 
-    .item .cont .info .tool {margin-bottom: 20px;}
+    .item .cont .info .tool {margin: 20px 0;}
 
 .video .sub_img {/* 비디오와 관련된 이미지가 들어가는 박스 */
-    width: 80%; 
-    display: flex; flex-wrap: wrap;
+    width: 100%;
+    display: flex; flex-wrap: wrap; 
     margin:0 auto;margin-top:50px;
 }
 
 .sub_img div {width: 100%;}
     .sub_img figure {
-        width:20%; 
-        height:100%;
+        width:19%; 
+        height:150px;
         box-sizing: border-box;
-        overflow: hidden;
+        overflow: hidden; margin: 3px 0;margin-right: 10px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
     }
 
         .sub_img figure img {
             width:100%; height: 100%; object-fit: cover;
             cursor: pointer;
         }
-        .sub_img figure img:hover {}
-
+        .sub_img figure img:hover { width:98%; height:98%; object-fit: contain; transition: 0.5s;}
+        .sub_img div { font-family: 'NanumSquareRound';font-size: 15px; color:rgba(51, 51, 51, 0.418);}
 
 /*  video ------------------------------- */
