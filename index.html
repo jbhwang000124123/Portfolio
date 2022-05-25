@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> HJB_Portfolio</title>
+    <title>황정빈 Portfolio</title>
     <!-- 팬시박스 css -->
     <link
   rel="stylesheet"
@@ -70,12 +70,15 @@ href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"
         }); 
         
 
-
+const myCarousel = new Carousel(document.querySelector(".carousel"), {
+  // Options
+});
            // Initialise Carousel
 const mainCarousel = new Carousel(document.querySelector("#mainCarousel"), { 
     infinite: false,
-    Navigation: false,
+    Navigation: true,
 });
+
 // Initialise Fancybox
 Fancybox.bind('[data-fancybox="gallery"]', {
     Carousel: {
@@ -122,9 +125,10 @@ Fancybox.bind('[data-fancybox="gallery"]', {
     <script>AOS.init();</script>
     <header><!-- 헤더 -->
     <div>
-        <img src="images/HJB_LOGO3.png"/>
+        
         <a href="https://www.youtube.com/channel/UCY7G7IWg7RE1eH4SWWsmtVg" target="_blank">유튜브</a>
-        <a href="images/황정빈_입사지원서.hwp" >Resume(.hwp)</a><a href="https://docs.google.com/document/d/1-raCYNn4b6ZKxFPs-28QfBTinfOtKTvnnekDnWsk4Rc/edit?usp=sharing" target="_blank"> Resume(.Google Docs)</a>
+        <a href="index.html">HWANG JEOUNG BIN</a>
+        <a href="reasume.html" >이력서&자기소개서</a>
     </div>
 </header>
     <section class="main_visual">
@@ -143,9 +147,9 @@ Fancybox.bind('[data-fancybox="gallery"]', {
     <section class="category">
         <div><h3>영상작업</h3></div>
                 <ul class="list">
-                    <li>2D그래픽 제작 및 합성작업</li>
-                    <li>영상촬영 및 편집작업</li>
-                    <li>3D그래픽 애니메이션</li>
+                    <li>모션그래픽</li>
+                    <li>V-log</li>
+                    <li>3D 애니메이션</li>
                 </ul><!-- list end -->
     </section> <!-- .category end -->
 
@@ -170,11 +174,7 @@ Fancybox.bind('[data-fancybox="gallery"]', {
                                 </div>  
                                 <p>영화 <친절한 금자씨>의 타이틀 시퀀스를 등장인물 소개형식으로 만들어보았다. <br>콜라쥬 기법을 차용하였으며, 인물에게 쓰이는 색은 무채색과 붉은 색으로 한정하였다. <br>실사이미지로 인물을 가리고 신체 일부 위에 덧씌워 낯선 화면을 만들고 원작 영화처럼 미장센을 추구했다. <br>작업은 포토샵으로 우선 콜라쥬한 이미지를 만든 후, 에프터이펙트에서 각 오브젝트들에 애니메이션을 주는 순서로 진행하였다.
                                 </p>
-                                <dl>
-                                    <dt>제작기간</dt>
-                                    <dd>1주</dd>
-                                </dl>
-                                <dl>
+                                                                <dl>
                                     <dt>러닝타임</dt>
                                     <dd>00:49</dd>
                                 </dl>
@@ -187,15 +187,16 @@ Fancybox.bind('[data-fancybox="gallery"]', {
                                     <dd><a href="https://youtu.be/hQ_CJdpOyaY">https://youtu.be/hQ_CJdpOyaY</a></dd>
                                 </dl>
                             </div><!-- info end -->
-                        <div class="sub_img">
+                        <div id="mainCarousel" class="sub_img" >
+                            <div>※ 클릭시 원본 사이즈로 확대됩니다.</div>
+                            <figure href="images/HJB_KJ (1).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (1).png" alt="#"/></figure>    
+                            <figure href="images/HJB_KJ (2).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (2).png" alt="#"/></figure>    
+                            <figure href="images/HJB_KJ (3).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (3).png" alt="#"/></figure>    
+                            <figure href="images/HJB_KJ (4).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (4).png" alt="#"/></figure>    
+                            <figure href="images/HJB_KJ (5).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (5).png" alt="#"/></figure>    
+                            <figure href="images/HJB_KJ (6).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (6).png" alt="#"/></figure>    
+                            <figure href="images/HJB_KJ (7).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (7).png" alt="#"/></figure>    
                             
-                            <figure href="images/HJB_KJ (1).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (1).png" alt="#"/></figure>
-                            <figure href="images/HJB_KJ (2).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (2).png" alt="#"/></figure>
-                            <figure href="images/HJB_KJ (3).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (3).png" alt="#"/></figure>
-                            <figure href="images/HJB_KJ (4).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (4).png" alt="#"/></figure>
-                            <figure href="images/HJB_KJ (5).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (5).png" alt="#"/></figure>
-                            <figure href="images/HJB_KJ (6).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (6).png" alt="#"/></figure>
-                            <figure href="images/HJB_KJ (7).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (7).png" alt="#"/></figure>
 
                         </div><!-- sub_img end -->   
                     </div><!-- cont end -->
@@ -210,19 +211,14 @@ Fancybox.bind('[data-fancybox="gallery"]', {
                             </div>
                         </div><!-- youtube end -->
                         <div class="info">
-                            <h3>알라딘 브랜드광고영상</h3>
+                            <h3>브랜드광고영상 (인터넷 서점 알라딘)</h3>
                             <div class="tool">
                                 <span class="Ai">Ai</span>
                                 <span class="Ae">Ae</span>
                                 <span class="Pr">Pr</span>
-                                <span class="Ps">Ps</span>
                                 +<span class="Maya">M</span><font style="font-size:14px;">(Autodesk Maya)</font>
                             </div>  
                             <p>인터넷 서점 알라딘 브랜드 광고 영상. '독서=간접경험'이라는 수식을 실사 촬영 영상 위에 모션그래픽을 합성하는 것으로 표현하였다. 마지막 씬 책 표지 합성 알라딘 중고서점 광활한 우주점에서 차용한 카피 Maya를 이용해 알라딘 심볼 3D오브젝트 제작 및 합성 </p>
-                            <dl>
-                                <dt>제작기간</dt>
-                                <dd>4주</dd>
-                            </dl>
                             <dl>
                                 <dt>러닝타임</dt>
                                 <dd>00:49</dd>
@@ -261,10 +257,7 @@ Fancybox.bind('[data-fancybox="gallery"]', {
                                 <span class="Ai">Ai</span>
                                 <span class="Ae">Ae</span>
                             </div>  
-                            <p>살면서 가장 많이 해먹은 요리인 나폴리탄 스파게티의 레시피를 모션그래픽으로 표현하였다. 저채도 고명도의 색채를 사용, 부드러운 분위기. 일러스트레이터에서 굴소스, 케쳡등의 오브젝트들을 먼저 만든 후 오브젝트들을 이용해서 레시피 내용에 맞추어 화면을 구성.</p><dl>
-                                <dt>제작기간</dt>
-                                <dd>1주</dd>
-                            </dl>
+                            <p>살면서 가장 많이 해먹은 요리인 나폴리탄 스파게티의 레시피를 모션그래픽으로 표현하였다. 저채도 고명도의 색채를 사용, 부드러운 분위기. 일러스트레이터에서 굴소스, 케쳡등의 오브젝트들을 먼저 만든 후 오브젝트들을 이용해서 레시피 내용에 맞추어 화면을 구성.</p>                      
                             <dl>
                                 <dt>러닝타임</dt>
                                 <dd>00:40</dd>
