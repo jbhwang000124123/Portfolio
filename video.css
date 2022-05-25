@@ -1,0 +1,160 @@
+@charset "utf-8";
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+@font-face {
+    font-family: 'Hahmlet-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/Hahmlet-Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ONE-Mobile-Title';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 2D그래픽 제작 및 합성 작업 */
+.video .category_title1 { /* 선택한 카테고리를 보여주는 곳 */
+    width:100%;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    color:rgba(0, 0, 0, 0.534);
+    font-family: 'Hahmlet'; 
+}
+
+.Contents section:nth-of-type(1) {background-color: rgb(255, 249, 230);}
+
+/* 영상 촬영 및 편집 작업 */
+.video .category_title2 { /* 선택한 카테고리를 보여주는 곳 */
+    width:100%;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    color:rgba(0, 0, 0, 0.534);
+    font-family: 'Hahmlet';
+}
+.Contents section:nth-of-type(2) {background-color: rgb(227, 240, 233);}
+
+
+/* 3D그래픽작업 */
+.video .category_title3 { /* 선택한 카테고리를 보여주는 곳 */
+    width:100%;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    color:rgba(0, 0, 0, 0.534);
+    font-family: 'Hahmlet';
+}
+.Contents section:nth-of-type(3) {background-color: rgb(255, 232, 217);}
+
+/*  video ----------------------------------------------------------------- */
+.video { /* 카테고리에 속한 비디오들이 나타나는 영역 */
+    display: none;
+    flex-wrap: wrap;
+}
+.video.on { /* 카테고리에 속한 비디오들이 나타나는 영역 */
+    display: flex;
+    flex-wrap: wrap;    
+    
+}
+
+/* .video  */
+.video .item { /* 비디오 1개 콘텐츠의 전체박스 */
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px auto;
+    /* background-color: antiquewhite; */}
+.video .item .cont { /* 영상과 영상정보의 박스*/
+    /* background-color: antiquewhite; */
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin:0 40px;
+    padding: 80px 10px;
+}
+.video .item .cont h3 {font-size: 60px;
+    font-family: 'Hahmlet-Bold';
+    margin-bottom: 30px;}
+
+.video .item .cont .youtube{
+    width:100%; margin: 0 auto;   
+}
+    .video .item .cont .youtube .youtube_in {
+            width:100%;
+            padding-bottom:56.25%; /* 유튜브박스공간을 16:9비율로 만들어준다. */
+            position: relative;
+        }
+        .video .item .cont .youtube .youtube_in iframe {
+                width:100%;
+                height: 100%;
+                position: absolute;
+                top:0; left:0;
+            }
+.video .item .cont .info {/* 영상의 설명이 들어가는 곳 */
+    width:100%;  margin:0 auto;
+    /* background-color: aliceblue; */
+}
+    .video .item .cont .info h3 {
+        font-size: 50px;
+        margin:10px 0;
+        font-family: 'Hahmlet-Bold';
+        margin-bottom: 20px;
+    }
+    .video .item .cont h3:hover {
+        color: rgb(255, 255, 255);
+        text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+        transition: 0.2s;
+    }
+    .video .item .cont .info p {
+        font-size: 18px;
+        margin-top: 5px;
+        margin-bottom: 30px;}
+    .video .item .cont .info dl {
+        display: flex;
+        font-size: 17px;
+        margin-bottom: 8px;
+    }
+        .info dl dt {
+            font-weight: bold;
+            margin-right:10px;
+        }
+        .info dl a {text-decoration: underline; color:green}
+        .info dl a:hover {text-decoration: underline; color:rgb(179, 218, 179); transition: 0.3s}
+
+    .item .cont .info .tool {margin: 20px 0;}
+
+.video .sub_img {/* 비디오와 관련된 이미지가 들어가는 박스 */
+    width: 100%;
+    display: flex; flex-wrap: wrap; 
+    margin:0 auto;margin-top:50px;
+}
+
+.sub_img div {width: 100%;}
+    .sub_img figure {
+        width:19%; 
+        height:150px;
+        box-sizing: border-box;
+        overflow: hidden; margin: 3px 0;margin-right: 10px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+        .sub_img figure img {
+            width:100%; height: 100%; object-fit: cover;
+            cursor: pointer;
+        }
+        .sub_img figure img:hover { width:98%; height:98%; object-fit: contain; transition: 0.5s;}
+        .sub_img div { font-family: 'NanumSquareRound';font-size: 15px; color:rgba(51, 51, 51, 0.418);}
+
+/*  video ------------------------------- */
