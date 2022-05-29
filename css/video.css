@@ -115,10 +115,12 @@
         text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
         transition: 0.2s;
     }
-    .video .item .cont .info p {
+
+    .video .item .cont .info .main_info {width:70%;word-break: keep-all;}
+    .video .item .cont .info .main_info p {
         font-size: 18px;
         margin-top: 5px;
-        margin-bottom: 30px;}
+        margin-bottom: 20px; letter-spacing: 0.4px;}
     .video .item .cont .info dl {
         display: flex;
         font-size: 17px;
