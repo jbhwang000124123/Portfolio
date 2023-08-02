@@ -1,142 +1,160 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>황정빈 Portfolio</title>
     <!-- 팬시박스 css -->
     <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
-/>
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
+    />
     <!-- animate css -->
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-/>
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <!--스크롤애니메이션(aos)의 css-->
-<link 
-href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"
-/> 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- html 메인 css -->
-    <link href="css/video.css" rel="stylesheet" /> 
-    <link href="css/index.css" rel="stylesheet" /> 
-    
+    <link href="css/video.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
+
     <!-- jquery 라이브러리 연결 스크립트 -->
-    <script 
-    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer">    
-    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <!-- fancybox.umd.js 스크립트 -->
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
     <!-- 모션그래픽 리스트 버튼 함수 스크립트 -->
-    <script> //$=script, function:함수*
-        $(function(){//탭메뉴
-            $('.category .list li').click //''안의 선택자를 click한다.
-            (function(){
-                $('.video').removeClass('on');
-                $('.video').eq/*=적용대상 순번 지정*/($(this/*=이전 액션에서 명령어를 실행한 대상*/).index()/*대상의 순번 추출*/).addClass('on');//클래스명에 'on'추가
-                $('.category .list li').removeClass('on');
-                $(this).addClass('on');//클래스명에 'on'추가
-            });//click end 
+    <script>
+      //$=script, function:함수*
+      $(function () {
+        //탭메뉴
+        $(".category .list li").click(
+          //''안의 선택자를 click한다.
+          function () {
+            $(".video").removeClass("on");
+            $(".video")
+              .eq(
+                /*=적용대상 순번 지정*/ $(
+                  this /*=이전 액션에서 명령어를 실행한 대상*/
+                ).index() /*대상의 순번 추출*/
+              )
+              .addClass("on"); //클래스명에 'on'추가
+            $(".category .list li").removeClass("on");
+            $(this).addClass("on"); //클래스명에 'on'추가
+          }
+        ); //click end
+      });
+      $(function () {
+        //탭메뉴
+        $(".category.on .list li").click(
+          //''안의 선택자를 click한다.
+          function () {
+            $(".video").removeClass("on");
+            $(".video")
+              .eq(
+                /*=적용대상 순번 지정*/ $(
+                  this /*=이전 액션에서 명령어를 실행한 대상*/
+                ).index() /*대상의 순번 추출*/
+              )
+              .addClass("on"); //클래스명에 'on'추가
+          }
+        ); //click end
 
-        });
-        $(function(){//탭메뉴
-            $('.category.on .list li').click //''안의 선택자를 click한다.
-            (function(){
-                $('.video').removeClass('on');
-                $('.video').eq/*=적용대상 순번 지정*/($(this/*=이전 액션에서 명령어를 실행한 대상*/).index()/*대상의 순번 추출*/).addClass('on');//클래스명에 'on'추가
-            });//click end
- 
-                       ////////////////////////
-            //스크롤시 메뉴 상단 고정 22.05.06 하수정
-            ////////////////////////////////////////
-            //var headerTop = $('.category').offset().top;
+        ////////////////////////
+        //스크롤시 메뉴 상단 고정 22.05.06 하수정
+        ////////////////////////////////////////
+        //var headerTop = $('.category').offset().top;
 
-            //$(window).scroll(function(){
-                //var wst = $(window).scrollTop();
-            
-                //if(headerTop < wst) {
-                    // 스크립트 코드
-                    //header한테 클래스명('on')이 추가
-                    //$('.category').addClass('on');
-                //} else {
-                    //$('.category').removeClass('on');
-                //} 
-                //조건식에 부합되지 않을 때 else
-                // header에게 클래스명 on 제거
-           // });//window scroll end
-        }); 
-        
+        //$(window).scroll(function(){
+        //var wst = $(window).scrollTop();
 
-const myCarousel = new Carousel(document.querySelector(".carousel"), {
-  // Options
-});
-           // Initialise Carousel
-const mainCarousel = new Carousel(document.querySelector("#mainCarousel"), { 
-    infinite: false,
-    Navigation: true,
-});
+        //if(headerTop < wst) {
+        // 스크립트 코드
+        //header한테 클래스명('on')이 추가
+        //$('.category').addClass('on');
+        //} else {
+        //$('.category').removeClass('on');
+        //}
+        //조건식에 부합되지 않을 때 else
+        // header에게 클래스명 on 제거
+        // });//window scroll end
+      });
 
-// Initialise Fancybox
-Fancybox.bind('[data-fancybox="gallery"]', {
-    Carousel: {
-    on: {
-    change: (carousel, to) => {
-        // Sync Carousel slide
-        // ===
-        const $el = Fancybox.getInstance()
-        .getSlide()
-        .$trigger.closest(".carousel__slide");
+      const myCarousel = new Carousel(document.querySelector(".carousel"), {
+        // Options
+      });
+      // Initialise Carousel
+      const mainCarousel = new Carousel(
+        document.querySelector("#mainCarousel"),
+        {
+          infinite: false,
+          Navigation: true,
+        }
+      );
 
-        const slide = mainCarousel.slides.find((slide) => {
-        return slide.$el === $el;
-        });
+      // Initialise Fancybox
+      Fancybox.bind('[data-fancybox="gallery"]', {
+        Carousel: {
+          on: {
+            change: (carousel, to) => {
+              // Sync Carousel slide
+              // ===
+              const $el = Fancybox.getInstance()
+                .getSlide()
+                .$trigger.closest(".carousel__slide");
 
-        mainCarousel.slideTo(slide.index, {
-        friction: 0,
-        });
-    },
-    },
-},
-});
-/* https://fancyapps.com/docs/ui/fancybox  팬시박스 적용방법 나중에 읽고 적용해보기*/
- 
+              const slide = mainCarousel.slides.find((slide) => {
+                return slide.$el === $el;
+              });
 
-        
+              mainCarousel.slideTo(slide.index, {
+                friction: 0,
+              });
+            },
+          },
+        },
+      });
+      /* https://fancyapps.com/docs/ui/fancybox  팬시박스 적용방법 나중에 읽고 적용해보기*/
     </script>
     <!-- 팬시박스 js -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
-    <link  href="/path/to/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="/path/to/jquery.fancybox.min.css" rel="stylesheet" />
     <script src="/path/to/jquery.fancybox.min.js"></script>
-    
-    
+
     <!-- aos js -->
-    <script 
-    src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  </head>
+  <body id="top">
+    <script>
+      AOS.init();
     </script>
-
-
-    
-</head>
-<body  id="top"> 
-    <script>AOS.init();</script>
-    <header><!-- 헤더 -->
-    <div>
-        <a href="https://www.youtube.com/channel/UCY7G7IWg7RE1eH4SWWsmtVg" target="_blank">유튜브</a>
-        <a href="index.html" style="text-align:center">HWANG JEOUNG BIN</a>
-        <!-- <a href="reasume.html" >이력서&자기소개서</a> -->
-    </div>
-</header>
+    <header>
+      <!-- 헤더 -->
+      <div>
+        <a
+          href="https://www.youtube.com/channel/UCY7G7IWg7RE1eH4SWWsmtVg"
+          target="_blank"
+          >유튜브</a
+        >
+        <a href="index.html" style="text-align: center">HWANG JEOUNG BIN</a>
+        <!-- <a href="reasume.html">이력서&자기소개서</a> -->
+      </div>
+    </header>
     <!-- <section class="main_visual">
         <figure class="bg">
             <img src="images/hills_2.jpg" />  
         </figure>
         <div class="title"> -->
-        <!--   <div class="animate__animated animate__bounceInRight"> -->
-                <!-- <h2>*Portfolio</h2>
+    <!--   <div class="animate__animated animate__bounceInRight"> -->
+    <!-- <h2>*Portfolio</h2>
                 <p> <img src="images/T_line_0000_Shape-1.png"/> Hwang Jeoung Bin</p>
             </div>
         </div>
@@ -145,468 +163,831 @@ Fancybox.bind('[data-fancybox="gallery"]', {
     <!-- mainvisual end -->
 
     <section class="category">
-        <div><h3>영상작업</h3></div>
-                <ul class="list">
-                    <li>모션그래픽</li>
-                    <li>V-log</li>
-                    <li>3D 애니메이션</li>
-                </ul><!-- list end -->
-    </section> <!-- .category end -->
+      <div><h3>Portfolio</h3></div>
+      <ul class="list">
+        <li>모션그래픽&애니메이션</li>
+        <li>촬영 및 편집</li>
+        <li>etc.</li>
+      </ul>
+      <!-- list end -->
+    </section>
+    <!-- .category end -->
 
-    <section class="Contents" id="Contents" >
-        <section class="video on"> <!-- 2D그래픽제작 -->
-<!--             <div class="category_title1" id="category_title1">
+    <section class="Contents" id="Contents">
+      <section class="video on">
+        <!-- 2D그래픽제작 -->
+        <!--             <div class="category_title1" id="category_title1">
                     <h3># 2D그래픽 제작 및 합성 작업</h3>
             </div> -->
-            <!--///////  1 ///////-->
-                <div class="item" id="top_video1" style="background: url('images/HJB_KJ_bg(1).jpg') center center / cover no-repeat;">
-                    <div class="cont"><!-- 영상 및 정보, 이미지 출력영역 --> 
-                            <div class="youtube" ><!-- 유튜브 영상 box-->
-                                <div class="youtube_in">
-                <!-- 영상링크 --><iframe width="560" height="315" src="https://www.youtube.com/embed/hQ_CJdpOyaY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                            </div><!-- youtube end -->
-                            <div class="info" ><h3><친절한 금자씨> 타이틀 시퀀스</h3>
-                                <div class="tool"> 
-                                    <span class="Ae">Ae</span>
-                                    <span class="Ps">Ps</span>
-                                </div>  
-                                <p>영화 <친절한 금자씨>의 타이틀 시퀀스를 등장인물 소개형식으로 만들어 보았습니다.
-                                    주요 디자인 방향 및 스타일은 원작 영화와 통일성을 갖도록 오리지널 영화 포스터를 레퍼런스로 삼아 콜라주로 결정하고, 포스터에 나타난 요소 ('흑백의 인물', '붉은 포인트 색', '장식적 오브젝트') 를 디테일로서 차용했습니다.
-                                    원본 영화가 어둡고 극 BGM인 OST(기도하는 금자-조영욱)도 템포가 느리고 음울한 음악이기 때문에, 애니메이션 작업 시 역동적인 움직임을 배제하고 각 오브젝트 및 오브젝트와 인물사이의 공간감을 의도적으로 무시하였습니다. 
-                                    콜라주에 이용한 이미지는 각 인물과 연관된 것들을 선정했습니다. 
-                                    극 중에서 두 가지 모습으로 그려지는‘이금자’는 분홍색과 빨강색, 종교적 모티프로는 성모의 파란 천과 아기천사, 천사날개와 예수 상 이미지로 대비되는 두 캐릭터를 표현하였습니다.
-                                </p>
-                                                                <dl>
-                                    <dt>러닝타임</dt>
-                                    <dd>00:49</dd>
-                                </dl>
-                                <dl>
-                                    <dt>BGM</dt>
-                                    <dd>기도하는 금자-조영욱</dd>
-                                </dl>
-                                <dl>
-                                    <dt>URL</dt>
-                                    <dd><a href="https://youtu.be/hQ_CJdpOyaY">https://youtu.be/hQ_CJdpOyaY</a></dd>
-                                </dl>
-                            </div><!-- info end -->
-                        <div id="mainCarousel" class="sub_img" >
-                            <div>※ 클릭시 원본 사이즈로 확대됩니다.</div>
-                            <figure href="images/HJB_KJ (1).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (1).png" alt="#"/></figure>    
-                            <figure href="images/HJB_KJ (2).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (2).png" alt="#"/></figure>    
-                            <figure href="images/HJB_KJ (3).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (3).png" alt="#"/></figure>    
-                            <figure href="images/HJB_KJ (4).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (4).png" alt="#"/></figure>    
-                            <figure href="images/HJB_KJ (5).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (5).png" alt="#"/></figure>    
-                            <figure href="images/HJB_KJ (6).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (6).png" alt="#"/></figure>    
-                            <figure href="images/HJB_KJ (7).png" data-fancybox="gallery-1"><img src="images/HJB_KJ (7).png" alt="#"/></figure>    
-                            
-
-                        </div><!-- sub_img end -->   
-                    </div><!-- cont end -->
-                    
-                </div><!-- item end 1-->
-                <!--///////  2 ///////-->
-                <div class="item"  style="background: url('images/Aladin_HJB_bg.jpg') center center / cover no-repeat;">
-                    <div class="cont"><!-- 영상 및 정보, 이미지 출력영역 -->
-                        <div class="youtube"><!-- 유튜브 영상 box-->
-                            <div class="youtube_in">
-            <!-- 영상링크 --><iframe width="560" height="315" src="https://www.youtube.com/embed/s5FogOkv4fM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                        </div><!-- youtube end -->
-                        <div class="info">
-                            <h3>브랜드광고영상 (인터넷 서점 알라딘)</h3>
-                            <div class="tool">
-                                <span class="Ai">Ai</span>
-                                <span class="Ae">Ae</span>
-                                <span class="Pr">Pr</span>
-                                +<span class="Maya">M</span><font style="font-size:14px;">(Autodesk Maya)</font>
-                            </div><!-- .tool end --> 
-                            <!-- 영상 설명부 .main_info start -->
-                            <div class="main_info"> 
-                                <p>인터넷 서점 알라딘의 브랜드 광고영상입니다.
-                                    (1)고유의 상품이 명확하지 않고 도서를 판매·유통하는 기업인 점, (2)온/오프라인 중고매장을 통해 소비자가 도서를 판매하고 구입하는 창구를 적극적으로 개척하는 점, (3)자체 굿즈를 일정기간 판매하여 구매자로 하여금 알라딘 이용자와 독서가 등의 소속감과 정체성을 가지도록 하는 점과 (4)이미 온라인 서점으로서 시장의 입지가 있고 대중에게 널리 알려져있는 점을 생각했을 때 직설적인 메세지를 전달하는 것보다 이미 독서를 즐기는 소비자를 타깃으로 추상적이더라도 '독서'와 관련된 감성적인 영상을 만드는 것이 좋을 것 같다고 생각했습니다. 이를 기반으로 몽환적인 음악을 선정하고, '독서는 간접경험이다'라는 익숙한 명제를 차용해 실사 촬영 영상 위에 모션그래픽을 합성하는 방식으로 책을 읽는 현실의 사람과 책 속의 세상이 공존하는 장면을 표현하였습니다.
-                                    해당 영상은 광고를 목적으로 제작한 만큼 알라딘 중고서점을 배경으로 촬영한 컷을 넣고 3D로 만든 알라딘의 로고를 합성하는 등 알라딘과 관련된 컷들을 담았습니다. 특히 마지막 카피 '안녕! 이 광활한 우주에서 당신을 기다릴게요'는 기존 알라딘 중고서점 절판 코너의 캐치프레이즈 '이 광활한 우주에서 이미 사라진 책을 읽는다는 것은. '에서 파생시킨 문장입니다. 의인화 된 책이 독자에게 당신을 만나기를 고대한다고 말을 건네는 카피로, 기존 캐치프레이즈의 주체가 독자인 것을 어레인지하여 반대로 책이 주체인 문장을 만들었습니다.
-                                    이어서, 원래 책은 말을 건네는 주체가 될 수 없기 때문에 텍스트 삽입 만으로는 문장의 주체가 책인 것을 바로 전달하기는 어려우리라 생각이 들었습니다. 이 문제의 대안으로 카피를 세 부분, 안녕!/이 광활한 우주에서/당신을 기다릴게요로 나누어, 각각의 제목을 가진 가상의 책 표지를 만들고 합성하여 책이 제목을 통해 말하는 중임을 나타내고 강조하였습니다.</p>
-                            </div>
-                            <!-- .main_info end -->
-                            <dl>
-                                <dt>러닝타임</dt>
-                                <dd>00:49</dd>
-                            </dl>
-                            <dl>
-                                <dt>BGM</dt>
-                                <dd>Eden - Thomas Gresen</dd>
-                            </dl>
-                            <dl>
-                                <dt>URL</dt>
-                                <dd><a href="https://youtu.be/s5FogOkv4fM">https://youtu.be/s5FogOkv4fM</a></dd>
-                            </dl>
-                        </div><!-- info end -->
-                        <div class="sub_img" >
-                            <div>※ 클릭시 원본 사이즈로 확대됩니다.</div>
-                            <figure href="images/Aladin_HJB (1).jpg" data-fancybox="gallery-2"><img src="images/Aladin_HJB (1).jpg" alt="#"/></figure>    
-                            <figure href="images/Aladin_HJB (2).jpg" data-fancybox="gallery-2"><img src="images/Aladin_HJB (2).jpg" alt="#"/></figure>    
-                            <figure href="images/Aladin_HJB (3).jpg" data-fancybox="gallery-2"><img src="images/Aladin_HJB (3).jpg" alt="#"/></figure>    
-                            <figure href="images/Aladin_HJB (4).jpg" data-fancybox="gallery-2"><img src="images/Aladin_HJB (4).jpg" alt="#"/></figure>    
-                            <figure href="images/Aladin_HJB (5).jpg" data-fancybox="gallery-2"><img src="images/Aladin_HJB (5).jpg" alt="#"/></figure>  
-                            <figure href="images/aladin_modeling.jpg" data-fancybox="gallery-2"><img src="images/aladin_modeling.jpg" alt="#"/></figure>
-                        </div><!-- sub_img end -->   
-                    </div><!-- cont end -->
-                    
-                </div><!-- item end 2-->
-                <!--///////  3 ///////-->
-                <div class="item"  style="background: url('images/HJB_Napolitan_bg(2).jpg') center center / cover no-repeat;">
-                    <div class="cont"><!-- 영상 및 정보, 이미지 출력영역 -->    
-                        <div class="youtube" ><!-- 유튜브 영상 box-->
-                            <div class="youtube_in">
-            <!-- 영상링크 --><iframe width="560" height="315" src="https://www.youtube.com/embed/bdPbKodqxPE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                        </div><!-- youtube end -->
-                        <div class="info" >
-                        <h3>나폴리탄 스파게티 레시피</h3>
-                            <div class="tool">
-                                <span class="Ai">Ai</span>
-                                <span class="Ae">Ae</span>
-                            </div>  
-                            <p>일러스트레이션을 이용한 모션그래픽으로 조리법을 소개하는 영상입니다. 영상에 쓰인 일러스트 요소들은 어도비 일러스트레이터를 이용해 제작하였으며, ~~명암을 최소화한 플랫디자인.~~~일러스트 컨셉소개. 저채도 고명도의 파스텔 톤을 사용. 리듬감있는 BGM 단순, 반복, 경쾌</p>                      
-                            <dl>
-                                <dt>러닝타임</dt>
-                                <dd>00:40</dd>
-                            </dl>
-                            <dl>
-                                <dt>BGM</dt>
-                                <dd>PAINT IT! - Nicolai Heidlas Music </dd>
-                            </dl>
-                            <dl>
-                                <dt>URL</dt>
-                                <dd><a href="https://youtu.be/bdPbKodqxPE">https://youtu.be/bdPbKodqxPE</a></dd>
-                            </dl>
-                        </div><!-- info end -->
-                        <div class="sub_img"> <div>※ 클릭시 원본 사이즈로 확대됩니다.</div>
-                        <figure href="images/HJB_Napolitan (1).png" data-fancybox="gallery-3"><img src="images/HJB_Napolitan (1).png" alt="#"/></figure>    
-                        <figure href="images/HJB_Napolitan (2).png" data-fancybox="gallery-3"><img src="images/HJB_Napolitan (2).png" alt="#"/></figure>    
-                        <figure href="images/HJB_Napolitan (3).png" data-fancybox="gallery-3"><img src="images/HJB_Napolitan (3).png" alt="#"/></figure>    
-                        <figure href="images/HJB_Napolitan (4).png" data-fancybox="gallery-3"><img src="images/HJB_Napolitan (4).png" alt="#"/></figure>    
-                        <figure href="images/HJB_Napolitan (5).png" data-fancybox="gallery-3"><img src="images/HJB_Napolitan (5).png" alt="#"/></figure>    
-                        </div><!-- sub_img end -->   
-                    </div><!-- cont end -->
-                    
-                </div><!-- item end 3-->
-
-
-        </section><!-- video end (2D)-->
-        <section class="video"><!-- 영상촬영 및 편집 -->
-<!--             <div class="category_title2" id="category_title2">
+        <!--///////  3 ///////-->
+        <div class="item">
+          <div class="cont">
+            <!-- 영상 및 정보, 이미지 출력영역 -->
+            <div class="youtube">
+              <!-- 유튜브 영상 box-->
+              <div class="youtube_in">
+                <!-- 영상링크 --><iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/bdPbKodqxPE"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <!-- youtube end -->
+            <div class="info" id="top_video1">
+              <span class="indiviual">개인 작업</span>
+              <h3>나폴리탄 스파게티 레시피</h3>
+              <div class="tool">
+                이미지 제작 <span class="Ai">Ai</span> <br />모션그래픽
+                <span class="Ae">Ae</span>
+              </div>
+              <p>
+                일러스트레이션을 이용한 모션그래픽으로 조리법을 소개하는
+                영상입니다. 영상에 쓰인 일러스트 요소들은 어도비
+                일러스트레이터를 이용해 제작하였으며, ~~명암을 최소화한
+                플랫디자인.~~~일러스트 컨셉소개. 저채도 고명도의 파스텔 톤을
+                사용. 리듬감있는 BGM 단순, 반복, 경쾌
+              </p>
+              <div class="info_dl">
+                <dl>
+                  <dt>러닝타임</dt>
+                  <dd>00:40</dd>
+                </dl>
+                <dl>
+                  <dt>BGM</dt>
+                  <dd>PAINT IT! - Nicolai Heidlas Music</dd>
+                </dl>
+                <dl>
+                  <dt>URL</dt>
+                  <dd>
+                    <a href="https://youtu.be/bdPbKodqxPE"
+                      >https://youtu.be/bdPbKodqxPE</a
+                    >
+                  </dd>
+                </dl>
+              </div>
+            </div>
+            <!-- info end -->
+            <div class="sub_img">
+              <div>※ 클릭시 원본 사이즈로 확대됩니다.</div>
+              <figure
+                href="images/HJB_Napolitan (1).png"
+                data-fancybox="gallery-3"
+              >
+                <img src="images/HJB_Napolitan (1).png" alt="#" />
+              </figure>
+              <figure
+                href="images/HJB_Napolitan (2).png"
+                data-fancybox="gallery-3"
+              >
+                <img src="images/HJB_Napolitan (2).png" alt="#" />
+              </figure>
+              <figure
+                href="images/HJB_Napolitan (3).png"
+                data-fancybox="gallery-3"
+              >
+                <img src="images/HJB_Napolitan (3).png" alt="#" />
+              </figure>
+              <figure
+                href="images/HJB_Napolitan (4).png"
+                data-fancybox="gallery-3"
+              >
+                <img src="images/HJB_Napolitan (4).png" alt="#" />
+              </figure>
+              <figure
+                href="images/HJB_Napolitan (5).png"
+                data-fancybox="gallery-3"
+              >
+                <img src="images/HJB_Napolitan (5).png" alt="#" />
+              </figure>
+            </div>
+            <!-- sub_img end -->
+          </div>
+          <!-- cont end -->
+        </div>
+        <!-- item end 3-->
+        <!--///////  1 ///////-->
+        <div class="item">
+          <div class="cont">
+            <!-- 영상 및 정보, 이미지 출력영역 -->
+            <div class="youtube">
+              <!-- 유튜브 영상 box-->
+              <div class="youtube_in">
+                <!-- 영상링크 --><iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/hQ_CJdpOyaY"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <!-- youtube end -->
+            <div class="info">
+              <span class="indiviual">개인 작업</span>
+              <h3><친절한 금자씨> 타이틀 시퀀스</h3>
+              <div class="tool">
+                <span class="Ae">Ae</span>
+                <span class="Ps">Ps</span>
+              </div>
+              <p>
+                영화 <친절한 금자씨>의 타이틀 시퀀스를 등장인물 소개형식으로
+                만들어 보았습니다. 주요 디자인 방향 및 스타일은 원작 영화와
+                통일성을 갖도록 오리지널 영화 포스터를 레퍼런스로 삼아 콜라주로
+                결정하고, 포스터에 나타난 요소 ('흑백의 인물', '붉은 포인트 색',
+                '장식적 오브젝트') 를 디테일로서 차용했습니다. 원본 영화가
+                어둡고 극 BGM인 OST(기도하는 금자-조영욱)도 템포가 느리고 음울한
+                음악이기 때문에, 애니메이션 작업 시 역동적인 움직임을 배제하고
+                각 오브젝트 및 오브젝트와 인물사이의 공간감을 의도적으로
+                무시하였습니다. 콜라주에 이용한 이미지는 각 인물과 연관된 것들을
+                선정했습니다. 극 중에서 두 가지 모습으로 그려지는‘이금자’는
+                분홍색과 빨강색, 종교적 모티프로는 성모의 파란 천과 아기천사,
+                천사날개와 예수 상 이미지로 대비되는 두 캐릭터를 표현하였습니다.
+              </p>
+              <dl>
+                <dt>러닝타임</dt>
+                <dd>00:49</dd>
+              </dl>
+              <dl>
+                <dt>BGM</dt>
+                <dd>기도하는 금자-조영욱</dd>
+              </dl>
+              <dl>
+                <dt>URL</dt>
+                <dd>
+                  <a href="https://youtu.be/hQ_CJdpOyaY"
+                    >https://youtu.be/hQ_CJdpOyaY</a
+                  >
+                </dd>
+              </dl>
+            </div>
+            <!-- info end -->
+            <div id="mainCarousel" class="sub_img">
+              <div>※ 클릭시 원본 사이즈로 확대됩니다.</div>
+              <figure href="images/HJB_KJ (1).png" data-fancybox="gallery-1">
+                <img src="images/HJB_KJ (1).png" alt="#" />
+              </figure>
+              <figure href="images/HJB_KJ (2).png" data-fancybox="gallery-1">
+                <img src="images/HJB_KJ (2).png" alt="#" />
+              </figure>
+              <figure href="images/HJB_KJ (3).png" data-fancybox="gallery-1">
+                <img src="images/HJB_KJ (3).png" alt="#" />
+              </figure>
+              <figure href="images/HJB_KJ (4).png" data-fancybox="gallery-1">
+                <img src="images/HJB_KJ (4).png" alt="#" />
+              </figure>
+              <figure href="images/HJB_KJ (5).png" data-fancybox="gallery-1">
+                <img src="images/HJB_KJ (5).png" alt="#" />
+              </figure>
+              <figure href="images/HJB_KJ (6).png" data-fancybox="gallery-1">
+                <img src="images/HJB_KJ (6).png" alt="#" />
+              </figure>
+              <figure href="images/HJB_KJ (7).png" data-fancybox="gallery-1">
+                <img src="images/HJB_KJ (7).png" alt="#" />
+              </figure>
+            </div>
+            <!-- sub_img end -->
+          </div>
+          <!-- cont end -->
+        </div>
+        <!-- item end 1-->
+        <!--///////  1 ///////-->
+        <div
+          class="item"
+          style="background: url('') center center / cover no-repeat"
+        >
+          <div class="cont">
+            <!-- 영상 및 정보, 이미지 출력영역 -->
+            <div class="youtube">
+              <!-- data-aos="fade-up" data-aos-duration="600"> -->
+              <!-- 유튜브 영상 box-->
+              <div class="youtube_in">
+                <!-- 영상링크 --><iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/OFKDaFNwnQM"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <!-- youtube end -->
+            <div class="info">
+              <span class="indiviual">개인 작업</span>
+              <h3>행성</h3>
+              <div class="tool">
+                <span class="Ae">Ae</span>
+              </div>
+              <p>행성플레이어</p>
+              <dl>
+                <dt>러닝타임</dt>
+                <dd>00:08</dd>
+              </dl>
+              <dl>
+                <dt>BGM</dt>
+                <dd>Happy Birthday Song 1 (No Copyright)</dd>
+              </dl>
+              <dl>
+                <dt>URL</dt>
+                <dd>
+                  <a href="https://youtu.be/OFKDaFNwnQM"
+                    >https://youtu.be/OFKDaFNwnQM</a
+                  >
+                </dd>
+              </dl>
+            </div>
+            <div class="sub_img">
+              <div>※ 클릭시 원본 사이즈로 확대됩니다.</div>
+              <figure href="images/cake_modeling.jpg" data-fancybox="gallery-7">
+                <img src="images/cake_modeling.jpg" alt="#" />
+              </figure>
+              <figure href="images/CAKE (1).jpg" data-fancybox="gallery-7">
+                <img src="images/CAKE (1).jpg" alt="#" />
+              </figure>
+              <figure href="images/CAKE (2).jpg" data-fancybox="gallery-7">
+                <img src="images/CAKE (2).jpg" alt="#" />
+              </figure>
+            </div>
+            <!-- sub_img end -->
+          </div>
+          <!-- cont end -->
+        </div>
+        <!-- item end 1-->
+      </section>
+      <!-- video end (2D)-->
+      <section class="video">
+        <!-- 영상촬영 및 편집 -->
+        <!--             <div class="category_title2" id="category_title2">
                     <h3># 영상촬영 및 편집작업</h3>
             </div> -->
-            <!--///////  1 ///////-->
-            <div class="item" id="top_video2" style="background: url('images/HJB_Garden_bg.jpg') center center / cover no-repeat;">
-                <div class="cont" ><!-- 영상 및 정보, 이미지 출력영역 -->
-                    <div class="youtube" data-aos="fade-up"
-                    data-aos-duration="600"><!-- 유튜브 영상 box-->
-                        <div class="youtube_in">
-        <!-- 영상링크 --><iframe width="560" height="315" src="https://www.youtube.com/embed/8UJEsO6VkpM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                    </div><!-- youtube end -->
-                    <div class="info" data-aos="fade-up"
-                    data-aos-duration="900">
-                        <h3>부산 금강식물원</h3>
-                        <div class="tool">
-                            <span class="Ae">Ae</span>
-                            <span class="Pr">Pr</span>
-                        </div>  
-                        <p>영화를 보는 듯한 느낌을 의도한 작업입니다. 이를 위해서 화면을 2.39:1의 시네마스코프 비율로 정하고, 간단한 스토리를 설정하였습니다. 
+        <!--///////  1 ///////-->
+        <div
+          class="item"
+          id="top_video2"
+          style="background: url('') center center / cover no-repeat"
+        >
+          <div class="cont">
+            <!-- 영상 및 정보, 이미지 출력영역 -->
+            <div class="youtube" data-aos="fade-up" data-aos-duration="600">
+              <!-- 유튜브 영상 box-->
+              <div class="youtube_in">
+                <!-- 영상링크 --><iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/8UJEsO6VkpM"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <!-- youtube end -->
 
-                            식물원에 간 '나'. 입구 길에서 만난 작은 거위를 따라 점점 더 식물원의 안으로 들어가는데…….
-                            
-                            배경을 깊은 숲처럼 표현하기 위해 화면의 밝기와 콘트라스트를 조정하고 청록 색조를 강조했습니다. 또, 영상에 담긴 동화적 스토리에 맞춰 빛이 번지는 몽환적인 화면을 만들었습니다.  </p>
-                        <dl>
-                            <dt>제작기간</dt>
-                            <dd>1주</dd>
-                        </dl>
-                        <dl>
-                            <dt>러닝타임</dt>
-                            <dd>01:50</dd>
-                        </dl>
-                        <dl>
-                            <dt>BGM</dt>
-                            <dd>forest of the elves - jonathan segev </dd>
-                        </dl>
-                        <dl>
-                            <dt>URL</dt>
-                            <dd><a href="https://youtu.be/8UJEsO6VkpM">https://youtu.be/8UJEsO6VkpM</a></dd>
-                        </dl>
-                    </div><!-- info end -->
-                    <div class="sub_img" data-aos="fade-up"
-                    data-aos-duration="900"> <div>※ 클릭시 원본 사이즈로 확대됩니다.</div>
-                    <figure href="images/HJB_Garden (1).png" data-fancybox="gallery-4"><img src="images/HJB_Garden (1).png" alt="#"/></figure>
-                    <figure href="images/HJB_Garden (2).png" data-fancybox="gallery-4"><img src="images/HJB_Garden (2).png" alt="#"/></figure>
-                    <figure href="images/HJB_Garden (3).png" data-fancybox="gallery-4"><img src="images/HJB_Garden (3).png" alt="#"/></figure>
-                    <figure href="images/HJB_Garden (4).png" data-fancybox="gallery-4"><img src="images/HJB_Garden (4).png" alt="#"/></figure>
-                    <figure href="images/HJB_Garden (5).png" data-fancybox="gallery-4"><img src="images/HJB_Garden (5).png" alt="#"/></figure>
-                    <figure href="images/HJB_Garden (6).png" data-fancybox="gallery-4"><img src="images/HJB_Garden (6).png" alt="#"/></figure>
-                
-                    </div><!-- sub_img end -->   
-                </div><!-- cont end -->
-                
-            </div><!-- item end 1-->
-            <!--///////  2 ///////-->
-            <div class="item" style="background: url('images/VLOG_bg.jpg') center center / cover no-repeat;">
-                <div class="cont" ><!-- 영상 및 정보, 이미지 출력영역 -->
-                    <div class="youtube"data-aos="fade-up"
-                data-aos-duration="600"><!-- 유튜브 영상 box-->
-                        <div class="youtube_in">
-        <!-- 영상링크 --><iframe width="560" height="315" src="https://www.youtube.com/embed/vz-BZJYb9tk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                    </div><!-- youtube end -->
-                    <div class="info" data-aos="fade-up"
-                    data-aos-duration="900">
-                        <h3>우정이랑 혜화 V-log</h3>
-                        <div class="tool">
-                            <span class="Ae">Ae</span>
-                            <span class="Pr">Pr</span>
-                        </div>  
-                        <p>'우정이랑 우정 다지기' 
-                            유튜브 채널에 업로드 되는‘일상 브이로그’컨셉으로 촬영및 편집한 영상입니다. '일상, 아마추어, 현실적'을 키워드를 잡았고, 타겟은 20대~30대 초반 미혼 여성으로 설정했습니다. 타겟의 생활과 친숙한 날 것의 느낌, B급 영상의 느낌을 주기위해 일부 장면은 흔들림을 보정하지 않고 삽입했으며, 마지막 차회예고를 넣어, '일상 브이로그 유튜버'의 영상 중 하나라는 느낌을 주고자하였습니다. </p>
-                        <dl>
-                            <dt>제작기간</dt>
-                            <dd>1주</dd>
-                        </dl>
-                        <dl>
-                            <dt>러닝타임</dt>
-                            <dd>03:23</dd>
-                        </dl>
-                        <dl>
-                            <dt>BGM</dt>
-                            <dd>winter sleep - Sieur Bigorneau</dd>
-                        </dl>
-                        <dl>
-                            <dt>URL</dt>
-                            <dd><a href="https://youtu.be/vz-BZJYb9tk">https://youtu.be/vz-BZJYb9tk</a></dd>
-                        </dl>
-                    </div><!-- info end -->
-                    <div class="sub_img" data-aos="fade-up"
-                    data-aos-duration="900"> <div>※ 클릭시 원본 사이즈로 확대됩니다.</div>
-                        <figure href="images/VLOG (1).jpg" data-fancybox="gallery-5"><img src="images/VLOG (1).jpg" alt="#"/></figure>
-                        <figure href="images/VLOG (2).jpg" data-fancybox="gallery-5"><img src="images/VLOG (2).jpg" alt="#"/></figure>
-                        <figure href="images/VLOG (3).jpg" data-fancybox="gallery-5"><img src="images/VLOG (3).jpg" alt="#"/></figure>
-                        <figure href="images/VLOG (4).jpg" data-fancybox="gallery-5"><img src="images/VLOG (4).jpg" alt="#"/></figure>
-                        <figure href="images/VLOG (5).jpg" data-fancybox="gallery-5"><img src="images/VLOG (5).jpg" alt="#"/></figure>
-                        <figure href="images/VLOG (6).jpg" data-fancybox="gallery-5"><img src="images/VLOG (6).jpg" alt="#"/></figure>
-                        <figure href="images/VLOG (7).jpg" data-fancybox="gallery-5"><img src="images/VLOG (7).jpg" alt="#"/></figure>
-                    </div><!-- sub_img end -->   
-                </div><!-- cont end -->
-                
-            </div><!-- item end 2-->
-            <!--///////  3 ///////-->
-            <div class="item" style="background:url('images/DAISO_bg.jpg') center center / cover no-repeat;">
-                <div class="cont" ><!-- 영상 및 정보, 이미지 출력영역 -->
-                    <div class="youtube" data-aos="fade-up"
-                data-aos-duration="600"><!-- 유튜브 영상 box-->
-                        <div class="youtube_in">
-        <!-- 영상링크 --><iframe width="560" height="315" src="https://www.youtube.com/embed/doGio_7D7bE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                    </div><!-- youtube end -->
-                    <div class="info" data-aos="fade-up"
-                    data-aos-duration="900">
-                        <h3>✨💖DAISO💖 반지 리뷰✨</h3>
-                        <div class="tool">
-                            <span class="Ai">Ai</span>
-                            <span class="Ae">Ae</span>
-                            <span class="Pr">Pr</span>
-                        </div>  
-                        <p>패션악세서리 리뷰 및 바이럴 컨셉 영상입니다. 저렴한 다이소의 반지를 키치한 감성으로 진지하게 리뷰 하는 것을 포인트로 설정하였으며, BGM과 나레이션 음량 조절 습작같은거dd 패션 아이템소개 컨셉에 따라 인트로에 룩북 컨셉의 컷을 삽입했습니다. 여아용 플라스틱 제품의 색감을 과장하기 위해 화면은 차가운 핑크빛을 띄도록 보정했습니다.영상을 밝고 선명하게 보정하고,  하단 자막의 위치는 유튜브 등의 플랫폼에서 재생될 것을 고려하여 삽입하였습니다.</p>
-                        <dl>
-                            <dt>제작기간</dt>
-                            <dd>3주</dd>
-                        </dl>
-                        <dl>
-                            <dt>러닝타임</dt>
-                            <dd>01:31</dd>
-                        </dl>
-                        <dl>
-                            <dt>BGM</dt>
-                            <dd> Take Me Home - Andrew Applepie</dd>
-                        </dl>
-                        <dl>
-                            <dt>URL</dt>
-                            <dd><a href="https://youtu.be/doGio_7D7bE">https://youtu.be/doGio_7D7bE</a></dd>
-                        </dl>
-                    </div><!-- info end -->
-                    <div class="sub_img" data-aos="fade-up"
-                    data-aos-duration="900"> <div>※ 클릭시 원본 사이즈로 확대됩니다.</div>
-                        <figure href="images/DAISO (1).jpg" data-fancybox="gallery-6"><img src="images/DAISO (1).jpg" alt="#"/></figure>
-                        <figure href="images/DAISO (2).jpg" data-fancybox="gallery-6"><img src="images/DAISO (2).jpg" alt="#"/></figure>
-                        <figure href="images/DAISO (3).jpg" data-fancybox="gallery-6"><img src="images/DAISO (3).jpg" alt="#"/></figure>
-                        <figure href="images/DAISO (4).jpg" data-fancybox="gallery-6"><img src="images/DAISO (4).jpg" alt="#"/></figure>
-                        <figure href="images/DAISO (5).jpg" data-fancybox="gallery-6"><img src="images/DAISO (5).jpg" alt="#"/></figure>
-                        <figure href="images/DAISO (6).jpg" data-fancybox="gallery-6"><img src="images/DAISO (6).jpg" alt="#"/></figure>
-                        <figure href="images/DAISO (7).jpg" data-fancybox="gallery-6"><img src="images/DAISO (7).jpg" alt="#"/></figure>
-                    </div><!-- sub_img end -->   
-                </div><!-- cont end -->
-                
-            </div><!-- item end 3-->
-
-
-        </section><!-- video end (영편)-->
-        <section class="video"><!-- 3D -->
-<!--             <div class="category_title3" id="category_title3">
-                    <h3># 3D그래픽 애니메이션</h3>
+            <div class="info" data-aos="fade-up" data-aos-duration="900">
+              <span class="indiviual">개인 작업</span>
+              <h3>부산 금강식물원</h3>
+              <div class="tool">
+                <span class="Ae">Ae</span>
+                <span class="Pr">Pr</span>
+              </div>
+              <p>
+                영화를 보는 듯한 느낌을 의도한 작업입니다. 이를 위해서 화면을
+                2.39:1의 시네마스코프 비율로 정하고, 간단한 스토리를
+                설정하였습니다. 식물원에 간 '나'. 입구 길에서 만난 작은 거위를
+                따라 점점 더 식물원의 안으로 들어가는데……. 배경을 깊은 숲처럼
+                표현하기 위해 화면의 밝기와 콘트라스트를 조정하고 청록 색조를
+                강조했습니다. 또, 영상에 담긴 동화적 스토리에 맞춰 빛이 번지는
+                몽환적인 화면을 만들었습니다.
+              </p>
+              <dl>
+                <dt>러닝타임</dt>
+                <dd>01:50</dd>
+              </dl>
+              <dl>
+                <dt>BGM</dt>
+                <dd>forest of the elves - jonathan segev</dd>
+              </dl>
+              <dl>
+                <dt>URL</dt>
+                <dd>
+                  <a href="https://youtu.be/8UJEsO6VkpM"
+                    >https://youtu.be/8UJEsO6VkpM</a
+                  >
+                </dd>
+              </dl>
+            </div>
+            <!-- info end -->
+            <div class="sub_img" data-aos="fade-up" data-aos-duration="900">
+              <div>※ 클릭시 원본 사이즈로 확대됩니다.</div>
+              <figure
+                href="images/HJB_Garden (1).png"
+                data-fancybox="gallery-4"
+              >
+                <img src="images/HJB_Garden (1).png" alt="#" />
+              </figure>
+              <figure
+                href="images/HJB_Garden (2).png"
+                data-fancybox="gallery-4"
+              >
+                <img src="images/HJB_Garden (2).png" alt="#" />
+              </figure>
+              <figure
+                href="images/HJB_Garden (3).png"
+                data-fancybox="gallery-4"
+              >
+                <img src="images/HJB_Garden (3).png" alt="#" />
+              </figure>
+              <figure
+                href="images/HJB_Garden (4).png"
+                data-fancybox="gallery-4"
+              >
+                <img src="images/HJB_Garden (4).png" alt="#" />
+              </figure>
+              <figure
+                href="images/HJB_Garden (5).png"
+                data-fancybox="gallery-4"
+              >
+                <img src="images/HJB_Garden (5).png" alt="#" />
+              </figure>
+              <figure
+                href="images/HJB_Garden (6).png"
+                data-fancybox="gallery-4"
+              >
+                <img src="images/HJB_Garden (6).png" alt="#" />
+              </figure>
+            </div>
+            <!-- sub_img end -->
+          </div>
+          <!-- cont end -->
+        </div>
+        <!-- item end 1-->
+        <!--///////  2 ///////-->
+        <div
+          class="item"
+          style="background: url('') center center / cover no-repeat"
+        >
+          <div class="cont">
+            <!-- 영상 및 정보, 이미지 출력영역 -->
+            <div class="youtube" data-aos="fade-up" data-aos-duration="600">
+              <!-- 유튜브 영상 box-->
+              <div class="youtube_in">
+                <!-- 영상링크 --><iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/vz-BZJYb9tk"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <!-- youtube end -->
+            <div class="info" data-aos="fade-up" data-aos-duration="900">
+              <span class="indiviual">개인 작업</span>
+              <h3>우정이랑 혜화 V-log</h3>
+              <div class="tool">
+                <span class="Ae">Ae</span>
+                <span class="Pr">Pr</span>
+              </div>
+              <p>
+                ‘일상 브이로그’컨셉으로 촬영및 편집한 영상입니다. '일상,
+                아마추어, 현실적'을 키워드를 잡았고, 타겟은 20대~30대 초반 미혼
+                여성으로 설정했습니다. 타겟의 생활과 친숙한 날 것의 느낌, B급
+                영상의 느낌을 주기위해 일부 장면은 흔들림을 보정하지 않고
+                삽입했으며, 마지막 차회예고를 넣어, '일상 브이로그 유튜버'의
+                영상 중 하나라는 느낌을 주고자하였습니다.
+              </p>
+              <dl>
+                <dt>러닝타임</dt>
+                <dd>03:23</dd>
+              </dl>
+              <dl>
+                <dt>BGM</dt>
+                <dd>winter sleep - Sieur Bigorneau</dd>
+              </dl>
+              <dl>
+                <dt>URL</dt>
+                <dd>
+                  <a href="https://youtu.be/vz-BZJYb9tk"
+                    >https://youtu.be/vz-BZJYb9tk</a
+                  >
+                </dd>
+              </dl>
+            </div>
+            <!-- info end -->
+            <div class="sub_img" data-aos="fade-up" data-aos-duration="900">
+              <div>※ 클릭시 원본 사이즈로 확대됩니다.</div>
+              <figure href="images/VLOG (1).jpg" data-fancybox="gallery-5">
+                <img src="images/VLOG (1).jpg" alt="#" />
+              </figure>
+              <figure href="images/VLOG (2).jpg" data-fancybox="gallery-5">
+                <img src="images/VLOG (2).jpg" alt="#" />
+              </figure>
+              <figure href="images/VLOG (3).jpg" data-fancybox="gallery-5">
+                <img src="images/VLOG (3).jpg" alt="#" />
+              </figure>
+              <figure href="images/VLOG (4).jpg" data-fancybox="gallery-5">
+                <img src="images/VLOG (4).jpg" alt="#" />
+              </figure>
+              <figure href="images/VLOG (5).jpg" data-fancybox="gallery-5">
+                <img src="images/VLOG (5).jpg" alt="#" />
+              </figure>
+              <figure href="images/VLOG (6).jpg" data-fancybox="gallery-5">
+                <img src="images/VLOG (6).jpg" alt="#" />
+              </figure>
+              <figure href="images/VLOG (7).jpg" data-fancybox="gallery-5">
+                <img src="images/VLOG (7).jpg" alt="#" />
+              </figure>
+            </div>
+            <!-- sub_img end -->
+          </div>
+          <!-- cont end -->
+        </div>
+        <!-- item end 2-->
+        <!--///////  3 ///////-->
+        <div
+          class="item"
+          style="background: url('') center center / cover no-repeat"
+        >
+          <div class="cont">
+            <!-- 영상 및 정보, 이미지 출력영역 -->
+            <div class="youtube" data-aos="fade-up" data-aos-duration="600">
+              <!-- 유튜브 영상 box-->
+              <div class="youtube_in">
+                <!-- 영상링크 --><iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/doGio_7D7bE"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <!-- youtube end -->
+            <div class="info" data-aos="fade-up" data-aos-duration="900">
+              <span class="indiviual">개인 작업</span>
+              <h3>✨💖DAISO💖 반지 리뷰✨</h3>
+              <div class="tool">
+                <span class="Ai">Ai</span>
+                <span class="Ae">Ae</span>
+                <span class="Pr">Pr</span>
+              </div>
+              <p>
+                패션악세서리 리뷰 및 바이럴 컨셉 영상입니다. 저렴한 다이소의
+                반지를 키치한 감성으로 진지하게 리뷰 하는 것을 포인트로
+                설정하였으며, BGM과 나레이션 음량 조절 습작같은거dd 패션
+                아이템소개 컨셉에 따라 인트로에 룩북 컨셉의 컷을 삽입했습니다.
+                여아용 플라스틱 제품의 색감을 과장하기 위해 화면은 차가운
+                핑크빛을 띄도록 보정했습니다.영상을 밝고 선명하게 보정하고, 하단
+                자막의 위치는 유튜브 등의 플랫폼에서 재생될 것을 고려하여
+                삽입하였습니다.
+              </p>
+              <dl>
+                <dt>제작기간</dt>
+                <dd>3주</dd>
+              </dl>
+              <dl>
+                <dt>러닝타임</dt>
+                <dd>01:31</dd>
+              </dl>
+              <dl>
+                <dt>BGM</dt>
+                <dd>Take Me Home - Andrew Applepie</dd>
+              </dl>
+              <dl>
+                <dt>URL</dt>
+                <dd>
+                  <a href="https://youtu.be/doGio_7D7bE"
+                    >https://youtu.be/doGio_7D7bE</a
+                  >
+                </dd>
+              </dl>
+            </div>
+            <!-- info end -->
+            <div class="sub_img" data-aos="fade-up" data-aos-duration="900">
+              <div>※ 클릭시 원본 사이즈로 확대됩니다.</div>
+              <figure href="images/DAISO (1).jpg" data-fancybox="gallery-6">
+                <img src="images/DAISO (1).jpg" alt="#" />
+              </figure>
+              <figure href="images/DAISO (2).jpg" data-fancybox="gallery-6">
+                <img src="images/DAISO (2).jpg" alt="#" />
+              </figure>
+              <figure href="images/DAISO (3).jpg" data-fancybox="gallery-6">
+                <img src="images/DAISO (3).jpg" alt="#" />
+              </figure>
+              <figure href="images/DAISO (4).jpg" data-fancybox="gallery-6">
+                <img src="images/DAISO (4).jpg" alt="#" />
+              </figure>
+              <figure href="images/DAISO (5).jpg" data-fancybox="gallery-6">
+                <img src="images/DAISO (5).jpg" alt="#" />
+              </figure>
+              <figure href="images/DAISO (6).jpg" data-fancybox="gallery-6">
+                <img src="images/DAISO (6).jpg" alt="#" />
+              </figure>
+              <figure href="images/DAISO (7).jpg" data-fancybox="gallery-6">
+                <img src="images/DAISO (7).jpg" alt="#" />
+              </figure>
+            </div>
+            <!-- sub_img end -->
+          </div>
+          <!-- cont end -->
+        </div>
+        <!-- item end 3-->
+      </section>
+      <!-- video end (영편)-->
+      <section class="video">
+        <!-- 3D -->
+        <!--             <div class="category_title3" id="category_title3">
+                    <h3># etc</h3>
             </div> -->
-            <!--///////  1 ///////-->
-            <div class="item" id="top_video3" style="background: url('images/CAKE_bg.jpg') center center / cover no-repeat;">
-                <div class="cont"><!-- 영상 및 정보, 이미지 출력영역 -->
-                    <div class="youtube" data-aos="fade-up"
-                    data-aos-duration="600"><!-- 유튜브 영상 box-->
-                        <div class="youtube_in">
-        <!-- 영상링크 --><iframe width="560" height="315" src="https://www.youtube.com/embed/OFKDaFNwnQM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                    </div><!-- youtube end -->
-                    <div class="info" data-aos="fade-up"
-                    data-aos-duration="900">
-                        <h3>12세 이용가 연령고지 영상</h3>
-                        <div class="tool">
-                            <span class="Maya">M</span><font style="font-size:14px;">(Autodesk Maya)</font>
-                            <span class="Pr">Pr</span>
-                            <span class="Ae">Ae</span>
-                        </div>  
-                        <p>오토데스크 마야를 사용해 3D 애니메이션 연령고지 영상을 만들었습니다. </p>
-                        <dl>
-                            <dt>제작기간</dt>
-                            <dd>1주 반</dd>
-                        </dl>
-                        <dl>
-                            <dt>러닝타임</dt>
-                            <dd>00:08</dd>
-                        </dl>
-                        <dl>
-                            <dt>BGM</dt>
-                            <dd>Happy Birthday Song 1 (No Copyright)</dd>
-                        </dl>
-                        <dl>
-                            <dt>URL</dt>
-                            <dd><a href="https://youtu.be/OFKDaFNwnQM">https://youtu.be/OFKDaFNwnQM</a></dd>
-                        </dl>
-                    </div><!-- info end -->
-                    <div class="sub_img" data-aos="fade-up"
-                    data-aos-duration="900"> <div>※ 클릭시 원본 사이즈로 확대됩니다.</div>
-                        <figure href="images/cake_modeling.jpg" data-fancybox="gallery-7"><img src="images/cake_modeling.jpg" alt="#"/></figure>
-                        <figure href="images/CAKE (1).jpg" data-fancybox="gallery-7"><img src="images/CAKE (1).jpg" alt="#"/></figure>
-                        <figure href="images/CAKE (2).jpg" data-fancybox="gallery-7"><img src="images/CAKE (2).jpg" alt="#"/></figure>
-                    </div><!-- sub_img end -->   
-                </div><!-- cont end -->
-                
-            </div><!-- item end 1-->
-        </section><!-- video end (3D)-->
-        <div class="topbutton"><a href="#top">TOP</a></div>
-    </section><!-- contents end -->
+        <!-- info end -->
+
+        <!--///////  2 ///////-->
+        <div class="item" id="top_video3" style="background: ">
+          <div class="cont">
+            <!-- 영상 및 정보, 이미지 출력영역 -->
+            <div class="youtube" data-aos="fade-up" data-aos-duration="600">
+              <!-- 유튜브 영상 box-->
+              <div class="youtube_in">
+                <!-- 영상링크 --><iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/dEFyoc2guBQ"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <!-- youtube end -->
+            <div class="info" data-aos="fade-up" data-aos-duration="900">
+              <span class="team">팀 작업</span>
+              <h3>[팬 영상]나의 작은 향아치</h3>
+              <div class="tool">
+                <span class="Ae">Ae</span>
+                <span class="Pr">Pr</span>
+              </div>
+              <p>
+                오토데스크 마야를 사용해 3D 애니메이션 연령고지 영상을
+                만들었습니다.
+              </p>
+              <dl>
+                <dt>러닝타임</dt>
+                <dd>03:23</dd>
+              </dl>
+              <dl>
+                <dt>BGM</dt>
+                <dd>나의 작은 향아치-리즈비(팀 자체 제작곡)</dd>
+              </dl>
+              <dl>
+                <dt>URL</dt>
+                <dd>
+                  <a href="https://youtu.be/dEFyoc2guBQ"
+                    >https://youtu.be/dEFyoc2guBQ</a
+                  >
+                </dd>
+              </dl>
+            </div>
+            <div class="sub_img" data-aos="fade-up" data-aos-duration="900">
+              <div>※ 클릭시 원본 사이즈로 확대됩니다.</div>
+              <figure href="images/cake_modeling.jpg" data-fancybox="gallery-7">
+                <img src="images/cake_modeling.jpg" alt="#" />
+              </figure>
+              <figure href="images/CAKE (1).jpg" data-fancybox="gallery-7">
+                <img src="images/CAKE (1).jpg" alt="#" />
+              </figure>
+              <figure href="images/CAKE (2).jpg" data-fancybox="gallery-7">
+                <img src="images/CAKE (2).jpg" alt="#" />
+              </figure>
+            </div>
+            <!-- sub_img end -->
+          </div>
+          <!-- cont end -->
+        </div>
+        <!-- item end 2-->
+        <div class="item" style="background: ">
+          <div class="cont">
+            <!-- 영상 및 정보, 이미지 출력영역 -->
+            <div class="youtube" data-aos="fade-up" data-aos-duration="600">
+              <!-- 유튜브 영상 box-->
+              <div class="youtube_in">
+                <!-- 영상링크 --><iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/Wqnl1JhQNQ8"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <!-- youtube end -->
+            <div class="info" data-aos="fade-up" data-aos-duration="900">
+              <span class="team">팀 작업</span>
+              <h3>[팬 영상]긍지높은 사대부</h3>
+              <div class="tool">
+                <span class="Ae">Ae</span>
+                <span class="Pr">Pr</span>
+              </div>
+              <p>긍높사</p>
+              <dl>
+                <dt>러닝타임</dt>
+                <dd>04:15</dd>
+              </dl>
+              <dl>
+                <dt>BGM</dt>
+                <dd>-</dd>
+              </dl>
+              <dl>
+                <dt>URL</dt>
+                <dd>
+                  <a href="https://youtu.be/Wqnl1JhQNQ8"
+                    >https://youtu.be/Wqnl1JhQNQ8</a
+                  >
+                </dd>
+              </dl>
+            </div>
+            <div class="sub_img" data-aos="fade-up" data-aos-duration="900">
+              <div>※ 클릭시 원본 사이즈로 확대됩니다.</div>
+              <figure href="images/cake_modeling.jpg" data-fancybox="gallery-7">
+                <img src="images/cake_modeling.jpg" alt="#" />
+              </figure>
+              <figure href="images/CAKE (1).jpg" data-fancybox="gallery-7">
+                <img src="images/CAKE (1).jpg" alt="#" />
+              </figure>
+              <figure href="images/CAKE (2).jpg" data-fancybox="gallery-7">
+                <img src="images/CAKE (2).jpg" alt="#" />
+              </figure>
+            </div>
+            <!-- sub_img end -->
+          </div>
+          <!-- cont end -->
+        </div>
+        <!-- item end 2-->
+      </section>
+      <!-- video end (3D)-->
+      <div class="topbutton"><a href="#top">TOP</a></div>
+    </section>
+    <!-- contents end -->
     <section class="D_desgin">
-            <div class="D_title">
-                <h3>2 D⠀디 자 인</h3>
-                <span>※ 클릭시 원본 사이즈로 확대됩니다.</span>
-            </div><!-- D_title End -->
-            <div class="conts">
-                <div class="item"><!-- 1 -->
-                <figure href="images/ppt_d_1.png" data-fancybox="gallery-8">
-                        <img src="images/ppt_d_1.png" alt="ppt디자인_1"/>
-                    </figure> 
-                    <div class="info">
-                        <p>PPT디자인</p>
-                        <p>#목업 #심플</p>
-                    </div>
-                </div>
-                <div class="item"><!-- 2 -->
-                    <figure href="images/ppt_d_2.png" data-fancybox="gallery-8">
-                        <img src="images/ppt_d_2.png" alt="ppt디자인_2"/>
-                    </figure>
-                    <div class="info">
-                        <p>PPT디자인</p>
-                        <p>#타깃설정</p>
-                    </div>
-                </div>
-            </div><!-- conts end -->
-        </section><!-- D_desgin end -->
-    <section class="about" id="bottom"><!-- 나의 프로필! -->
-        <div class="about_title">
-                <h2>PROFILE</h2>
-        </div><!-- about_title end -->
-        <div class="cont">
-            <div class="basic">
-                <div class="propic">
-                <figure>
-                    <img src="images/wildrose.jpg" alt="황정빈_프로필사진" />
-                </figure>
-                </div>
-                
-            </div><!-- basic end -->
-            <div class="info">
-                <div>
-                    <h4>황정빈<br>HWANG JEOUNGBIN</h4>
-                    <p>1995.07.15</p>
-                    <p><a href="tel:010-4381-6587">010 4381 6587</a></p>
-                    <p>창원 의창구, 부산 진구</p>
-                </div>
-                <div>
-                    <h4>LICENSE / SKILL</h4>
-                    <dl>
-                        <dt>2020.08</dt>
-                        <dd>GTQ 1급</dd>
-                    </dl>
-                    <dl>
-                        <dt>2021.07</dt>
-                        <dd>컴퓨터그래픽스운용기능사</dd>
-                    </dl>
-                    <span>
-                    <p>프리미어 프로, 에프터 이펙트<br>포토샵, 일러스트레이터, 클립스튜디오</p>
-                    <p>HTML, CSS</p><p>Excel, 한글, 파워포인트</p>
-                    <p>3D마야</p></span>
-                </div><!-- lisence end -->
-                <div>
-                    <h4>EDUCATION</h4>
-                    <dl>
-                        <dt>2014.3~2019.08</dt>
-                        <dd>동덕여자대학교<br>회화과 서양화전공 졸</dd>
-                    </dl>
-                    <dl>
-                        <dt>2021.12~2022.05</dt>
-                        <dd>부산 그린컴퓨터아카데미<br>[멀티미디어콘텐츠제작]영상편집 수료</dd>
-                    </dl>
-                </div><!-- education end -->
-                <!-- <div>
+      <div class="D_title">
+        <h3>2 D⠀디 자 인</h3>
+        <span>※ 클릭시 원본 사이즈로 확대됩니다.</span>
+      </div>
+      <!-- D_title End -->
+      <div class="conts">
+        <div class="item">
+          <!-- 1 -->
+          <figure href="images/ppt_d_1.png" data-fancybox="gallery-8">
+            <img src="images/ppt_d_1.png" alt="ppt디자인_1" />
+          </figure>
+          <div class="info">
+            <p>PPT디자인</p>
+            <p>#목업 #심플</p>
+          </div>
+        </div>
+        <div class="item">
+          <!-- 2 -->
+          <figure href="images/ppt_d_2.png" data-fancybox="gallery-8">
+            <img src="images/ppt_d_2.png" alt="ppt디자인_2" />
+          </figure>
+          <div class="info">
+            <p>PPT디자인</p>
+            <p>#타깃설정</p>
+          </div>
+        </div>
+      </div>
+      <!-- conts end -->
+    </section>
+    <!-- D_desgin end -->
+    <section class="about" id="bottom">
+      <!-- 나의 프로필! -->
+      <div class="about_title">
+        <h2>PROFILE</h2>
+      </div>
+      <!-- about_title end -->
+      <div class="cont">
+        <div class="basic">
+          <div class="propic">
+            <figure>
+              <img src="images/wildrose.jpg" alt="황정빈_프로필사진" />
+            </figure>
+          </div>
+        </div>
+        <!-- basic end -->
+        <div class="info">
+          <div>
+            <h4>황정빈<br />HWANG JEOUNGBIN</h4>
+            <p>1995.07.15</p>
+            <p><a href="tel:010-4381-6587">010 4381 6587</a></p>
+            <p>창원 의창구</p>
+          </div>
+          <div>
+            <h4>LICENSE / SKILL</h4>
+            <dl>
+              <dt>2020.08</dt>
+              <dd>GTQ 1급</dd>
+            </dl>
+            <dl>
+              <dt>2021.07</dt>
+              <dd>컴퓨터그래픽스운용기능사</dd>
+            </dl>
+            <span>
+              <p>
+                프리미어 프로, 에프터 이펙트<br />포토샵, 일러스트레이터,
+                클립스튜디오
+              </p>
+              <p>HTML, CSS</p>
+              <p>Excel, 한글, 파워포인트</p>
+              <p>3D마야</p></span
+            >
+          </div>
+          <!-- lisence end -->
+          <div>
+            <h4>EDUCATION</h4>
+            <dl>
+              <dt>2014.3~2019.08</dt>
+              <dd>동덕여자대학교<br />회화과 서양화전공 졸</dd>
+            </dl>
+            <dl>
+              <dt>2021.12~2022.05</dt>
+              <dd>
+                부산 그린컴퓨터아카데미<br />[멀티미디어콘텐츠제작]영상편집 수료
+              </dd>
+            </dl>
+            <dl>
+              <dt>2022.08~</dt>
+              <dd>서울디지털대학교<br />생활문화학부 미디어영상학과</dd>
+            </dl>
+          </div>
+          <!-- education end -->
+          <!-- <div>
                     <h4>SKILL</h4>
                     <p>프리미어 프로, 에프터 이펙트<br>포토샵, 일러스트레이터, 클립스튜디오</p>
                     <p>HTML, CSS</p><p>Excel, 한글, 파워포인트</p>
                     <p>3D마야</p>
                 </div> -->
-            </div><!-- .info end -->
-        </div><!-- .cont end -->
-    </section><!-- .about end -->
+        </div>
+        <!-- .info end -->
+      </div>
+      <!-- .cont end -->
+    </section>
+    <!-- .about end -->
 
     <footer>
-        <p>HJB</p>
-        
-            <!-- 번호, 이메일  /////////////////////////////////-->
-        <div class="connect">
-            <span>CONNECT<br><font size="1pt">▼</font></span>
-            <ul>
-                <li><a href="tel:010-4381-6587">010-4381-6587</a></li>
-                <li>jbwhang0001@gmail.com</li>
-            </ul>
-        </div><!-- div .connect end -->    
-        <!-- 유튜브 바로가기 //////////////////////-->
+      <p>HJB</p>
+
+      <!-- 번호, 이메일  /////////////////////////////////-->
+      <div class="connect">
+        <span>CONNECT<br /><font size="1pt">▼</font></span>
         <ul>
-            <li class="youtube">
-                <a href="https://www.youtube.com/channel/UCY7G7IWg7RE1eH4SWWsmtVg" target="_blank">▶ YouTube</a>
-            </li>
-        </ul><!-- ul end -->
-        <p>copyright© 2022. 황정빈 all rights reserved.<br>본 사이트는 개인 포트폴리오를 위해 제작되었으며, 상업적 이윤을 추구하지않습니다.  <br>사이트에 게시된 영상과 그래픽 이미지의 저작권은 제작자에게 있으며 일부 이미지 및 폰트는 각각 별도의 출처를 가지고 있음을 밝힙니다.</p>
+          <li><a href="tel:010-4381-6587">010-4381-6587</a></li>
+          <li>jbwhang0001@gmail.com</li>
+        </ul>
+      </div>
+      <!-- div .connect end -->
+      <!-- 유튜브 바로가기 //////////////////////-->
+      <ul>
+        <li class="youtube">
+          <a
+            href="https://www.youtube.com/channel/UCY7G7IWg7RE1eH4SWWsmtVg"
+            target="_blank"
+            >▶ YouTube</a
+          >
+        </li>
+      </ul>
+      <!-- ul end -->
+      <p>
+        copyright© 2022. 황정빈 all rights reserved.<br />본 사이트는 개인
+        포트폴리오를 위해 제작되었으며, 상업적 이윤을 추구하지않습니다.
+        <br />사이트에 게시된 영상과 그래픽 이미지의 저작권은 제작자에게 있으며
+        일부 이미지 및 폰트는 각각 별도의 출처를 가지고 있음을 밝힙니다.
+      </p>
     </footer>
 
     <aside>
-        <ul>
-            <li><a href="#top">▲<br>TOP</a></li>
-            <li><a href="#bottom">END<br>▼</a></li>
-        </ul>
+      <ul>
+        <li>
+          <a href="#top">▲<br />TOP</a>
+        </li>
+        <li>
+          <a href="#bottom">END<br />▼</a>
+        </li>
+      </ul>
     </aside>
-</body>
+  </body>
 </html>
