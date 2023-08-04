@@ -174,7 +174,7 @@ h1 {
 /* main_visual ----------------------------------------------------------*/
 /* header -----------------------------------*/
 header {
-  width: 100%;
+  width: 78%;
   /* line-height: 65px; */
   background: rgba(255, 255, 255, 0.7);
   background: linear-gradient(
@@ -183,17 +183,25 @@ header {
     rgba(255, 255, 255, 0.2) 100%
   );
   margin: 10px;
+  margin: 0 auto;
+  padding: 10px 0;
 }
 
 header .name {
   height: 50%;
+
+  margin: 0 auto;
 }
 header .up_menu {
   display: block;
+  text-align: right;
+  /* position: absolute;
+  top: 0;
+  right: 0%; */
 }
 
 header .name a {
-  font-size: 35px;
+  font-size: 40px;
   font-family: "ONE-Mobile-Title";
   line-height: 65px;
   color: #ff7200;
