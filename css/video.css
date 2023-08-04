@@ -21,6 +21,21 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "KCC-eunyoung";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/KCC-eunyoung-Regular.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "KyoboHandwriting2022khn";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/KyoboHandwriting2022khn.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* 2D그래픽 제작 및 합성 작업 */
 .video .category_title1 {
@@ -34,7 +49,7 @@
 }
 
 .Contents section:nth-of-type(1) {
-  background-color: rgb(255, 253, 247);
+  background-color: rgb(255, 251, 247);
 }
 
 /* 영상 촬영 및 편집 작업 */
@@ -85,7 +100,7 @@
   flex-wrap: wrap;
   margin-top: 1px;
   padding: 20px 0;
-  /* background-color: antiquewhite; */
+  /* background-color: rgb(109, 100, 88); */
 }
 .video .item .cont {
   /* 영상과 영상정보의 박스*/
@@ -98,14 +113,20 @@
   margin: 0 auto;
   padding: 80px 10px;
 }
-.video .item .cont h3 {
-  font-size: 60px;
+
+.video .item .title {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.video .item .title h3 {
+  font-size: 50px;
   font-family: "Hahmlet-Bold";
-  margin-bottom: 30px;
+  display: inline-block;
+  /* margin-bottom: 30px; */
 }
 
 .video .item .cont .youtube {
-  width: 65%;
+  width: 58%;
   margin: 0 auto;
 }
 .video .item .cont .youtube .youtube_in {
@@ -122,10 +143,17 @@
 }
 .video .item .cont .info {
   /* 영상의 설명이 들어가는 곳 */
-  width: 28%;
+  width: 40%;
   margin: 0 auto;
+  background-color: rgba(255, 231, 211, 0.651);
+}
+
+.video .item .cont .infobox {
+  /* 영상의 설명이 들어가는 곳 */
+  padding: 20px 40px;
   /* background-color: aliceblue; */
 }
+
 .video .item .cont .info h3 {
   font-size: 50px;
   margin: 10px 0;
@@ -148,27 +176,37 @@
   margin-bottom: 20px;
   letter-spacing: 0.4px;
 }
-.video .item .cont .info dl {
-  display: flex;
+
+.video .item .cont .info_p {
+  margin: 20px 0;
+  width: 90%;
+}
+.video .item .cont .info_dl {
+  /* display: flex; */
   font-size: 17px;
-  margin: 8px 0;
+  /* margin: 20px 0; */
+  /* height: 30%; */
 }
-.info dl dt {
-  font-weight: bold;
-  margin-right: 10px;
+
+.info_dl .info_title {
+  /* display: block; */
+  font-size: 30px;
+  font-family: "KCC-eunyoung";
+  /* font-family: "KyoboHandwriting2022khn"; */
 }
-.info dl a {
+.info_dl a {
+  /* text-decoration: underline; */
+  color: rgb(173, 130, 94);
+}
+.info_dl a:hover {
   text-decoration: underline;
-  color: green;
-}
-.info dl a:hover {
-  text-decoration: underline;
-  color: rgb(179, 218, 179);
+  color: #ff7b00;
   transition: 0.3s;
 }
 
 .item .cont .info .tool {
-  margin: 20px 0;
+  /* margin: 20px 0; */
+  /* padding-left: 5px; */
 }
 
 .video .sub_img {
@@ -177,15 +215,15 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
 
 .sub_img div {
   width: 100%;
 }
 .sub_img figure {
-  width: 15%;
-  height: 150px;
+  width: 18%;
+  height: 100px;
   box-sizing: border-box;
   overflow: hidden;
   margin: 3px 0;
