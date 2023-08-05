@@ -175,6 +175,8 @@ h1 {
 /* header -----------------------------------*/
 header {
   width: 78%;
+  display: flex;
+  flex-wrap: wrap;
   /* line-height: 65px; */
   background: rgba(255, 255, 255, 0.7);
   background: linear-gradient(
@@ -184,24 +186,20 @@ header {
   );
   margin: 10px;
   margin: 0 auto;
-  padding: 10px 0;
+  padding: 40px 0;
 }
 
 header .name {
-  height: 50%;
-
-  margin: 0 auto;
+  width: 100%;
 }
 header .up_menu {
-  display: block;
+  /* display: block; */
   text-align: right;
-  /* position: absolute;
-  top: 0;
-  right: 0%; */
+  width: 100%;
 }
 
 header .name a {
-  font-size: 40px;
+  font-size: 50px;
   font-family: "ONE-Mobile-Title";
   line-height: 65px;
   color: #ff7200;
@@ -282,7 +280,7 @@ header .up_menu a:nth-of-type(2):hover {
 
 .category .list {
   /* 카테고리를 선택할 수 있는 곳 */
-  /* background-color: yellowgreen; */
+  /* background-color: rgb(238, 238, 237); */
   width: 78%;
   margin: 0 auto;
   height: 50px;
@@ -295,6 +293,7 @@ header .up_menu a:nth-of-type(2):hover {
   font-size: 30px;
   /* background-color: tomato; */
   display: inline-block;
+  /* border: #ff7200 ; */
   width: 50%;
   text-align: center;
   cursor: pointer;
@@ -320,8 +319,9 @@ header .up_menu a:nth-of-type(2):hover {
   cursor: pointer;
   line-height: 50px;
   color: #fff;
-  background-color: #ff7200;
+  background-color: #fa801c;
   transition: 0.8s;
+  /* border: #333; */
 }
 .category .list .on a {
   color: #fff;
