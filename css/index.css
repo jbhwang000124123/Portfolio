@@ -283,9 +283,9 @@ header .up_menu a:nth-of-type(2):hover {
 .category .list {
   /* 카테고리를 선택할 수 있는 곳 */
   /* background-color: yellowgreen; */
-  width: 75%;
+  width: 78%;
   margin: 0 auto;
-  height: 70px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -295,30 +295,30 @@ header .up_menu a:nth-of-type(2):hover {
   font-size: 30px;
   /* background-color: tomato; */
   display: inline-block;
-  width: 33.33%;
+  width: 50%;
   text-align: center;
   cursor: pointer;
-  line-height: 70px;
+  line-height: 50px;
   font-weight: bold;
 }
 .category .list li:hover {
-  font-size: 36px;
+  font-size: 33px;
   /* background-color: tomato; */
   display: inline-block;
-  width: 33.33%;
+  width: 50%;
   text-align: center;
   background-color: rgba(184, 184, 184, 0.5);
   transition: 0.3s;
 }
 .category .list li.on {
-  font-size: 35px;
+  font-size: 30px;
   /* background-color: tomato; */
   display: inline-block;
-  width: 33.33%;
+  width: 50%;
   height: 100%;
   text-align: center;
   cursor: pointer;
-  line-height: 70px;
+  line-height: 50px;
   color: #fff;
   background-color: #ff7200;
   transition: 0.8s;
@@ -481,7 +481,7 @@ header .up_menu a:nth-of-type(2):hover {
   /* background-color: violet; */
 }
 .about .cont .info div {
-  width: 33%;
+  width: 50%;
   margin: 20px 0;
   /* background-color: turquoise; */
 }
@@ -522,6 +522,11 @@ header .up_menu a:nth-of-type(2):hover {
   margin-bottom: 12px;
 }
 
+.about .cont .info div .profile tr td {
+  font-size: 15px;
+  margin-left: 10px;
+}
+
 /* footer ----------------------------------------------*/
 footer {
   text-align: center;
@@ -530,7 +535,7 @@ footer {
   font-size: 13px;
   font-family: "돋움";
   color: rgb(105, 116, 100);
-  background-color: rgb(56, 56, 56);
+  /* background-color: rgb(56, 56, 56); */
 }
 /* footer p ----------------------*/
 footer p:nth-of-type(1) {
@@ -607,13 +612,13 @@ footer .connect ul span:nth-child(2) {
 }
 
 footer .connect ul li:nth-of-type(2) {
-  color: rgba(245, 255, 240, 0.5);
+  /* color: rgba(245, 255, 240, 0.5);
   background-color: rgb(104, 156, 152);
   display: inline-block;
   border-radius: 8px;
   padding: 0 10px;
   height: 20px;
-  line-height: 20px;
+  line-height: 20px; */
 }
 
 /* footer ----------------------------------------------*/

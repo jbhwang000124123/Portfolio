@@ -145,7 +145,7 @@
   /* 영상의 설명이 들어가는 곳 */
   width: 40%;
   margin: 0 auto;
-  background-color: rgba(255, 231, 211, 0.651);
+  /* background-color: rgba(255, 231, 211, 0.651); */
 }
 
 .video .item .cont .infobox {
